@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DClinic - Settings - Basic Info</title>
+        <!-- <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous"
+        /> -->
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+        <!-- <link rel="stylesheet" href="vendor/aos/aos.css" /> -->
+        <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
+        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-ar.css" />
+    </head>
+    <body dir="rtl">
+        <div class="top-bar bg-blue py-3 text-light">
+            <div class="container-fluid d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                    <a href="index-ar.html" class="ml-4 d-none d-md-block">
+                        <img
+                            src="imgs/svg/logo.svg"
+                            alt="logo"
+                            class="img-fluid"
+                        />
+                    </a>
+                    <nav
+                        aria-label="breadcrumb"
+                        class="d-flex align-items-center"
+                    >
+                        <a
+                            href="settings-ar.html"
+                            class="back-link d-block d-md-none ml-2"
+                        >
+                            <img
+                                src="imgs/svg/back-arrow.svg"
+                                alt="back"
+                                class="img-fluid"
+                            />
+                        </a>
+
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="settings-ar.html">الاعدادات</a>
+                            </li>
+                            <li
+                                class="breadcrumb-item active d-none d-md-block"
+                                aria-current="page"
+                            >
+                                معلومات أساسية
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="d-flex align-items-center mr-auto">
+                    <a href="settings-ar.html" class="ml-3">
+                        <img
+                            src="imgs/svg/settings-icon.svg"
+                            alt="settings"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="#" class="ml-3">
+                        <img
+                            src="imgs/svg/appointment-icon.svg"
+                            alt="appointment"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="#" class="ml-3">
+                        <img
+                            src="imgs/svg/visits-icon.svg"
+                            alt="visits"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="#" class="profile-btn"
+                        ><span class="profile-btn solve-font-issue">
+                            KI
+                        </span></a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div id="app-container">
+            <div class="side-menu">
+                <div class="tooltip-menu"></div>
+
+                <div
+                    class="side-menu-content d-flex flex-column justify-content-between"
+                >
+                    <a href="#" class="slide-menu-toggler py-2">
+                        <img
+                            src="imgs/svg/settings/white/more-icon.svg"
+                            alt="more-icon"
+                            class="img-fluid"
+                        />
+                        <span data-alternate="إخفاء">إظهار</span>
+                    </a>
+                    <a href="settings-basic-info-ar.html" class="active">
+                        <img
+                            src="imgs/svg/settings/white/basic-info.svg"
+                            alt="basic-info"
+                            class="img-fluid"
+                        />
+                        <span>معلومات اساسية</span>
+                    </a>
+                    <a href="settings-business-hours-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/business-hours.svg"
+                            alt="business-hours"
+                            class="img-fluid"
+                        />
+                        <span>ساعات العمل</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/services.svg"
+                            alt="services"
+                            class="img-fluid"
+                        />
+                        <span>الخدمات</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/staff.svg"
+                            alt="staff"
+                            class="img-fluid"
+                        />
+                        <span>فريق العمل</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/expenses.svg"
+                            alt="expenses"
+                            class="img-fluid"
+                        />
+                        <span>المصروفات</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/insurance.svg"
+                            alt="insurance"
+                            class="img-fluid"
+                        />
+                        <span>التأمينات</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/extra-patient-profile-fields.svg"
+                            alt="extra-patient-profile-fields"
+                            class="img-fluid"
+                        />
+                        <span>حقول إضافية لملف المريض</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/extra-visit-fields.svg"
+                            alt="extra-visit-fields"
+                            class="img-fluid"
+                        />
+                        <span>حقول إضافية للزيارة</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/prescription.svg"
+                            alt="prescription"
+                            class="img-fluid"
+                        />
+                        <span>الروشتة الطبية</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/patients-locations.svg"
+                            alt="patients-locations"
+                            class="img-fluid"
+                        />
+                        <span>عناوين المرضي</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/learning-videos.svg"
+                            alt="learning-videos"
+                            class="img-fluid"
+                        />
+                        <span>فيديوهات تعليمية</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/subscription.svg"
+                            alt="subscription"
+                            class="img-fluid"
+                        />
+                        <span>الاشتراكات</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/additional-clinic-locations.svg"
+                            alt="additional-clinic-locations"
+                            class="img-fluid"
+                        />
+                        <span>مواقع إضافية للعيادة</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/branches.svg"
+                            alt="branches"
+                            class="img-fluid"
+                        />
+                        <span>الفروع</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/patients-mobile-app.svg"
+                            alt="patients-mobile-app"
+                            class="img-fluid"
+                        />
+                        <span>موبايل ابليكشن للمرضي</span>
+                    </a>
+                </div>
+            </div>
+            <main class="main-content">
+                <form class="my-5 form-theme-1">
+                    <div class="container pb-5 pt-3 pt-md-5">
+                        <div class="form-group mb-3">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="doctor-name">اسم الدكتور</label>
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="doctor-name"
+                                        placeholder=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="gender">النوع</label>
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <select class="custom-select" id="gender">
+                                        <option selected disabled></option>
+                                        <option value="male">ذكر</option>
+                                        <option value="female">انثى</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div
+                                class="row align-items-start justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="address">العنوان</label>
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <textarea
+                                        class="form-control"
+                                        id="address"
+                                        placeholder=""
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="specialization">التخصص</label>
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <select
+                                        class="custom-select"
+                                        id="specialization"
+                                    >
+                                        <option selected disabled></option>
+                                        <option value="option1">
+                                            اختيار 1
+                                        </option>
+                                        <option value="option2">
+                                            اختيار 2
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="phone-number"
+                                        >التليفون المحمول</label
+                                    >
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="phone-number"
+                                        placeholder=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="row align-items-center justify-content-center no-gutters"
+                        >
+                            <div
+                                class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                            ></div>
+                            <div
+                                class="col-lg-6 col-sm-9 col-12 text-center my-3 py-3"
+                            >
+                                <button
+                                    type="submit"
+                                    class="btn btn-red px-4 py-2"
+                                >
+                                    حفظ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+        <!-- <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"
+        ></script> -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/aos/aos.js"></script>
+        <script src="vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
