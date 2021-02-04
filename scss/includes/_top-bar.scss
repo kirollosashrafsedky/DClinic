@@ -8,7 +8,7 @@
     position: relative;
     .logo {
         position: relative;
-        margin-top: -6px;
+        // margin-top: -6px;
     }
     .profile-btn {
         display: flex;
@@ -37,7 +37,7 @@
             display: none;
         }
         .breadcrumb-item {
-            margin-top: 5px;
+            // margin-top: 5px;
 
             &::after {
                 display: inline-block;

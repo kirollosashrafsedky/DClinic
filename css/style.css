@@ -135,10 +135,6 @@ p {
   user-select: none;
 }
 
-.solve-font-issue {
-  margin-top: 5px;
-}
-
 .btn {
   border-width: 0;
   font-weight: 700;
@@ -180,7 +176,6 @@ p {
 }
 .top-bar .logo {
   position: relative;
-  margin-top: -6px;
 }
 .top-bar .profile-btn {
   display: flex;
@@ -208,9 +203,6 @@ p {
 }
 .top-bar .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   display: none;
-}
-.top-bar .breadcrumb .breadcrumb-item {
-  margin-top: 5px;
 }
 .top-bar .breadcrumb .breadcrumb-item::after {
   display: inline-block;
