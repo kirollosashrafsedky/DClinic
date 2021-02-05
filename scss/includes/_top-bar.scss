@@ -5,11 +5,11 @@
     right: 0;
     color: $textLight;
     z-index: 500;
-    position: relative;
+    position: fixed;
     .logo {
         position: relative;
-        margin-top: -6px;
-        width: 90px;
+        margin-top: -4px;
+        width: 85px;
     }
     .profile-btn {
         display: flex;
@@ -19,17 +19,17 @@
         font-size: 1.2rem;
         background-color: $red;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
     .breadcrumb {
         background-color: transparent;
         padding: 0;
         margin-bottom: 0;
-        font-size: 1.2rem;
+        font-size: 1rem;
         a {
             color: $textLight;
-            font-weight: 700;
+            font-weight: $semibold;
         }
         .breadcrumb-item.active {
             color: $textLight;
@@ -44,7 +44,7 @@
                 display: inline-block;
                 margin: 0 0.5rem;
                 padding: 0;
-                width: 10px;
+                width: 8px;
                 background-image: url("../imgs/svg/breadcrumb-arrow.svg");
                 background-position: center;
                 background-repeat: no-repeat;
@@ -65,7 +65,7 @@
         }
         .breadcrumb-item + .breadcrumb-item {
             padding-left: 0;
-            font-weight: 700;
+            font-weight: $semibold;
         }
     }
     .back-link {
@@ -76,6 +76,31 @@
     }
     .icon {
         max-width: 20px;
+    }
+    .top-item {
+        white-space: nowrap;
+        border-left: 1px solid rgba(255, 255, 255, 0.34);
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+        font-size: 0.8rem;
+        .form-group {
+            margin-bottom: 0;
+            label {
+                margin-bottom: 0;
+            }
+            select {
+                min-width: 150px;
+                font-size: 0.8rem;
+            }
+        }
+        p {
+            display: flex;
+            align-items: center;
+        }
+        &:last-of-type {
+            border-right: 1px solid rgba(255, 255, 255, 0.34);
+        }
     }
 }
 
@@ -95,6 +120,20 @@
                     &::after {
                         display: none;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .top-bar {
+        .top-item {
+            font-size: 0.8rem;
+            .form-group {
+                select {
+                    min-width: 120px;
+                    font-size: 0.8rem;
                 }
             }
         }

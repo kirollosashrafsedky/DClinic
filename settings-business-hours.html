@@ -21,14 +21,16 @@
         <!-- <link rel="stylesheet" href="css/style-ar.css" /> -->
     </head>
     <body dir="ltr">
-        <div class="top-bar bg-blue py-3 text-light">
-            <div class="container-fluid d-flex align-items-center">
-                <div class="d-flex align-items-center">
+        <div class="top-bar bg-blue text-light">
+            <div
+                class="container-fluid d-flex align-items-stretch justify-content-between"
+            >
+                <div class="d-flex align-items-center py-1">
                     <a href="index.html" class="mr-4 d-none d-md-block">
                         <img
                             src="imgs/svg/logo.svg"
                             alt="logo"
-                            class="img-fluid"
+                            class="img-fluid logo"
                         />
                     </a>
                     <nav
@@ -37,7 +39,7 @@
                     >
                         <a
                             href="settings.html"
-                            class="back-link d-block d-md-none mr-2"
+                            class="back-link d-flex d-md-none mr-2 align-items-center"
                         >
                             <img
                                 src="imgs/svg/back-arrow.svg"
@@ -58,7 +60,42 @@
                         </ol>
                     </nav>
                 </div>
-                <div class="d-flex align-items-center ml-auto">
+                <div
+                    class="align-items-center justify-content-center d-none d-lg-flex"
+                >
+                    <div class="top-item px-2 px-xl-3">
+                        <p>Current Clinic: Main Clinic</p>
+                    </div>
+                    <div class="top-item px-2 px-xl-3">
+                        <div class="form-group d-flex align-items-center">
+                            <label class="text-light mr-2">Change Clinic</label>
+                            <select
+                                class="custom-select input-border input-text-gray"
+                                id="current-clinic-top"
+                            >
+                                <option selected>Clinic Name</option>
+                                <option value="clinic-2">clinic 2</option>
+                                <option value="clinic-3">clinic 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center py-2">
+                    <a
+                        href="#"
+                        class="mr-3 position-relative"
+                        data-target="chats-menu-popup"
+                        data-type="side-popup"
+                    >
+                        <span class="notification floating-notification"
+                            >3</span
+                        >
+                        <img
+                            src="imgs/svg/chat-icon.svg"
+                            alt="chat"
+                            class="img-fluid icon"
+                        />
+                    </a>
                     <a href="settings.html" class="mr-3">
                         <img
                             src="imgs/svg/settings-icon.svg"
@@ -80,10 +117,12 @@
                             class="img-fluid icon"
                         />
                     </a>
-                    <a href="#" class="profile-btn"
-                        ><span class="profile-btn solve-font-issue">
-                            KI
-                        </span></a
+                    <a
+                        href="#"
+                        class="profile-btn"
+                        data-target="profile-menu-popup"
+                        data-type="side-popup"
+                        ><span class="solve-font-issue"> KI </span></a
                     >
                 </div>
             </div>
@@ -338,7 +377,7 @@
                         <a
                             href="#"
                             type="button"
-                            class="btn btn-blue py-1"
+                            class="btn btn-blue py-1 mx-2"
                             data-toggle="modal"
                             data-target="#settings-modal"
                         >
@@ -371,10 +410,10 @@
                                             <p class="mb-4">This day is off</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -391,13 +430,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -406,16 +445,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -440,10 +479,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -461,13 +500,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -476,16 +515,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -507,10 +546,10 @@
                                             <p class="mb-4">This day is off</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -527,13 +566,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -542,16 +581,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -576,10 +615,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -597,13 +636,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -612,16 +651,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -646,10 +685,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -667,13 +706,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -682,16 +721,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -716,10 +755,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -737,13 +776,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -752,16 +791,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -786,10 +825,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -807,13 +846,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -822,16 +861,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -883,7 +922,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -900,7 +939,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -921,7 +960,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -939,7 +978,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -963,7 +1002,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -980,7 +1019,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1001,7 +1040,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1019,7 +1058,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1040,7 +1079,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1058,7 +1097,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1079,7 +1118,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1097,7 +1136,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1118,7 +1157,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1136,7 +1175,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1172,10 +1211,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -1193,13 +1232,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -1208,16 +1247,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -1239,10 +1278,10 @@
                                             <p class="mb-4">This day is off</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -1259,13 +1298,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -1274,16 +1313,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -1308,10 +1347,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -1329,13 +1368,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -1344,16 +1383,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -1378,10 +1417,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -1399,13 +1438,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -1414,16 +1453,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -1448,10 +1487,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -1469,13 +1508,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -1484,16 +1523,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -1515,10 +1554,10 @@
                                             <p class="mb-4">This day is off</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -1535,13 +1574,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -1550,16 +1589,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -1584,10 +1623,10 @@
                                             <p class="mb-1">Visits Limit : 5</p>
                                         </div>
                                         <div
-                                            class="col-3 d-flex justify-content-center align-items-center"
+                                            class="col-3 d-flex justify-content-end align-items-center"
                                         >
                                             <div
-                                                class="custom-control custom-switch"
+                                                class="custom-control custom-switch custom-switch-bar"
                                             >
                                                 <input
                                                     type="checkbox"
@@ -1605,13 +1644,13 @@
                                                 type="button"
                                                 data-toggle="modal"
                                                 data-target="#edit-modal"
-                                                class="mx-3 edit-btn"
+                                                class="edit-btn"
                                             >
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="21.903"
-                                                    height="21.88"
-                                                    viewBox="0 0 21.903 21.88"
+                                                    width="28.03"
+                                                    height="28"
+                                                    viewBox="0 0 28.03 28"
                                                 >
                                                     <g
                                                         id="pencil"
@@ -1620,16 +1659,16 @@
                                                         <path
                                                             id="Path_140"
                                                             data-name="Path 140"
-                                                            d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
-                                                            transform="translate(0 -78.569)"
-                                                            fill="#585858"
+                                                            d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                            transform="translate(0 -77.546)"
+                                                            fill="#bebebe"
                                                         />
                                                         <path
                                                             id="Path_141"
                                                             data-name="Path 141"
-                                                            d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
-                                                            transform="translate(-319.46)"
-                                                            fill="#585858"
+                                                            d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                            transform="translate(-315.301 0)"
+                                                            fill="#bebebe"
                                                         />
                                                     </g>
                                                 </svg>
@@ -1678,7 +1717,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1696,7 +1735,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1720,7 +1759,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1737,7 +1776,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1758,7 +1797,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1776,7 +1815,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1797,7 +1836,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1815,7 +1854,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1836,7 +1875,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1854,7 +1893,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1878,7 +1917,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1895,7 +1934,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1916,7 +1955,7 @@
                                                 class="d-flex justify-content-center align-items-center"
                                             >
                                                 <div
-                                                    class="custom-control custom-switch"
+                                                    class="custom-control custom-switch custom-switch-bar"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -1934,7 +1973,7 @@
                                                     type="button"
                                                     data-toggle="modal"
                                                     data-target="#edit-modal"
-                                                    class="mx-3 edit-btn"
+                                                    class="edit-btn"
                                                 >
                                                     <img
                                                         src="imgs/svg/edit-icon.svg"
@@ -1950,6 +1989,118 @@
                     </div>
                 </div>
             </main>
+            <div class="side-popup profile-menu" id="profile-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <h2 class="mt-4 mb-2 px-3">Dr Demo</h2>
+                <p class="px-3 mb-4">mohamed@yahoo.com</p>
+                <div class="d-block d-lg-none px-3 mt-4 pt-2">
+                    <p class="mb-3">Current Clinic: Main Clinic</p>
+                    <div class="form-group d-flex align-items-center">
+                        <label class="text-light mr-2 mb-0"
+                            >Change Clinic</label
+                        >
+                        <select
+                            class="custom-select input-border input-text-gray"
+                            id="current-clinic-side"
+                        >
+                            <option selected>Clinic Name</option>
+                            <option value="clinic-2">clinic 2</option>
+                            <option value="clinic-3">clinic 3</option>
+                        </select>
+                    </div>
+                </div>
+                <ul class="profile-nav py-3">
+                    <li>
+                        <a href="settings-business-hours-ar.html">
+                            <img
+                                src="imgs/svg/profile-menu/language.svg"
+                                alt="language"
+                                class="img-fluid mx-2"
+                            />
+                            Change language to: Arabic</a
+                        >
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <img
+                                src="imgs/svg/settings-icon.svg"
+                                alt="settings"
+                                class="img-fluid mx-2"
+                            />
+                            Settings</a
+                        >
+                    </li>
+                    <li>
+                        <a href="appointments.html">
+                            <img
+                                src="imgs/svg/appointment-icon.svg"
+                                alt="appointments"
+                                class="img-fluid mx-2"
+                            />
+                            Appointments</a
+                        >
+                    </li>
+                    <li>
+                        <a href="visits.html">
+                            <img
+                                src="imgs/svg/profile-menu/eye.svg"
+                                alt="visits"
+                                class="img-fluid mx-2"
+                            />
+                            Visits</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/change-password.svg"
+                                alt="change password"
+                                class="img-fluid mx-2"
+                            />
+                            Change Password</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/logout.svg"
+                                alt="logout"
+                                class="img-fluid mx-2"
+                            />
+                            Logout</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="side-popup profile-menu" id="chats-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <ul class="chats-nav mt-4 mb-3">
+                    <li>
+                        <a href="settings-business-hours-ar.html">
+                            <img
+                                src="imgs/svg/profile-menu/language.svg"
+                                alt="language"
+                                class="img-fluid mx-2"
+                            />
+                            Change language to: Arabic</a
+                        >
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <!-- Settings Modal -->
@@ -1978,39 +2129,45 @@
                         Reservation Type
                     </h4>
                     <form class="form-sm">
-                        <div class="custom-control custom-radio mb-3">
-                            <input
-                                type="radio"
-                                class="custom-control-input"
-                                id="first-come-first-enter"
-                                name="reservation-type"
-                                checked
-                            />
-                            <label
-                                class="custom-control-label"
-                                for="first-come-first-enter"
-                                >First-come, first-entered</label
-                            >
-                            <div class="invalid-feedback">
-                                invalid text.. add is-invalid class to the input
-                                to see this msg
+                        <div class="form-group">
+                            <div class="custom-control custom-radio mb-3">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    id="first-come-first-enter"
+                                    name="reservation-type"
+                                    checked
+                                />
+                                <label
+                                    class="custom-control-label"
+                                    for="first-come-first-enter"
+                                    >First-come, first-entered</label
+                                >
+                                <div class="invalid-feedback">
+                                    invalid text.. add is-invalid class to the
+                                    input to see this msg
+                                </div>
                             </div>
                         </div>
-                        <div class="custom-control custom-radio mb-3">
-                            <input
-                                type="radio"
-                                class="custom-control-input"
-                                id="reservation-at-specific-time"
-                                name="reservation-type"
-                            />
-                            <label
-                                class="custom-control-label"
-                                for="reservation-at-specific-time"
-                                >Reservation and entry at a specific time</label
-                            >
-                            <div class="invalid-feedback">
-                                invalid text.. add is-invalid class to the input
-                                to see this msg
+                        <div class="form-group">
+                            <div class="custom-control custom-radio mb-3">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    id="reservation-at-specific-time"
+                                    name="reservation-type"
+                                />
+
+                                <label
+                                    class="custom-control-label"
+                                    for="reservation-at-specific-time"
+                                    >Reservation and entry at a specific
+                                    time</label
+                                >
+                                <div class="invalid-feedback">
+                                    invalid text.. add is-invalid class to the
+                                    input to see this msg
+                                </div>
                             </div>
                         </div>
                         <div class="text-center">
@@ -2048,7 +2205,7 @@
                     <h4 class="text-blue font-weight-bold text-center mb-4">
                         Sunday
                     </h4>
-                    <form class="form-theme-1">
+                    <form>
                         <div class="form-group mb-3">
                             <div
                                 class="row align-items-center justify-content-center no-gutters"
@@ -2059,16 +2216,29 @@
                                     <label for="from-time">From</label>
                                 </div>
                                 <div class="col-sm-7 col-12">
-                                    <input
-                                        type="time"
-                                        class="form-control"
-                                        id="from-time"
-                                        placeholder=""
-                                    />
+                                    <div
+                                        class="input-group input-with-img img-other-side"
+                                    >
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <img
+                                                    src="imgs/svg/time-icon.svg"
+                                                    alt="time"
+                                                    class="img-fluid"
+                                                />
+                                            </div>
+                                        </div>
+                                        <input
+                                            id="from-time"
+                                            type="time"
+                                            class="form-control time-input input-border input-gray"
+                                            placeholder=""
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-3 invalid-input">
                             <div
                                 class="row align-items-center justify-content-center no-gutters"
                             >
@@ -2078,16 +2248,32 @@
                                     <label for="to-time">To</label>
                                 </div>
                                 <div class="col-sm-7 col-12">
-                                    <input
-                                        type="time"
-                                        class="form-control"
-                                        id="to-time"
-                                        placeholder=""
-                                    />
+                                    <div
+                                        class="input-group input-with-img img-other-side"
+                                    >
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <img
+                                                    src="imgs/svg/time-icon.svg"
+                                                    alt="time"
+                                                    class="img-fluid"
+                                                />
+                                            </div>
+                                        </div>
+                                        <input
+                                            id="to-time"
+                                            type="time"
+                                            class="form-control time-input input-border input-gray"
+                                            placeholder=""
+                                        />
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <p>Please provide a valid input.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-3 invalid-input">
                             <div
                                 class="row align-items-center justify-content-center no-gutters"
                             >
@@ -2097,12 +2283,64 @@
                                     <label for="limit">Limit</label>
                                 </div>
                                 <div class="col-sm-7 col-12">
-                                    <input
-                                        type="text"
-                                        class="form-control number"
-                                        id="limit"
-                                        placeholder=""
-                                    />
+                                    <div
+                                        class="input-group input-with-img img-other-side"
+                                    >
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <img
+                                                    src="imgs/svg/number-input-icon.svg"
+                                                    alt="number"
+                                                    class="img-fluid"
+                                                />
+                                            </div>
+                                        </div>
+                                        <input
+                                            type="number"
+                                            id="limit"
+                                            class="form-control input-border input-gray"
+                                            placeholder=""
+                                        />
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <p>Please provide a valid input.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 invalid-input">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="duration">Duration</label>
+                                </div>
+                                <div class="col-sm-7 col-12">
+                                    <select
+                                        class="custom-select input-gray input-border"
+                                        id="duration"
+                                    >
+                                        <option selected disabled>
+                                            Select Duration
+                                        </option>
+                                        <option value="5-mins">5 mins</option>
+                                        <option value="10-mins">10 mins</option>
+                                        <option value="15-mins">15 mins</option>
+                                        <option value="20-mins">20 mins</option>
+                                        <option value="25-mins">25 mins</option>
+                                        <option value="30-mins">30 mins</option>
+                                        <option value="35-mins">35 mins</option>
+                                        <option value="40-mins">40 mins</option>
+                                        <option value="45-mins">45 mins</option>
+                                        <option value="50-mins">50 mins</option>
+                                        <option value="55-mins">55 mins</option>
+                                        <option value="1-hour">1 hour</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        <p>Please provide a valid input.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2112,6 +2350,72 @@
                             </button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- success Modal -->
+        <div
+            class="modal fade success-modal"
+            id="success-modal"
+            tabindex="-1"
+            aria-labelledby="success-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="font-weight-bold text-center mb-4">Saved</h4>
+                    <img
+                        src="imgs/svg/success-icon.svg"
+                        alt="success"
+                        class="img-fluid img-success"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- error Modal -->
+        <div
+            class="modal fade success-modal"
+            id="error-modal"
+            tabindex="-1"
+            aria-labelledby="error-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="font-weight-bold text-center mb-4">
+                        An error occured
+                    </h4>
+                    <img
+                        src="imgs/svg/error-icon.svg"
+                        alt="error"
+                        class="img-fluid img-error"
+                    />
                 </div>
             </div>
         </div>

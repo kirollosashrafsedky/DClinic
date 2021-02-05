@@ -13,7 +13,6 @@
         .modal-dialog {
             -webkit-transform: none;
             transform: none;
-            // margin: 1.5rem auto;
         }
     }
     .modal-content {
@@ -42,6 +41,11 @@
             background-color: #c54e4e;
             outline: none;
         }
+    }
+    .img-success,
+    .img-error {
+        width: 60px;
+        margin: auto;
     }
 }
 

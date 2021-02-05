@@ -23,9 +23,10 @@
                     padding: 40px 20px;
                     font-size: 1.2rem;
                     box-shadow: $defaultShadow;
-                    font-weight: 300;
+                    font-weight: $regular;
                     .number {
                         font-size: 2rem;
+                        font-weight: $semibold;
                     }
                 }
             }
@@ -136,7 +137,7 @@
     .card {
         color: $textDark;
         font-size: 1.2rem;
-        font-weight: 500;
+        font-weight: $regular;
         display: flex;
         justify-content: center;
         align-items: center;

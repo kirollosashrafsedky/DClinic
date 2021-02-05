@@ -1,75 +1,50 @@
-label {
-    margin-bottom: 0;
-    font-weight: 500;
-    color: $textDark;
+.form-group {
+    label {
+        margin-bottom: 0.5rem;
+        font-weight: $regular;
+        color: $textDark;
+    }
+    img {
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    //invalid-feedback
+    .invalid-feedback {
+        display: none;
+        font-size: 90%;
+        font-weight: $regular;
+    }
+    &.invalid-input {
+        .invalid-feedback {
+            display: block;
+        }
+        select,
+        .form-control {
+            border: 1px solid $red;
+        }
+    }
 }
 
-.form-theme-1 {
-    .form-control {
-        color: $textDark;
-        background-color: #e9e9e9;
-        border-width: 0;
-        border-radius: 5px;
-        &:focus {
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-        }
-        &::-webkit-input-placeholder {
-            color: #555555;
-        }
-        &::-ms-input-placeholder {
-            color: #555555;
-        }
-        &::placeholder {
-            color: #555555;
-        }
+.form-control {
+    color: $textDark;
+    background-color: #fff;
+    border-width: 0;
+    border-radius: 5px;
+    width: 100%;
+    &:focus {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     }
-    textarea {
-        resize: none;
+    &::-webkit-input-placeholder {
+        color: #555555;
     }
-    .custom-select {
-        background: #e9e9e9 url("../imgs/svg/select-arrow.svg") no-repeat right
-            0.75rem center/13px 10px;
-        &:focus {
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-        }
-        border-width: 0;
+    &::-ms-input-placeholder {
+        color: #555555;
     }
-    input[type="time"] {
-        padding: 0.75rem;
-    }
-    .input-with-img {
-        position: relative;
-        .input-group-prepend {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 5;
-            height: 100%;
-
-            .input-group-text {
-                height: 100%;
-                width: 35px;
-                padding: 5px 10px 5px 10px;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                white-space: nowrap;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-                background-color: transparent;
-                border-width: 0;
-                img {
-                    flex-shrink: 0;
-                    width: 17px;
-                }
-            }
-        }
-        .form-control {
-            background-color: #fff;
-            padding-left: 36px;
-            border-radius: 5px;
-        }
+    &::placeholder {
+        color: #555555;
     }
 }
 
@@ -81,11 +56,10 @@ label {
         left: 0;
         z-index: 5;
         height: 100%;
-
         .input-group-text {
             height: 100%;
             width: 35px;
-            padding: 5px 8px 5px 8px;
+            padding: 5px 10px 5px 10px;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -103,68 +77,39 @@ label {
     }
     .form-control {
         background-color: #fff;
-        padding-left: 36px;
+        padding-left: 33px;
         border-radius: 5px;
+        &.input-text-gray {
+            color: #a5a5a5;
+        }
+    }
+    &.img-other-side {
+        .input-group-prepend {
+            left: auto;
+            right: 0;
+        }
+        .form-control {
+            padding-right: 33px;
+            padding-left: 0.75rem;
+        }
+    }
+    & > .form-control:not(:first-child) {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
     }
 }
 
-.custom-switch {
-    transform: scale(0.8);
-    .custom-control-input:checked ~ .custom-control-label {
-        &::before {
-            color: #fff;
-            border-width: 0;
-            background-color: $blue;
-        }
-        &::after {
-            background-color: $red;
-            -webkit-transform: translateX(0.75rem);
-            transform: translateX(1.75rem);
-        }
-    }
-    .custom-control-label {
-        cursor: pointer;
-        &::before {
-            left: -2.25rem;
-            width: 2.5rem;
-            pointer-events: all;
-            border-radius: 0.5rem;
-            position: absolute;
-            top: 0.5rem;
-            display: block;
-            height: 0.75rem;
-            background-color: #cfcfcf;
-            border-width: 0;
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
-        }
-        &::after {
-            background-color: #b5b5b5;
-            top: calc(0.25rem + 1px);
-            left: calc(-2.25rem - 4px);
-            width: calc(1rem + 2px);
-            height: calc(1rem + 2px);
-        }
-    }
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: none;
 }
 
-.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
-    /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e); */
-    background: #b7b7b7;
-    border-radius: 50%;
-    transform: scale(0.6);
-}
-.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
-    color: #fff;
-    border-color: #b7b7b7;
-    background-color: #fff !important;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
-}
+// gj time and date picker override -- start
 
-.form-sm {
-    max-width: 290px;
-    margin: auto;
+.gj-timepicker,
+.gj-datepicker {
+    width: 100%;
 }
-
 .gj-icon {
     display: none;
 }
@@ -183,4 +128,189 @@ label {
 }
 .gj-picker.timepicker [role="header"] {
     direction: ltr;
+}
+.gj-picker-md table tr td.today div {
+    color: $red;
+}
+.gj-picker-md table tr td.selected.gj-cursor-pointer div {
+    background: $red;
+}
+.gj-timepicker-md,
+.gj-datepicker-md,
+.gj-textbox-md {
+    font-family: $defaultFont;
+}
+.gj-icon.chevron-right,
+.gj-icon.chevron-left {
+    display: block !important;
+}
+
+.gj-picker-md div[role="navigator"] {
+    direction: ltr;
+}
+// gj time and date picker override -- end
+
+textarea {
+    &.not-resized {
+        resize: none;
+    }
+}
+
+.custom-select {
+    background: #fff url("../imgs/svg/select-arrow.svg") no-repeat right 0.5rem
+        center/13px 10px;
+    &:focus {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    border-width: 0;
+}
+
+.form-control,
+.custom-select {
+    &.input-gray {
+        background-color: #f1f1f1;
+    }
+    &.input-border {
+        border: 1.5px solid #d2d2d2;
+    }
+    &.input-text-gray {
+        color: #b0b0b0;
+        &::-webkit-input-placeholder {
+            color: #b0b0b0;
+        }
+        &::-ms-input-placeholder {
+            color: #b0b0b0;
+        }
+        &::placeholder {
+            color: #b0b0b0;
+        }
+    }
+}
+
+// custom-switch-bar --start
+
+.custom-switch {
+    &.custom-switch-bar {
+        padding-left: 2rem;
+        .custom-control-input:checked ~ .custom-control-label {
+            &::before {
+                color: #fff;
+                border-width: 0;
+                background-color: $blue;
+            }
+            &::after {
+                background-color: $red;
+                -webkit-transform: translateX(0.75rem);
+                transform: translateX(1.75rem);
+            }
+        }
+        .custom-control-label {
+            transform: scale(0.8);
+            transform-origin: 0%;
+            cursor: pointer;
+            &::before {
+                left: -2.25rem;
+                width: 2.5rem;
+                pointer-events: all;
+                border-radius: 0.5rem;
+                position: absolute;
+                top: 0.5rem;
+                display: block;
+                height: 0.75rem;
+                background-color: #cfcfcf;
+                border-width: 0 !important;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+            }
+            &::after {
+                background-color: #b5b5b5;
+                top: calc(0.25rem + 1px);
+                left: calc(-2.25rem - 4px);
+                width: calc(1rem + 2px);
+                height: calc(1rem + 2px);
+            }
+        }
+    }
+    &.custom-switch-box {
+        padding-left: 2rem;
+        .custom-control-input:checked ~ .custom-control-label {
+            &::before {
+                color: #fff;
+                background-color: #fff;
+            }
+            &::after {
+                background-color: transparent;
+                background-image: url("../imgs/svg/switch-box.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 70%;
+                transform: scale(1);
+            }
+        }
+        .custom-control-label {
+            cursor: pointer;
+            &::before {
+                left: -1.75rem;
+                width: 1.2rem;
+                pointer-events: all;
+                border-radius: 2px;
+                position: absolute;
+                top: 0.2rem;
+                display: block;
+                height: 1.2rem;
+                background-color: #fff !important;
+                border: 1.5px solid #d2d2d2 !important;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+            }
+            &::after {
+                background-color: transparent;
+                top: 0.2rem;
+                left: -1.75rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 5px;
+                transform: scale(0.1);
+            }
+            &:focus {
+                &::before {
+                    background-color: red;
+                }
+            }
+        }
+    }
+}
+
+// custom-switch-bar --end
+
+// radio buttom -- start
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+    background: #b7b7b7;
+    border-radius: 50%;
+    transform: scale(0.5);
+}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #b7b7b7;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+// radio buttom -- end
+
+//number -- start
+
+input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    -moz-appearance: textfield;
+}
+
+// number end
+
+.form-sm {
+    max-width: 290px;
+    margin: auto;
 }

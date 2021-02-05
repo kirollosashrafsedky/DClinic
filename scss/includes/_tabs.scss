@@ -4,7 +4,7 @@
     border-bottom-width: 0;
     li {
         .nav-link {
-            font-weight: 700;
+            font-weight: $semibold;
             font-size: 1rem;
             color: $textDark;
             background-color: #fff;
@@ -18,7 +18,7 @@
             align-items: center;
             justify-content: center;
             svg {
-                height: 30px;
+                height: 45px;
             }
             &.active {
                 color: $red;
@@ -54,60 +54,7 @@
     }
 }
 .tab-heading {
-    font-weight: 700;
-}
-.tab-pane {
-    .table-alternative {
-        .card {
-            cursor: pointer;
-            font-size: 1rem;
-            background-color: #f2f2f2;
-            box-shadow: 0 0 0 rgba($color: #000000, $alpha: 0);
-            transition: $defaultTransition;
-            p {
-                font-weight: 500;
-            }
-            svg {
-                path {
-                    transition: $defaultTransition;
-                }
-            }
-            &:hover,
-            &.active {
-                background-color: $red;
-                color: $textLight;
-
-                svg {
-                    path {
-                        fill: #fff;
-                    }
-                }
-                .custom-switch {
-                    .custom-control-input:checked ~ .custom-control-label {
-                        &::before {
-                            background-color: $blue;
-                        }
-                        &::after {
-                            background-color: #fff;
-                        }
-                    }
-                    .custom-control-label {
-                        &::before {
-                            background-color: #fff;
-                        }
-                        &::after {
-                            background-color: #e8e8e8;
-                        }
-                    }
-                }
-            }
-            &.disabled {
-                .edit-btn {
-                    visibility: hidden;
-                }
-            }
-        }
-    }
+    font-weight: $semibold;
 }
 
 @media (max-width: 400px) {

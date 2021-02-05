@@ -1,5 +1,7 @@
 $(document).ready(function() {
     let sideMenuState = "closed";
+    let sidePopupState = "closed";
+
     const reservationSwiper = new Swiper('.home-info-cards .swiper-container', {
         slidesPerView: "auto",
         // spaceBetween: 15,
@@ -14,22 +16,32 @@ $(document).ready(function() {
     $(".slide-menu-toggler").on('click', function(e){
         e.preventDefault();
         if(sideMenuState == "closed"){
-            $("#app-container .side-menu").addClass('open');
-            sideMenuState = "opened";
-            let alternateText = $(".slide-menu-toggler span").text();
-            $(".slide-menu-toggler span").text($(".slide-menu-toggler span").attr("data-alternate"));
-            $(".slide-menu-toggler span").attr("data-alternate", alternateText);
-            $(".tooltip-menu").removeClass('show')
+            openSideMenu();
         }else{
-            $("#app-container .side-menu").removeClass('open');
-            sideMenuState = "closed";
-            
-            let alternateText = $(".slide-menu-toggler span").text();
-            $(".slide-menu-toggler span").text($(".slide-menu-toggler span").attr("data-alternate"));
-            $(".slide-menu-toggler span").attr("data-alternate", alternateText);
+            closeSideMenu();
         }
-
     })
+
+    function openSideMenu(){
+        closeSidePopup();
+        $("#app-container .side-menu").addClass('open');
+        sideMenuState = "opened";
+        let alternateText = $(".slide-menu-toggler span").text();
+        $(".slide-menu-toggler span").text($(".slide-menu-toggler span").attr("data-alternate"));
+        $(".slide-menu-toggler span").attr("data-alternate", alternateText);
+        $(".tooltip-menu").removeClass('show')
+
+    }
+
+    function closeSideMenu(){
+        $("#app-container .side-menu").removeClass('open');
+        sideMenuState = "closed";
+        let alternateText = $(".slide-menu-toggler span").text();
+        $(".slide-menu-toggler span").text($(".slide-menu-toggler span").attr("data-alternate"));
+        $(".slide-menu-toggler span").attr("data-alternate", alternateText);
+
+
+    }
 
     $("#app-container .side-menu a").on('mouseenter', function(){
         if(sideMenuState == "closed"){
@@ -49,6 +61,8 @@ $(document).ready(function() {
             $(this).parents('tr').addClass('disabled');
             $(this).parents('.table-alternative .card').addClass('disabled');
         }else{
+            $('#edit-modal').modal('show');
+
             $(this).parents('tr').removeClass('disabled');
             $(this).parents('.table-alternative .card').removeClass('disabled');
 
@@ -56,9 +70,69 @@ $(document).ready(function() {
     })
 
     $('[data-dblclick-event="true"]').dblclick(function(){
-        $(this).toggleClass('disabled');
-        $(this).find('.row-switch').prop('checked', !$(this).find('.row-switch').prop('checked'))
+        if($(this).find('.row-switch').prop('checked')){
+            $('#edit-modal').modal('show');
+        }else{
+            $(this).find('.row-switch').prop('checked', !$(this).find('.row-switch').prop('checked'))
+            $('#edit-modal').modal('show');
+
+            $(this).removeClass('disabled');
+
+        }
     })
+
+    // for illustrating success and error modals only and will be removed  -- start
+
+    $('#settings-modal form').on('submit', function(e){
+        e.preventDefault();
+        $('#settings-modal').modal('hide')
+        $('#success-modal').modal('show')
+    })
+    
+    $('#edit-modal form').on('submit', function(e){
+        e.preventDefault();
+        $('#edit-modal').modal('hide')
+        $('#error-modal').modal('show')
+    })
+
+    // for illustrating success and error modals only and will be removed  -- end
+
+
+    // side-popup
+
+    function openSidePopup(el){
+        if(sideMenuState == "opened"){
+            $("#app-container .side-menu").removeClass('open');
+            sideMenuState = "closed";
+            let alternateText = $(".slide-menu-toggler span").text();
+            $(".slide-menu-toggler span").text($(".slide-menu-toggler span").attr("data-alternate"));
+            $(".slide-menu-toggler span").attr("data-alternate", alternateText);
+        }
+        $('.side-popup').removeClass('show');
+        el.addClass('show');
+        sidePopupState = "opened";
+    }
+
+    function closeSidePopup(){
+        $('.side-popup').removeClass('show');
+        sidePopupState = "close";
+    }
+
+    $('.close-popup').on('click', function(){
+        closeSidePopup();
+    });
+
+    $('[data-type="side-popup"]').on('click', function(e){
+        e.preventDefault();
+        const popup = $(`#${$(this).data('target')}`)
+        if(popup.hasClass('show')){
+            closeSidePopup()
+        }else{
+            openSidePopup(popup)
+        }
+    })
+
+
     // function activeImgsOnLoad(){
     //     $("[data-active-img]").each(function(index, el){
     //         $(el).attr('data-main-img', $(el).find('img').attr('src'))
