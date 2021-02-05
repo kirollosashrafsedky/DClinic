@@ -1,0 +1,281 @@
+.home-info-cards {
+    .container {
+        .swiper-container {
+            .swiper-slide {
+                width: calc(100% / 5);
+                padding: 0 8px;
+                &:first-of-type {
+                    padding-left: 0;
+                }
+                &:last-of-type {
+                    padding-right: 0;
+                }
+                .card {
+                    border-radius: 5px;
+                    color: $textLight;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    white-space: nowrap;
+                    // padding: 20% 20px;
+                    padding: 40px 20px;
+                    font-size: 1.2rem;
+                    box-shadow: $defaultShadow;
+                    font-weight: 300;
+                    .number {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991.5px) {
+    .home-info-cards {
+        .container {
+            .swiper-container {
+                .swiper-slide {
+                    width: calc(100% / 5);
+                    padding: 0;
+                    &:last-of-type {
+                        .card {
+                            margin-right: 0 !important;
+                            width: 100%;
+                        }
+                    }
+                    .card {
+                        min-width: 130px;
+                        width: 130px;
+                        font-size: 0.9rem;
+                        padding: 25px 0;
+
+                        .number {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .home-info-cards {
+        background-color: #eeeeee;
+        .container {
+            max-width: 100%;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+            .swiper-container {
+                .swiper-slide {
+                    width: auto;
+                    padding: 0 8px;
+                    &:first-of-type {
+                        padding-left: 15px;
+                    }
+                    &:last-of-type {
+                        padding-right: 15px;
+                    }
+                    .card {
+                        min-width: 140px;
+                        width: 140px;
+                        font-size: 1.1rem;
+                        .number {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .home-info-cards {
+        .container {
+            .swiper-container {
+                .swiper-slide {
+                    .card {
+                        min-width: 125px;
+                        width: 125px;
+                        font-size: 0.9rem;
+                        .number {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-height: 550px) {
+    .home-info-cards {
+        .container {
+            .swiper-container {
+                .swiper-slide {
+                    .card {
+                        padding: 8% 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-grid,
+.settings-grid {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    .card {
+        color: $textDark;
+        font-size: 1.2rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // padding-top: 100% !important;
+        padding: 20% 10px;
+        // padding: 0 10px;
+        transition: $defaultTransition;
+        .content {
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+            // width: 90%;
+            // height: 100%;
+            text-align: center;
+        }
+        img {
+            width: 50%;
+        }
+        &:hover {
+            color: $textDark;
+            background-color: #cecece;
+        }
+    }
+}
+
+.settings-grid {
+    grid-template-columns: repeat(6, 1fr);
+    .card {
+        .content {
+            width: 100%;
+        }
+        img {
+            width: 40%;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .settings-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 991.5px) {
+    .settings-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .home-grid-container {
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+    }
+    .home-grid {
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+        max-height: 350px;
+        min-height: 295px;
+        .card {
+            padding: 0 10px;
+        }
+    }
+    .settings-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .home-grid {
+        .card {
+            font-size: 1rem;
+            img {
+                width: 40%;
+            }
+        }
+    }
+    .settings-grid {
+        .card {
+            font-size: 0.9rem;
+            padding: 12px 8px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .home-grid {
+        max-height: 320px;
+    }
+}
+
+@media (max-width: 420px) {
+    .settings-grid {
+        .card {
+            font-size: 0.9rem;
+            img {
+                width: 35%;
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .settings-grid {
+        .card {
+            font-size: 0.8rem;
+            img {
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media (max-width: 319px) {
+    .settings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        .card {
+            font-size: 0.8rem;
+            img {
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media (max-height: 570px) and (max-width: 767.5px) {
+    .home-grid {
+        min-height: 250px;
+        max-width: 400px;
+        .card {
+            font-size: 1rem;
+            img {
+                width: 30%;
+            }
+        }
+    }
+    .home-grid-container {
+        height: auto;
+    }
+}

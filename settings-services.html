@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DClinic - Settings - Services</title>
+        <!-- <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous"
+        /> -->
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+        <!-- <link rel="stylesheet" href="vendor/aos/aos.css" /> -->
+        <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/core.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/timepicker.min.css" />
+
+        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- <link rel="stylesheet" href="css/style-ar.css" /> -->
+    </head>
+    <body dir="ltr">
+        <div class="top-bar bg-blue py-3 text-light">
+            <div class="container-fluid d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                    <a href="index.html" class="mr-4 d-none d-md-block">
+                        <img
+                            src="imgs/svg/logo.svg"
+                            alt="logo"
+                            class="img-fluid"
+                        />
+                    </a>
+                    <nav
+                        aria-label="breadcrumb"
+                        class="d-flex align-items-center"
+                    >
+                        <a
+                            href="settings.html"
+                            class="back-link d-block d-md-none mr-2"
+                        >
+                            <img
+                                src="imgs/svg/back-arrow.svg"
+                                alt="back"
+                                class="img-fluid"
+                            />
+                        </a>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="settings.html">Settings</a>
+                            </li>
+                            <li
+                                class="breadcrumb-item active d-none d-md-block"
+                                aria-current="page"
+                            >
+                                Services
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="d-flex align-items-center ml-auto">
+                    <a href="settings.html" class="mr-3">
+                        <img
+                            src="imgs/svg/settings-icon.svg"
+                            alt="settings"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="#" class="mr-3">
+                        <img
+                            src="imgs/svg/appointment-icon.svg"
+                            alt="appointment"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="#" class="mr-3">
+                        <img
+                            src="imgs/svg/visits-icon.svg"
+                            alt="visits"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="#" class="profile-btn"
+                        ><span class="profile-btn solve-font-issue">
+                            KI
+                        </span></a
+                    >
+                </div>
+            </div>
+        </div>
+        <div id="app-container">
+            <div class="side-menu">
+                <div class="tooltip-menu"></div>
+                <div
+                    class="side-menu-content d-flex flex-column justify-content-between"
+                >
+                    <a href="#" class="slide-menu-toggler py-2">
+                        <img
+                            src="imgs/svg/settings/white/more-icon.svg"
+                            alt="more-icon"
+                            class="img-fluid"
+                        />
+                        <span data-alternate="Hide">Show</span>
+                    </a>
+                    <a href="settings-basic-info.html">
+                        <img
+                            src="imgs/svg/settings/white/basic-info.svg"
+                            alt="basic-info"
+                            class="img-fluid"
+                        />
+                        <span>Basic Info</span>
+                    </a>
+                    <a href="settings-business-hours.html">
+                        <img
+                            src="imgs/svg/settings/white/business-hours.svg"
+                            alt="business-hours"
+                            class="img-fluid"
+                        />
+                        <span>Business Hours</span>
+                    </a>
+                    <a href="settings-services.html" class="active">
+                        <img
+                            src="imgs/svg/settings/white/services.svg"
+                            alt="services"
+                            class="img-fluid"
+                        />
+                        <span>Services</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/staff.svg"
+                            alt="staff"
+                            class="img-fluid"
+                        />
+                        <span>Staff</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/expenses.svg"
+                            alt="expenses"
+                            class="img-fluid"
+                        />
+                        <span>Expenses</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/insurance.svg"
+                            alt="insurance"
+                            class="img-fluid"
+                        />
+                        <span>Insurance</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/extra-patient-profile-fields.svg"
+                            alt="extra-patient-profile-fields"
+                            class="img-fluid"
+                        />
+                        <span>Extra patient profile fields</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/extra-visit-fields.svg"
+                            alt="extra-visit-fields"
+                            class="img-fluid"
+                        />
+                        <span>Extra visit fields</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/prescription.svg"
+                            alt="prescription"
+                            class="img-fluid"
+                        />
+                        <span>Prescription</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/patients-locations.svg"
+                            alt="patients-locations"
+                            class="img-fluid"
+                        />
+                        <span>Patients locations</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/learning-videos.svg"
+                            alt="learning-videos"
+                            class="img-fluid"
+                        />
+                        <span>learning videos</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/subscription.svg"
+                            alt="subscription"
+                            class="img-fluid"
+                        />
+                        <span>Subscription</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/additional-clinic-locations.svg"
+                            alt="additional-clinic-locations"
+                            class="img-fluid"
+                        />
+                        <span>Additional clinic locations</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/branches.svg"
+                            alt="branches"
+                            class="img-fluid"
+                        />
+                        <span>Branches</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/patients-mobile-app.svg"
+                            alt="patients-mobile-app"
+                            class="img-fluid"
+                        />
+                        <span>Patients mobile app</span>
+                    </a>
+                </div>
+            </div>
+            <main class="main-content">
+                <div class="container mt-3 mb-5">
+                    <a
+                        href="#"
+                        type="button"
+                        class="btn btn-blue py-2 d-none d-md-inline-block my-4 px-4"
+                        data-toggle="modal"
+                        data-target="#settings-modal"
+                    >
+                        <img
+                            src="imgs/svg/add-icon.svg"
+                            alt="add"
+                            class="img-fluid icon-sm"
+                        />
+                        New
+                    </a>
+                    <div class="table-alternative d-md-none">
+                        <div
+                            class="card mb-3 disabled"
+                            data-dblclick-event="true"
+                        >
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">Sunday</p>
+                                    <p class="mb-4">This day is off</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <div class="custom-control custom-switch">
+                                        <input
+                                            type="checkbox"
+                                            class="custom-control-input row-switch"
+                                            id="switch-clinic-alternative-1"
+                                        />
+                                        <label
+                                            class="custom-control-label"
+                                            for="switch-clinic-alternative-1"
+                                        ></label>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#edit-modal"
+                                        class="mx-3 edit-btn"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="21.903"
+                                            height="21.88"
+                                            viewBox="0 0 21.903 21.88"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
+                                                    transform="translate(0 -78.569)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
+                                                    transform="translate(-319.46)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-dblclick-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">Monday</p>
+                                    <p class="mb-1">
+                                        From 12:00 AM to 08:00 AM
+                                    </p>
+                                    <p class="mb-1">Visits Limit : 5</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <div class="custom-control custom-switch">
+                                        <input
+                                            type="checkbox"
+                                            class="custom-control-input row-switch"
+                                            checked
+                                            id="switch-clinic-alternative-2"
+                                        />
+                                        <label
+                                            class="custom-control-label"
+                                            for="switch-clinic-alternative-2"
+                                        ></label>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#edit-modal"
+                                        class="mx-3 edit-btn"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="21.903"
+                                            height="21.88"
+                                            viewBox="0 0 21.903 21.88"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
+                                                    transform="translate(0 -78.569)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
+                                                    transform="translate(-319.46)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="card mb-3 disabled"
+                            data-dblclick-event="true"
+                        >
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">Tuesday</p>
+                                    <p class="mb-4">This day is off</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <div class="custom-control custom-switch">
+                                        <input
+                                            type="checkbox"
+                                            class="custom-control-input row-switch"
+                                            id="switch-clinic-alternative-3"
+                                        />
+                                        <label
+                                            class="custom-control-label"
+                                            for="switch-clinic-alternative-3"
+                                        ></label>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#edit-modal"
+                                        class="mx-3 edit-btn"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="21.903"
+                                            height="21.88"
+                                            viewBox="0 0 21.903 21.88"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
+                                                    transform="translate(0 -78.569)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
+                                                    transform="translate(-319.46)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-dblclick-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        Wednesday
+                                    </p>
+                                    <p class="mb-1">
+                                        From 12:00 AM to 08:00 AM
+                                    </p>
+                                    <p class="mb-1">Visits Limit : 5</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <div class="custom-control custom-switch">
+                                        <input
+                                            type="checkbox"
+                                            class="custom-control-input row-switch"
+                                            checked
+                                            id="switch-clinic-alternative-4"
+                                        />
+                                        <label
+                                            class="custom-control-label"
+                                            for="switch-clinic-alternative-4"
+                                        ></label>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#edit-modal"
+                                        class="mx-3 edit-btn"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="21.903"
+                                            height="21.88"
+                                            viewBox="0 0 21.903 21.88"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
+                                                    transform="translate(0 -78.569)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
+                                                    transform="translate(-319.46)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-dblclick-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        Thursday
+                                    </p>
+                                    <p class="mb-1">
+                                        From 12:00 AM to 08:00 AM
+                                    </p>
+                                    <p class="mb-1">Visits Limit : 5</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <div class="custom-control custom-switch">
+                                        <input
+                                            type="checkbox"
+                                            class="custom-control-input row-switch"
+                                            checked
+                                            id="switch-clinic-alternative-5"
+                                        />
+                                        <label
+                                            class="custom-control-label"
+                                            for="switch-clinic-alternative-5"
+                                        ></label>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#edit-modal"
+                                        class="mx-3 edit-btn"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="21.903"
+                                            height="21.88"
+                                            viewBox="0 0 21.903 21.88"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
+                                                    transform="translate(0 -78.569)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
+                                                    transform="translate(-319.46)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-dblclick-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">Friday</p>
+                                    <p class="mb-1">
+                                        From 12:00 AM to 08:00 AM
+                                    </p>
+                                    <p class="mb-1">Visits Limit : 5</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <div class="custom-control custom-switch">
+                                        <input
+                                            type="checkbox"
+                                            class="custom-control-input row-switch"
+                                            checked
+                                            id="switch-clinic-alternative-6"
+                                        />
+                                        <label
+                                            class="custom-control-label"
+                                            for="switch-clinic-alternative-6"
+                                        ></label>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#edit-modal"
+                                        class="mx-3 edit-btn"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="21.903"
+                                            height="21.88"
+                                            viewBox="0 0 21.903 21.88"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
+                                                    transform="translate(0 -78.569)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
+                                                    transform="translate(-319.46)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-dblclick-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        Saturday
+                                    </p>
+                                    <p class="mb-1">
+                                        From 12:00 AM to 08:00 AM
+                                    </p>
+                                    <p class="mb-1">Visits Limit : 5</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <div class="custom-control custom-switch">
+                                        <input
+                                            type="checkbox"
+                                            class="custom-control-input row-switch"
+                                            checked
+                                            id="switch-clinic-alternative-7"
+                                        />
+                                        <label
+                                            class="custom-control-label"
+                                            for="switch-clinic-alternative-7"
+                                        ></label>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#edit-modal"
+                                        class="mx-3 edit-btn"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="21.903"
+                                            height="21.88"
+                                            viewBox="0 0 21.903 21.88"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M13.526,82.473,1.474,94.525a.48.48,0,0,0-.125.22L.013,100.107a.474.474,0,0,0,.46.589.47.47,0,0,0,.115-.014L5.95,99.346a.474.474,0,0,0,.22-.125L18.222,87.169Zm0,0"
+                                                    transform="translate(0 -78.569)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M340.668,2.26,339.326.919a2.429,2.429,0,0,0-3.355,0l-1.643,1.643,4.7,4.7,1.643-1.643a2.373,2.373,0,0,0,0-3.355Zm0,0"
+                                                    transform="translate(-319.46)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table
+                        class="table table-hover table-striped settings-table settings-table-2 d-none d-md-table"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Cost</th>
+                                <th scope="col" class="last-col">
+                                    <form class="form-theme-1">
+                                        <!-- <input
+                                            type="text"
+                                            class="form-control"
+                                            id="search-input"
+                                            placeholder=""
+                                        /> -->
+                                        <div
+                                            class="input-group input-with-img search"
+                                        >
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <img
+                                                        src="imgs/svg/search-icon.svg"
+                                                        alt="search"
+                                                        class="img-fluid"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="search-input"
+                                                placeholder=""
+                                            />
+                                        </div>
+                                    </form>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-dblclick-event="true" class="disabled">
+                                <td>كشف عادي</td>
+                                <td>150</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div
+                                            class="custom-control custom-switch"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-switch"
+                                                id="switch-clinic-1"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="switch-clinic-1"
+                                            ></label>
+                                        </div>
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#edit-modal"
+                                            class="mx-3 edit-btn"
+                                        >
+                                            <img
+                                                src="imgs/svg/edit-icon.svg"
+                                                alt="edit"
+                                                class="img-fluid icon"
+                                        /></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-dblclick-event="true" class="disabled">
+                                <td>كشف عادي</td>
+                                <td>150</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div
+                                            class="custom-control custom-switch"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-switch"
+                                                id="switch-clinic-1"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="switch-clinic-1"
+                                            ></label>
+                                        </div>
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#edit-modal"
+                                            class="mx-3 edit-btn"
+                                        >
+                                            <img
+                                                src="imgs/svg/edit-icon.svg"
+                                                alt="edit"
+                                                class="img-fluid icon"
+                                        /></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+
+        <!-- Settings Modal -->
+        <div
+            class="modal fade"
+            id="settings-modal"
+            tabindex="-1"
+            aria-labelledby="settings-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="text-blue font-weight-bold text-center mb-4">
+                        Reservation Type
+                    </h4>
+                    <form class="form-sm">
+                        <div class="custom-control custom-radio mb-3">
+                            <input
+                                type="radio"
+                                class="custom-control-input"
+                                id="first-come-first-enter"
+                                name="reservation-type"
+                                checked
+                            />
+                            <label
+                                class="custom-control-label"
+                                for="first-come-first-enter"
+                                >First-come, first-entered</label
+                            >
+                            <div class="invalid-feedback">
+                                invalid text.. add is-invalid class to the input
+                                to see this msg
+                            </div>
+                        </div>
+                        <div class="custom-control custom-radio mb-3">
+                            <input
+                                type="radio"
+                                class="custom-control-input"
+                                id="reservation-at-specific-time"
+                                name="reservation-type"
+                            />
+                            <label
+                                class="custom-control-label"
+                                for="reservation-at-specific-time"
+                                >Reservation and entry at a specific time</label
+                            >
+                            <div class="invalid-feedback">
+                                invalid text.. add is-invalid class to the input
+                                to see this msg
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-red px-4 py-2">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Modal -->
+        <div
+            class="modal fade"
+            id="edit-modal"
+            tabindex="-1"
+            aria-labelledby="edit-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="text-blue font-weight-bold text-center mb-4">
+                        Sunday
+                    </h4>
+                    <form class="form-theme-1">
+                        <div class="form-group mb-3">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="from-time">From</label>
+                                </div>
+                                <div class="col-sm-7 col-12">
+                                    <input
+                                        type="time"
+                                        class="form-control"
+                                        id="from-time"
+                                        placeholder=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="to-time">To</label>
+                                </div>
+                                <div class="col-sm-7 col-12">
+                                    <input
+                                        type="time"
+                                        class="form-control"
+                                        id="to-time"
+                                        placeholder=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="limit">Limit</label>
+                                </div>
+                                <div class="col-sm-7 col-12">
+                                    <input
+                                        type="text"
+                                        class="form-control number"
+                                        id="limit"
+                                        placeholder=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center pt-3">
+                            <button type="submit" class="btn btn-red px-4 py-2">
+                                Update
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"
+        ></script> -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/aos/aos.js"></script>
+        <script src="vendor/swiper/swiper-bundle.min.js"></script>
+        <!-- time picker -->
+        <script src="vendor/gijgo/js/core.js"></script>
+        <script src="vendor/gijgo/js/timepicker.min.js"></script>
+        <!-- time picker -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
