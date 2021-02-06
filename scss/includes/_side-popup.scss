@@ -3,7 +3,8 @@
     color: #fff;
     position: relative;
     width: 0;
-    transition: width 0.2s ease;
+    transition: visibility 0s linear 0.05s, width 0.2s ease;
+    visibility: hidden;
     flex-shrink: 0;
     position: relative;
     right: 0;
@@ -11,41 +12,39 @@
     bottom: 0;
     height: 100%;
     overflow-y: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
     padding: 0;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    font-size: 0.9rem;
+    font-weight: $regular;
     .close-popup {
         img {
             width: 25px;
         }
         position: absolute;
         top: 20px;
-        left: 10px;
+        right: 10px;
     }
     &.show {
+        visibility: visible;
+        transform: none;
         width: 350px;
-        padding: 60px 0 20px;
+        padding: 10px 0 20px;
     }
 }
 
-@media (max-width: 991.5px) {
+@media (max-width: 1199.5px) {
     .side-popup {
         position: fixed;
         right: 0;
         z-index: 1000;
         height: calc(100% - #{$offsetTop});
         top: $offsetTop - 1;
-        background-color: rgba(72, 163, 218, 0.98);
+        background-color: rgba(72, 163, 218, 0.95);
     }
 }
 @media (max-width: 575.5px) {
     .side-popup {
         right: 0;
         top: $offsetTop - 1;
-        background-color: rgba(106, 164, 198, 0.98);
         &.show {
             width: 100%;
         }
@@ -54,7 +53,7 @@
 
 .profile-menu {
     h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     .profile-nav {
         width: 100%;
@@ -62,18 +61,17 @@
             width: 100%;
             a {
                 width: 100%;
-                padding: 20px 15px;
+                padding: 8px 15px;
                 transition: $defaultTransition;
                 color: $textLight;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.14);
                 display: inline-block;
                 &:hover {
                     color: $textLight;
-                    background-color: #3d94ca;
                     background-color: $red;
                 }
                 img {
-                    width: 25px;
+                    width: 20px;
                 }
             }
             &:last-of-type {
@@ -85,5 +83,120 @@
     }
     .form-group {
         white-space: nowrap;
+        label {
+            font-size: 0.9rem;
+        }
+        select {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (max-width: 575.5px) {
+    .profile-menu {
+        background-color: rgba(106, 164, 198, 0.98);
+        .profile-nav {
+            font-size: 1rem;
+            t li {
+                a {
+                    padding: 15px 15px;
+
+                    img {
+                        width: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chats-menu {
+    &.show {
+        padding: 45px 0 20px;
+    }
+    .chats-nav {
+        width: 100%;
+        li {
+            width: 100%;
+            a {
+                width: 100%;
+                transition: $defaultTransition;
+                color: $textLight;
+                display: inline-block;
+                .content {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+                    position: relative;
+                    padding: 10px 0;
+                    .date {
+                        font-size: 0.8rem;
+                    }
+                    .status {
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        background-color: #3981ad;
+                        border-radius: 3px;
+                        color: $textLight;
+                        min-width: 80px;
+                        padding: 3px;
+                        font-size: 0.8rem;
+                        display: inline-block;
+                        text-align: center;
+                        font-weight: $regular;
+                        transition: $defaultTransition;
+                    }
+                    .notification {
+                        font-size: 0.8rem;
+                        width: 22px;
+                        height: 22px;
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        transition: $defaultTransition;
+                    }
+                }
+                &:hover {
+                    color: $textLight;
+                    background-color: $red;
+                    .content {
+                        .status {
+                            background-color: $textLight;
+                            color: $textDark;
+                        }
+                        .notification {
+                            color: $textDark;
+                            background-color: $textLight;
+                        }
+                    }
+                }
+            }
+            &:last-of-type {
+                a {
+                    .content {
+                        border-bottom-width: 0;
+                    }
+                }
+            }
+        }
+    }
+    .form-group {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 575.5px) {
+    .chats-menu {
+        width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0.8);
+        height: 100%;
+        top: 0;
+        transition: visibility 0s linear 0.05s, opacity 0.2s ease,
+            transform 0.2s ease;
+        &.show {
+            visibility: visible;
+            opacity: 1;
+            transform: none;
+        }
     }
 }

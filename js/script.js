@@ -101,16 +101,12 @@ $(document).ready(function() {
     // side-popup
 
     function openSidePopup(el){
-        if(sideMenuState == "opened"){
-            $("#app-container .side-menu").removeClass('open');
-            sideMenuState = "closed";
-            let alternateText = $(".slide-menu-toggler span").text();
-            $(".slide-menu-toggler span").text($(".slide-menu-toggler span").attr("data-alternate"));
-            $(".slide-menu-toggler span").attr("data-alternate", alternateText);
-        }
+        if(sideMenuState == "opened") closeSideMenu();
         $('.side-popup').removeClass('show');
-        el.addClass('show');
-        sidePopupState = "opened";
+        setTimeout(function(){
+            el.addClass('show');
+            sidePopupState = "opened";
+        },50)
     }
 
     function closeSidePopup(){

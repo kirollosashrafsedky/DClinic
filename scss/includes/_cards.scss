@@ -21,7 +21,7 @@
                     white-space: nowrap;
                     // padding: 20% 20px;
                     padding: 40px 20px;
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                     box-shadow: $defaultShadow;
                     font-weight: $regular;
                     .number {
@@ -136,7 +136,7 @@
     grid-gap: 15px;
     .card {
         color: $textDark;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: $regular;
         display: flex;
         justify-content: center;
@@ -234,7 +234,7 @@
 @media (max-width: 420px) {
     .settings-grid {
         .card {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             img {
                 width: 35%;
             }
@@ -245,7 +245,7 @@
 @media (max-width: 350px) {
     .settings-grid {
         .card {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             img {
                 width: 40%;
             }

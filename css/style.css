@@ -1,16 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
-@font-face {
-  font-family: "GE-SS";
-  src: url("../fonts/GE-SS-TWO-MEDIUM.otf");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "GE-SS";
-  src: url("../fonts/GE-SS-TWO-LIGHT.otf");
-  font-weight: 300;
-  font-style: normal;
-}
 * {
   margin: 0;
   padding: 0;
@@ -327,9 +315,9 @@ p {
   text-align: center;
   white-space: nowrap;
   padding: 40px 20px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-  font-weight: 400;
+  font-weight: 300;
 }
 .home-info-cards .container .swiper-container .swiper-slide .card .number {
   font-size: 2rem;
@@ -409,8 +397,8 @@ p {
 .home-grid .card,
 .settings-grid .card {
   color: #000000;
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 300;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -492,7 +480,7 @@ p {
 }
 @media (max-width: 420px) {
   .settings-grid .card {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .settings-grid .card img {
     width: 35%;
@@ -500,7 +488,7 @@ p {
 }
 @media (max-width: 350px) {
   .settings-grid .card {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .settings-grid .card img {
     width: 40%;
@@ -619,7 +607,7 @@ p {
 }
 .form-group label {
   margin-bottom: 0.5rem;
-  font-weight: 400;
+  font-weight: 300;
   color: #000000;
 }
 .form-group img {
@@ -632,7 +620,7 @@ p {
 .form-group .invalid-feedback {
   display: none;
   font-size: 90%;
-  font-weight: 400;
+  font-weight: 300;
 }
 .form-group.invalid-input .invalid-feedback {
   display: block;
@@ -927,7 +915,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   border-width: 0;
   border-radius: 0;
   text-align: center;
-  padding: 1.2rem 1rem;
+  padding: 0.8rem 1rem;
   transition: all 0.2s ease;
   height: 100%;
   display: flex;
@@ -974,7 +962,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 table.settings-table {
   border-top-width: 0;
-  font-weight: 400;
+  font-weight: 300;
   table-layout: auto;
   width: 100%;
 }
@@ -1061,7 +1049,7 @@ table.settings-table-2 .last-col {
   transition: all 0.25s ease;
 }
 .table-alternative .card p {
-  font-weight: 400;
+  font-weight: 300;
 }
 .table-alternative .card svg {
   transform: scale(0.7);
@@ -1154,7 +1142,8 @@ table.settings-table-2 .last-col {
   color: #fff;
   position: relative;
   width: 0;
-  transition: width 0.2s ease;
+  transition: visibility 0s linear 0.05s, width 0.2s ease;
+  visibility: hidden;
   flex-shrink: 0;
   position: relative;
   right: 0;
@@ -1162,48 +1151,46 @@ table.settings-table-2 .last-col {
   bottom: 0;
   height: 100%;
   overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   padding: 0;
-}
-.side-popup::-webkit-scrollbar {
-  display: none;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 .side-popup .close-popup {
   position: absolute;
   top: 20px;
-  left: 10px;
+  right: 10px;
 }
 .side-popup .close-popup img {
   width: 25px;
 }
 .side-popup.show {
+  visibility: visible;
+  transform: none;
   width: 350px;
-  padding: 60px 0 20px;
+  padding: 10px 0 20px;
 }
 
-@media (max-width: 991.5px) {
+@media (max-width: 1199.5px) {
   .side-popup {
     position: fixed;
     right: 0;
     z-index: 1000;
     height: calc(100% - 61px);
     top: 60px;
-    background-color: rgba(72, 163, 218, 0.98);
+    background-color: rgba(72, 163, 218, 0.95);
   }
 }
 @media (max-width: 575.5px) {
   .side-popup {
     right: 0;
     top: 60px;
-    background-color: rgba(106, 164, 198, 0.98);
   }
   .side-popup.show {
     width: 100%;
   }
 }
 .profile-menu h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 .profile-menu .profile-nav {
   width: 100%;
@@ -1213,7 +1200,7 @@ table.settings-table-2 .last-col {
 }
 .profile-menu .profile-nav li a {
   width: 100%;
-  padding: 20px 15px;
+  padding: 8px 15px;
   transition: all 0.25s ease;
   color: #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
@@ -1221,17 +1208,118 @@ table.settings-table-2 .last-col {
 }
 .profile-menu .profile-nav li a:hover {
   color: #ffffff;
-  background-color: #3d94ca;
   background-color: #ea6666;
 }
 .profile-menu .profile-nav li a img {
-  width: 25px;
+  width: 20px;
 }
 .profile-menu .profile-nav li:last-of-type a {
   border-bottom-width: 0;
 }
 .profile-menu .form-group {
   white-space: nowrap;
+}
+.profile-menu .form-group label {
+  font-size: 0.9rem;
+}
+.profile-menu .form-group select {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 575.5px) {
+  .profile-menu {
+    background-color: rgba(106, 164, 198, 0.98);
+  }
+  .profile-menu .profile-nav {
+    font-size: 1rem;
+  }
+  .profile-menu .profile-nav t li a {
+    padding: 15px 15px;
+  }
+  .profile-menu .profile-nav t li a img {
+    width: 22px;
+  }
+}
+.chats-menu.show {
+  padding: 45px 0 20px;
+}
+.chats-menu .chats-nav {
+  width: 100%;
+}
+.chats-menu .chats-nav li {
+  width: 100%;
+}
+.chats-menu .chats-nav li a {
+  width: 100%;
+  transition: all 0.25s ease;
+  color: #ffffff;
+  display: inline-block;
+}
+.chats-menu .chats-nav li a .content {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+  position: relative;
+  padding: 10px 0;
+}
+.chats-menu .chats-nav li a .content .date {
+  font-size: 0.8rem;
+}
+.chats-menu .chats-nav li a .content .status {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #3981ad;
+  border-radius: 3px;
+  color: #ffffff;
+  min-width: 80px;
+  padding: 3px;
+  font-size: 0.8rem;
+  display: inline-block;
+  text-align: center;
+  font-weight: 300;
+  transition: all 0.25s ease;
+}
+.chats-menu .chats-nav li a .content .notification {
+  font-size: 0.8rem;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: all 0.25s ease;
+}
+.chats-menu .chats-nav li a:hover {
+  color: #ffffff;
+  background-color: #ea6666;
+}
+.chats-menu .chats-nav li a:hover .content .status {
+  background-color: #ffffff;
+  color: #000000;
+}
+.chats-menu .chats-nav li a:hover .content .notification {
+  color: #000000;
+  background-color: #ffffff;
+}
+.chats-menu .chats-nav li:last-of-type a .content {
+  border-bottom-width: 0;
+}
+.chats-menu .form-group {
+  white-space: nowrap;
+}
+
+@media (max-width: 575.5px) {
+  .chats-menu {
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.8);
+    height: 100%;
+    top: 0;
+    transition: visibility 0s linear 0.05s, opacity 0.2s ease, transform 0.2s ease;
+  }
+  .chats-menu.show {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

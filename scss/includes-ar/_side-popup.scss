@@ -1,0 +1,27 @@
+@media (max-width: 991.5px) {
+    .side-popup {
+        left: 0;
+        right: auto;
+    }
+}
+@media (max-width: 575.5px) {
+    .side-popup {
+        right: auto;
+        left: 0;
+    }
+}
+
+.chats-menu {
+    .chats-nav {
+        li {
+            a {
+                .content {
+                    .notification {
+                        right: auto;
+                        left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

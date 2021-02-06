@@ -12,4 +12,11 @@
     .back-link {
         transform: rotate(0deg);
     }
+    .top-item {
+        border-right: 1px solid rgba(255, 255, 255, 0.34);
+        border-left-width: 0;
+        &:last-of-type {
+            border-left: 1px solid rgba(255, 255, 255, 0.34);
+        }
+    }
 }

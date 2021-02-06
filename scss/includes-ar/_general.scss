@@ -1,5 +1,20 @@
+@font-face {
+    font-family: "GE-SS";
+    src: url("../fonts/GE-SS-TWO-MEDIUM.otf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GE-SS";
+    src: url("../fonts/GE-SS-TWO-LIGHT.otf");
+    font-weight: 300;
+    font-style: normal;
+}
+
 body {
     text-align: right;
+    font-family: $defaultFont;
 }
 .btn {
     img {
@@ -7,3 +22,11 @@ body {
         margin-right: 0;
     }
 }
+
+.solve-font-issue {
+    margin-top: 5px;
+}
+
+// .number {
+// font-family: Arial, sans-serif;
+// }
