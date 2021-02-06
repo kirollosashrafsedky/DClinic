@@ -109,7 +109,10 @@ a:hover {
 }
 
 a,
-button {
+button,
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: none;
   border-radius: 0;
 }
