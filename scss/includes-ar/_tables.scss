@@ -1,13 +1,25 @@
-table.settings-table {
-    thead {
-        th {
-            &:first-of-type {
-                border-top-left-radius: 0;
-                border-top-right-radius: 15px;
+table {
+    &.settings-table {
+        thead {
+            th {
+                &:first-of-type {
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 15px;
+                }
+                &:last-of-type {
+                    border-top-right-radius: 0;
+                    border-top-left-radius: 15px;
+                }
             }
-            &:last-of-type {
-                border-top-right-radius: 0;
-                border-top-left-radius: 15px;
+        }
+    }
+    &.settings-table-2 {
+        tr {
+            td,
+            th {
+                &:nth-of-type(2) {
+                    text-align: right;
+                }
             }
         }
     }

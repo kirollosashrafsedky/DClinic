@@ -77,7 +77,6 @@ table {
     &.settings-table-2 {
         thead {
             th {
-                text-align: left;
                 padding: 1rem 0.75rem;
                 .search {
                     max-width: 300px;
@@ -86,16 +85,25 @@ table {
                 &:first-of-type {
                     width: 100px;
                 }
+                // &:last-of-type {
+                //     // max-width: 90px;
+                //     // min-width: 50px;
+                // }
             }
         }
         tr {
             td {
-                text-align: left;
                 padding: 1rem 0.75rem;
             }
-        }
-        .last-col {
-            max-width: 90px;
+            td,
+            th {
+                &:nth-of-type(2) {
+                    text-align: left;
+                }
+                &:nth-of-type(3) {
+                    min-width: 150px;
+                }
+            }
         }
     }
 }

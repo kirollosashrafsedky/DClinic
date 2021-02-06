@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,15 +18,15 @@
 
         <link rel="shortcut icon" href="favicon.svg" />
         <link rel="stylesheet" href="css/style.css" />
-        <!-- <link rel="stylesheet" href="css/style-ar.css" /> -->
+        <link rel="stylesheet" href="css/style-ar.css" />
     </head>
-    <body dir="ltr">
+    <body dir="rtl">
         <div class="top-bar bg-blue text-light">
             <div
                 class="container-fluid d-flex align-items-stretch justify-content-between"
             >
                 <div class="d-flex align-items-center py-1">
-                    <a href="index.html" class="mr-4 d-none d-md-block">
+                    <a href="index-ar.html" class="ml-4 d-none d-md-block">
                         <img
                             src="imgs/svg/logo.svg"
                             alt="logo"
@@ -38,8 +38,8 @@
                         class="d-flex align-items-center"
                     >
                         <a
-                            href="settings.html"
-                            class="back-link d-flex d-md-none mr-2 align-items-center"
+                            href="settings-ar.html"
+                            class="back-link d-block d-md-none ml-2 align-items-center"
                         >
                             <img
                                 src="imgs/svg/back-arrow.svg"
@@ -47,15 +47,16 @@
                                 class="img-fluid"
                             />
                         </a>
+
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="settings.html">Settings</a>
+                                <a href="settings-ar.html">الاعدادات</a>
                             </li>
                             <li
                                 class="breadcrumb-item active d-none d-md-block"
                                 aria-current="page"
                             >
-                                Services
+                                الخدمات
                             </li>
                         </ol>
                     </nav>
@@ -64,18 +65,18 @@
                     class="align-items-center justify-content-center d-none d-lg-flex"
                 >
                     <div class="top-item px-2 px-xl-3">
-                        <p>Current Clinic: Main Clinic</p>
+                        <p>العيادة الحالية: العيادة الرئيسية</p>
                     </div>
                     <div class="top-item px-2 px-xl-3">
                         <div class="form-group d-flex align-items-center">
-                            <label class="text-light mr-2">Change Clinic</label>
+                            <label class="text-light ml-2">تغيير العيادة</label>
                             <select
                                 class="custom-select input-border input-text-gray"
                                 id="current-clinic-top"
                             >
-                                <option selected>Clinic Name</option>
-                                <option value="clinic-2">clinic 2</option>
-                                <option value="clinic-3">clinic 3</option>
+                                <option selected>اسم العيادة</option>
+                                <option value="clinic-2">عيادة 2</option>
+                                <option value="clinic-3">عيادة 3</option>
                             </select>
                         </div>
                     </div>
@@ -83,7 +84,7 @@
                 <div class="d-flex align-items-center py-2">
                     <a
                         href="#"
-                        class="mr-3 position-relative"
+                        class="ml-3 position-relative"
                         data-target="chats-menu-popup"
                         data-type="side-popup"
                     >
@@ -96,21 +97,21 @@
                             class="img-fluid icon"
                         />
                     </a>
-                    <a href="settings.html" class="mr-3">
+                    <a href="settings-ar.html" class="ml-3">
                         <img
                             src="imgs/svg/settings-icon.svg"
                             alt="settings"
                             class="img-fluid icon"
                         />
                     </a>
-                    <a href="appointments.html" class="mr-3">
+                    <a href="appointments-ar.html" class="ml-3">
                         <img
                             src="imgs/svg/appointment-icon.svg"
                             alt="appointment"
                             class="img-fluid icon"
                         />
                     </a>
-                    <a href="visits.html" class="mr-3">
+                    <a href="visits-ar.html" class="ml-3">
                         <img
                             src="imgs/svg/visits-icon.svg"
                             alt="visits"
@@ -127,9 +128,11 @@
                 </div>
             </div>
         </div>
+
         <div id="app-container">
             <div class="side-menu">
                 <div class="tooltip-menu"></div>
+
                 <div
                     class="side-menu-content d-flex flex-column justify-content-between"
                 >
@@ -139,127 +142,127 @@
                             alt="more-icon"
                             class="img-fluid"
                         />
-                        <span data-alternate="Hide">Show</span>
+                        <span data-alternate="إخفاء">إظهار</span>
                     </a>
-                    <a href="settings-basic-info.html">
+                    <a href="settings-basic-info-ar.html">
                         <img
                             src="imgs/svg/settings/white/basic-info.svg"
                             alt="basic-info"
                             class="img-fluid"
                         />
-                        <span>Basic Info</span>
+                        <span>معلومات اساسية</span>
                     </a>
-                    <a href="settings-business-hours.html">
+                    <a href="settings-business-hours-ar.html">
                         <img
                             src="imgs/svg/settings/white/business-hours.svg"
                             alt="business-hours"
                             class="img-fluid"
                         />
-                        <span>Business Hours</span>
+                        <span>ساعات العمل</span>
                     </a>
-                    <a href="settings-services.html" class="active">
+                    <a href="settings-services-ar.html" class="active">
                         <img
                             src="imgs/svg/settings/white/services.svg"
                             alt="services"
                             class="img-fluid"
                         />
-                        <span>Services</span>
+                        <span>الخدمات</span>
                     </a>
-                    <a href="settings-staff.html">
+                    <a href="settings-staff-ar.html">
                         <img
                             src="imgs/svg/settings/white/staff.svg"
                             alt="staff"
                             class="img-fluid"
                         />
-                        <span>Staff</span>
+                        <span>فريق العمل</span>
                     </a>
-                    <a href="settings-expenses.html">
+                    <a href="settings-expenses-ar.html">
                         <img
                             src="imgs/svg/settings/white/expenses.svg"
                             alt="expenses"
                             class="img-fluid"
                         />
-                        <span>Expenses</span>
+                        <span>المصروفات</span>
                     </a>
-                    <a href="settings-insurance.html">
+                    <a href="settings-insurance-ar.html">
                         <img
                             src="imgs/svg/settings/white/insurance.svg"
                             alt="insurance"
                             class="img-fluid"
                         />
-                        <span>Insurance</span>
+                        <span>التأمينات</span>
                     </a>
-                    <a href="settings-extra-patient-profile-fields.html">
+                    <a href="settings-extra-patient-profile-fields-ar.html">
                         <img
                             src="imgs/svg/settings/white/extra-patient-profile-fields.svg"
                             alt="extra-patient-profile-fields"
                             class="img-fluid"
                         />
-                        <span>Extra patient profile fields</span>
+                        <span>حقول إضافية لملف المريض</span>
                     </a>
-                    <a href="settings-extra-visit-fields.html">
+                    <a href="settings-extra-visit-fields-ar.html">
                         <img
                             src="imgs/svg/settings/white/extra-visit-fields.svg"
                             alt="extra-visit-fields"
                             class="img-fluid"
                         />
-                        <span>Extra visit fields</span>
+                        <span>حقول إضافية للزيارة</span>
                     </a>
-                    <a href="settings-prescription.html">
+                    <a href="settings-prescription-ar.html">
                         <img
                             src="imgs/svg/settings/white/prescription.svg"
                             alt="prescription"
                             class="img-fluid"
                         />
-                        <span>Prescription</span>
+                        <span>الروشتة الطبية</span>
                     </a>
-                    <a href="settings-patients-locations.html">
+                    <a href="settings-patients-locations-ar.html">
                         <img
                             src="imgs/svg/settings/white/patients-locations.svg"
                             alt="patients-locations"
                             class="img-fluid"
                         />
-                        <span>Patients locations</span>
+                        <span>عناوين المرضي</span>
                     </a>
-                    <a href="settings-learning-videos.html">
+                    <a href="settings-learning-videos-ar.html">
                         <img
                             src="imgs/svg/settings/white/learning-videos.svg"
                             alt="learning-videos"
                             class="img-fluid"
                         />
-                        <span>learning videos</span>
+                        <span>فيديوهات تعليمية</span>
                     </a>
-                    <a href="settings-subscription.html">
+                    <a href="settings-subscription-ar.html">
                         <img
                             src="imgs/svg/settings/white/subscription.svg"
                             alt="subscription"
                             class="img-fluid"
                         />
-                        <span>Subscription</span>
+                        <span>الاشتراكات</span>
                     </a>
-                    <a href="settings-additional-clinic-locations.html">
+                    <a href="settings-additional-clinic-locations-ar.html">
                         <img
                             src="imgs/svg/settings/white/additional-clinic-locations.svg"
                             alt="additional-clinic-locations"
                             class="img-fluid"
                         />
-                        <span>Additional clinic locations</span>
+                        <span>مواقع إضافية للعيادة</span>
                     </a>
-                    <a href="settings-branches.html">
+                    <a href="settings-branches-ar.html">
                         <img
                             src="imgs/svg/settings/white/branches.svg"
                             alt="branches"
                             class="img-fluid"
                         />
-                        <span>Branches</span>
+                        <span>الفروع</span>
                     </a>
-                    <a href="settings-patients-mobile-app.html">
+                    <a href="settings-patients-mobile-app-ar.html">
                         <img
                             src="imgs/svg/settings/white/patients-mobile-app.svg"
                             alt="patients-mobile-app"
                             class="img-fluid"
                         />
-                        <span>Patients mobile app</span>
+                        <span>موبايل ابليكشن للمرضي</span>
                     </a>
                 </div>
             </div>
@@ -278,14 +281,14 @@
                             alt="add"
                             class="img-fluid icon-sm"
                         />
-                        New
+                        اضافة
                     </a>
 
                     <div class="table-alternative d-md-none">
                         <div
                             class="d-flex justify-content-between align-items-center my-3"
                         >
-                            <h4 class="mb-0 tab-heading">Services</h4>
+                            <h4 class="mb-0 tab-heading">الخدمات</h4>
                             <a
                                 href="#"
                                 type="button"
@@ -299,12 +302,14 @@
                                     alt="add"
                                     class="img-fluid icon-sm"
                                 />
-                                New
+                                اضافة
                             </a>
                         </div>
                         <form class="">
                             <div class="form-group mb-3">
-                                <div class="input-group input-with-img">
+                                <div
+                                    class="input-group input-with-img img-other-side"
+                                >
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <img
@@ -327,9 +332,9 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        Normal Medical Examination
+                                        كشف عادي
                                     </p>
-                                    <p class="mb-">150 L.E</p>
+                                    <p class="mb-">150 جنيه</p>
                                 </div>
                                 <div
                                     class="col-3 d-flex justify-content-center align-items-center"
@@ -339,7 +344,7 @@
                                         type="button"
                                         data-toggle="modal"
                                         data-target="#delete-modal"
-                                        class="mr-2"
+                                        class="ml-2"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -427,9 +432,9 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        Normal Medical Examination
+                                        كشف عادي
                                     </p>
-                                    <p class="mb-">150 L.E</p>
+                                    <p class="mb-">150 جنيه</p>
                                 </div>
                                 <div
                                     class="col-3 d-flex justify-content-center align-items-center"
@@ -510,11 +515,11 @@
                                             <input
                                                 type="checkbox"
                                                 class="custom-control-input row-check"
-                                                id="checkbox-table-alternative-1"
+                                                id="checkbox-table-alternative-2"
                                             />
                                             <label
                                                 class="custom-control-label"
-                                                for="checkbox-table-alternative-1"
+                                                for="checkbox-table-alternative-2"
                                             ></label>
                                         </div>
                                     </div>
@@ -527,9 +532,9 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        Normal Medical Examination
+                                        كشف عادي
                                     </p>
-                                    <p class="mb-">150 L.E</p>
+                                    <p class="mb-">150 جنيه</p>
                                 </div>
                                 <div
                                     class="col-3 d-flex justify-content-center align-items-center"
@@ -610,11 +615,11 @@
                                             <input
                                                 type="checkbox"
                                                 class="custom-control-input row-check"
-                                                id="checkbox-table-alternative-1"
+                                                id="checkbox-table-alternative-3"
                                             />
                                             <label
                                                 class="custom-control-label"
-                                                for="checkbox-table-alternative-1"
+                                                for="checkbox-table-alternative-3"
                                             ></label>
                                         </div>
                                     </div>
@@ -627,9 +632,9 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        Normal Medical Examination
+                                        كشف عادي
                                     </p>
-                                    <p class="mb-">150 L.E</p>
+                                    <p class="mb-">150 جنيه</p>
                                 </div>
                                 <div
                                     class="col-3 d-flex justify-content-center align-items-center"
@@ -710,11 +715,11 @@
                                             <input
                                                 type="checkbox"
                                                 class="custom-control-input row-check"
-                                                id="checkbox-table-alternative-1"
+                                                id="checkbox-table-alternative-4"
                                             />
                                             <label
                                                 class="custom-control-label"
-                                                for="checkbox-table-alternative-1"
+                                                for="checkbox-table-alternative-4"
                                             ></label>
                                         </div>
                                     </div>
@@ -727,9 +732,9 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        Normal Medical Examination
+                                        كشف عادي
                                     </p>
-                                    <p class="mb-">150 L.E</p>
+                                    <p class="mb-">150 جنيه</p>
                                 </div>
                                 <div
                                     class="col-3 d-flex justify-content-center align-items-center"
@@ -810,11 +815,11 @@
                                             <input
                                                 type="checkbox"
                                                 class="custom-control-input row-check"
-                                                id="checkbox-table-alternative-1"
+                                                id="checkbox-table-alternative-5"
                                             />
                                             <label
                                                 class="custom-control-label"
-                                                for="checkbox-table-alternative-1"
+                                                for="checkbox-table-alternative-5"
                                             ></label>
                                         </div>
                                     </div>
@@ -827,9 +832,9 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        Normal Medical Examination
+                                        كشف عادي
                                     </p>
-                                    <p class="mb-">150 L.E</p>
+                                    <p class="mb-">150 جنيه</p>
                                 </div>
                                 <div
                                     class="col-3 d-flex justify-content-center align-items-center"
@@ -910,11 +915,11 @@
                                             <input
                                                 type="checkbox"
                                                 class="custom-control-input row-check"
-                                                id="checkbox-table-alternative-1"
+                                                id="checkbox-table-alternative-6"
                                             />
                                             <label
                                                 class="custom-control-label"
-                                                for="checkbox-table-alternative-1"
+                                                for="checkbox-table-alternative-6"
                                             ></label>
                                         </div>
                                     </div>
@@ -927,9 +932,9 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        Normal Medical Examination
+                                        كشف عادي
                                     </p>
-                                    <p class="mb-">150 L.E</p>
+                                    <p class="mb-">150 جنيه</p>
                                 </div>
                                 <div
                                     class="col-3 d-flex justify-content-center align-items-center"
@@ -1010,11 +1015,11 @@
                                             <input
                                                 type="checkbox"
                                                 class="custom-control-input row-check"
-                                                id="checkbox-table-alternative-1"
+                                                id="checkbox-table-alternative-7"
                                             />
                                             <label
                                                 class="custom-control-label"
-                                                for="checkbox-table-alternative-1"
+                                                for="checkbox-table-alternative-7"
                                             ></label>
                                         </div>
                                     </div>
@@ -1029,13 +1034,13 @@
                         <thead>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Cost</th>
+                                <th scope="col">اسم الخدمة</th>
+                                <th scope="col">التكلفة</th>
                                 <th scope="col">
                                     <form>
                                         <div class="form-group mb-0">
                                             <div
-                                                class="input-group input-with-img search"
+                                                class="input-group input-with-img search img-other-side"
                                             >
                                                 <div
                                                     class="input-group-prepend"
@@ -1079,7 +1084,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>Normal Medical Examination</td>
+                                <td>كشف عادي</td>
                                 <td>150</td>
                                 <td>
                                     <div
@@ -1090,7 +1095,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="mr-3"
+                                            class="ml-3"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1130,7 +1135,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>Normal Medical Examination</td>
+                                <td>كشف عادي</td>
                                 <td>150</td>
                                 <td>
                                     <div
@@ -1141,7 +1146,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="mr-3"
+                                            class="ml-3"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1181,7 +1186,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>Normal Medical Examination</td>
+                                <td>كشف عادي</td>
                                 <td>150</td>
                                 <td>
                                     <div
@@ -1192,7 +1197,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="mr-3"
+                                            class="ml-3"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1232,7 +1237,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>Normal Medical Examination</td>
+                                <td>كشف عادي</td>
                                 <td>150</td>
                                 <td>
                                     <div
@@ -1243,7 +1248,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="mr-3"
+                                            class="ml-3"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1283,7 +1288,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>Normal Medical Examination</td>
+                                <td>كشف عادي</td>
                                 <td>150</td>
                                 <td>
                                     <div
@@ -1294,7 +1299,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="mr-3"
+                                            class="ml-3"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1334,7 +1339,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>Normal Medical Examination</td>
+                                <td>كشف عادي</td>
                                 <td>150</td>
                                 <td>
                                     <div
@@ -1345,7 +1350,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="mr-3"
+                                            class="ml-3"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1385,7 +1390,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>Normal Medical Examination</td>
+                                <td>كشف عادي</td>
                                 <td>150</td>
                                 <td>
                                     <div
@@ -1396,7 +1401,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="mr-3"
+                                            class="ml-3"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1431,63 +1436,63 @@
                     />
                 </button>
 
-                <h2 class="mt-4 mb-2 px-3">Dr Demo</h2>
-                <p class="px-3 mb-3">mohamed@yahoo.com</p>
+                <div class="text-left">
+                    <h2 class="mt-4 mb-2 px-3">Dr Demo</h2>
+                    <p class="px-3 mb-3">mohamed@yahoo.com</p>
+                </div>
                 <div class="d-block d-lg-none px-3 mt-3 pt-2">
-                    <p class="mb-3">Current Clinic: Main Clinic</p>
+                    <p class="mb-3">العيادة الحالية : العيادة الرئيسية</p>
                     <div class="form-group d-flex align-items-center">
-                        <label class="text-light mr-2 mb-0"
-                            >Change Clinic</label
-                        >
+                        <label class="text-light ml-2 mb-0">تغييرالعيادة</label>
                         <select
                             class="custom-select input-border input-text-gray"
                             id="current-clinic-side"
                         >
-                            <option selected>Clinic Name</option>
-                            <option value="clinic-2">clinic 2</option>
-                            <option value="clinic-3">clinic 3</option>
+                            <option selected>اسم العيادة</option>
+                            <option value="clinic-2">عيادة 2</option>
+                            <option value="clinic-3">عيادة 3</option>
                         </select>
                     </div>
                 </div>
                 <ul class="profile-nav py-3">
                     <li>
-                        <a href="settings-services-ar.html">
+                        <a href="settings-services.html">
                             <img
                                 src="imgs/svg/profile-menu/language.svg"
                                 alt="language"
                                 class="img-fluid mx-2"
                             />
-                            Change language to: Arabic</a
+                            تغيير اللغة الي: الإنجليزية</a
                         >
                     </li>
                     <li>
-                        <a href="settings.html">
+                        <a href="settings-ar.html">
                             <img
                                 src="imgs/svg/settings-icon.svg"
                                 alt="settings"
                                 class="img-fluid mx-2"
                             />
-                            Settings</a
+                            الاعدادات</a
                         >
                     </li>
                     <li>
-                        <a href="appointments.html">
+                        <a href="appointments-ar.html">
                             <img
                                 src="imgs/svg/appointment-icon.svg"
                                 alt="appointments"
                                 class="img-fluid mx-2"
                             />
-                            Appointments</a
+                            المواعيد</a
                         >
                     </li>
                     <li>
-                        <a href="visits.html">
+                        <a href="visits-ar.html">
                             <img
                                 src="imgs/svg/profile-menu/eye.svg"
                                 alt="visits"
                                 class="img-fluid mx-2"
                             />
-                            Visits</a
+                            الزيارات</a
                         >
                     </li>
                     <li>
@@ -1497,7 +1502,7 @@
                                 alt="change password"
                                 class="img-fluid mx-2"
                             />
-                            Change Password</a
+                            تغيير كلمة المرور</a
                         >
                     </li>
                     <li>
@@ -1507,7 +1512,7 @@
                                 alt="logout"
                                 class="img-fluid mx-2"
                             />
-                            Logout</a
+                            تسجيل الخروج</a
                         >
                     </li>
                 </ul>
@@ -1526,8 +1531,8 @@
                         <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">Underway</span>
-                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
                                 <span class="notification">2</span>
                             </div>
                         </a>
@@ -1536,8 +1541,8 @@
                         <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">Underway</span>
-                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
                                 <span class="notification">2</span>
                             </div>
                         </a>
@@ -1546,8 +1551,8 @@
                         <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">Underway</span>
-                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
                             </div>
                         </a>
                     </li>
@@ -1555,8 +1560,8 @@
                         <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">Underway</span>
-                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
                                 <span class="notification">2</span>
                             </div>
                         </a>
@@ -1565,8 +1570,8 @@
                         <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">Underway</span>
-                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
                             </div>
                         </a>
                     </li>
@@ -1574,8 +1579,8 @@
                         <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">Underway</span>
-                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
                             </div>
                         </a>
                     </li>
@@ -1583,8 +1588,8 @@
                         <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">finished</span>
-                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="status">انتهت</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
                             </div>
                         </a>
                     </li>
@@ -1592,8 +1597,8 @@
                         <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">Underway</span>
-                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
                             </div>
                         </a>
                     </li>
@@ -1601,15 +1606,15 @@
                         <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">Underway</span>
-                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
                             </div>
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="side-popup form-menu" id="new-menu-popup">
-                <button class="btn close-popup">
+                <button class="btn close-popup close-left">
                     <img
                         src="imgs/svg/close-lg-icon.svg"
                         alt="close"
@@ -1619,11 +1624,11 @@
 
                 <form class="py-4 px-3">
                     <h2 class="d-block d-sm-none text-center mb-4">
-                        Add Service
+                        اضافة خدمة
                     </h2>
                     <div class="form-group mb-3">
                         <label class="text-light" for="service-name"
-                            >Service Name :</label
+                            >اسم الخدمة :</label
                         >
                         <input
                             type="text"
@@ -1631,12 +1636,12 @@
                             class="form-control input-border"
                         />
                         <div class="invalid-feedback">
-                            <p>Please provide a valid input.</p>
+                            <p>رسالة خطا</p>
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label class="text-light" for="service-cost"
-                            >Service Cost :</label
+                        <label class="text-light" for="service-cost">
+                            التكلفة :</label
                         >
                         <div class="input-group input-with-img img-other-side">
                             <div class="input-group-prepend">
@@ -1658,7 +1663,7 @@
                     </div>
                     <div class="text-center pt-3">
                         <button type="submit" class="btn btn-red px-4 py-2">
-                            Save
+                            حفظ
                         </button>
                     </div>
                 </form>
@@ -1677,11 +1682,11 @@
 
                 <form class="py-4 px-3">
                     <h2 class="d-block d-sm-none text-center mb-4">
-                        Add Service
+                        اضافة خدمة
                     </h2>
                     <div class="form-group mb-3">
                         <label class="text-light" for="service-name"
-                            >Service Name :</label
+                            >اسم الخدمة :</label
                         >
                         <input
                             type="text"
@@ -1689,12 +1694,12 @@
                             class="form-control input-border input-gray"
                         />
                         <div class="invalid-feedback">
-                            <p>Please provide a valid input.</p>
+                            <p>رسالة خطا</p>
                         </div>
                     </div>
                     <div class="form-group mb-3">
                         <label class="text-light" for="service-cost"
-                            >Service Cost :</label
+                            >التكلفة :</label
                         >
                         <div class="input-group input-with-img img-other-side">
                             <div class="input-group-prepend">
@@ -1716,7 +1721,7 @@
                     </div>
                     <div class="text-center pt-3">
                         <button type="submit" class="btn btn-red px-4 py-2">
-                            Save
+                            حفظ
                         </button>
                     </div>
                 </form>
@@ -1746,7 +1751,7 @@
                         />
                     </button>
                     <h4 class="font-weight-bold text-center mb-4">
-                        Are you sure you want to delete?
+                        هل انت متأكد من حذف الخدمة
                     </h4>
                     <img
                         src="imgs/svg/delete-red-icon.svg"
@@ -1758,9 +1763,9 @@
                             class="btn btn-blue px-4 py-2"
                             data-dismiss="modal"
                         >
-                            Close
+                            اغلاق
                         </button>
-                        <button class="btn btn-red px-4 py-2">Delete</button>
+                        <button class="btn btn-red px-4 py-2">حذف</button>
                     </div>
                 </div>
             </div>
@@ -1788,7 +1793,7 @@
                             class="img-fluid"
                         />
                     </button>
-                    <h4 class="font-weight-bold text-center mb-4">Saved</h4>
+                    <h4 class="font-weight-bold text-center mb-4">تم الحفظ</h4>
                     <img
                         src="imgs/svg/success-icon.svg"
                         alt="success"
@@ -1820,9 +1825,7 @@
                             class="img-fluid"
                         />
                     </button>
-                    <h4 class="font-weight-bold text-center mb-4">
-                        An error occured
-                    </h4>
+                    <h4 class="font-weight-bold text-center mb-4">رسالة خطأ</h4>
                     <img
                         src="imgs/svg/error-icon.svg"
                         alt="error"

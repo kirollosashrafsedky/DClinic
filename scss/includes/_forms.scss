@@ -58,7 +58,7 @@
         height: 100%;
         .input-group-text {
             height: 100%;
-            width: 35px;
+            width: 40px;
             padding: 5px 10px 5px 10px;
             text-align: center;
             display: flex;
@@ -71,13 +71,14 @@
             border-width: 0;
             img {
                 flex-shrink: 0;
-                width: 17px;
+                width: 25px;
+                max-height: 20px;
             }
         }
     }
     .form-control {
         background-color: #fff;
-        padding-left: 33px;
+        padding-left: 35px;
         border-radius: 5px;
         &.input-text-gray {
             color: #a5a5a5;
@@ -89,7 +90,7 @@
             right: 0;
         }
         .form-control {
-            padding-right: 33px;
+            padding-right: 35px;
             padding-left: 0.75rem;
         }
     }

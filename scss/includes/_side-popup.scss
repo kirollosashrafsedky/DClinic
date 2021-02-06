@@ -1,18 +1,16 @@
 .side-popup {
     background-color: $blue;
     color: #fff;
-    position: relative;
-    width: 0;
-    transition: visibility 0s linear 0.05s, width 0.2s ease;
-    visibility: hidden;
+    position: absolute;
+    width: 350px;
+    right: -360px;
+    transition: right 0.2s ease, position 0s ease, opacity 0.1s ease;
     flex-shrink: 0;
-    position: relative;
-    right: 0;
-    top: -1px;
-    bottom: 0;
+    top: $offsetTop - 1;
     height: 100%;
     overflow-y: auto;
-    padding: 0;
+    padding: 45px 0 20px;
+    opacity: 0;
     font-size: 0.9rem;
     font-weight: $regular;
     .close-popup {
@@ -21,37 +19,56 @@
         }
         position: absolute;
         top: 20px;
-        right: 10px;
+        right: 5px;
+        &.close-right {
+            right: auto;
+            left: 5px;
+        }
     }
     &.show {
-        visibility: visible;
-        transform: none;
-        width: 350px;
-        padding: 10px 0 20px;
+        opacity: 1;
+        position: relative;
+        top: -1px;
+        right: 0;
     }
 }
 
 @media (max-width: 1199.5px) {
     .side-popup {
-        position: fixed;
-        right: 0;
         z-index: 1000;
-        height: calc(100% - #{$offsetTop});
-        top: $offsetTop - 1;
         background-color: rgba(72, 163, 218, 0.95);
+        &.show {
+            position: fixed;
+            top: $offsetTop - 1;
+            height: calc(100% - #{$offsetTop});
+        }
     }
 }
+
 @media (max-width: 575.5px) {
-    .side-popup {
+    .side-popup:not(.profile-menu) {
+        background-color: rgba(106, 164, 198, 0.98);
+        opacity: 0;
+        width: 100%;
         right: 0;
-        top: $offsetTop - 1;
+        transform: scale(0);
+        padding: 45px 0 20px;
+        height: 100%;
+        top: 0;
+        transition: visibility 0s linear 0.05s, opacity 0.1s ease,
+            transform 0.2s ease;
         &.show {
-            width: 100%;
+            position: fixed;
+            top: 0;
+            height: 100%;
+            opacity: 1;
+            transform: none;
         }
     }
 }
 
 .profile-menu {
+    padding: 10px 0 20px;
     h2 {
         font-size: 2rem;
     }
@@ -107,13 +124,13 @@
                 }
             }
         }
+        &.show {
+            width: 100%;
+        }
     }
 }
 
 .chats-menu {
-    &.show {
-        padding: 45px 0 20px;
-    }
     .chats-nav {
         width: 100%;
         li {
@@ -184,19 +201,29 @@
 }
 
 @media (max-width: 575.5px) {
-    .chats-menu {
-        width: 100%;
-        visibility: hidden;
-        opacity: 0;
-        transform: scale(0.8);
-        height: 100%;
-        top: 0;
-        transition: visibility 0s linear 0.05s, opacity 0.2s ease,
-            transform 0.2s ease;
-        &.show {
-            visibility: visible;
-            opacity: 1;
-            transform: none;
+    .side-popup.chats-menu {
+        background-color: rgba(72, 163, 218, 0.95);
+    }
+}
+
+.side-popup.form-menu {
+    font-size: 1.1rem;
+    &.form-white {
+        background-color: #f9f9f9 !important;
+        color: $textDark;
+        h2 {
+            font-weight: $semibold;
         }
+        label {
+            color: $textDark !important;
+        }
+        .input-gray {
+            background-color: #e9e9e9;
+        }
+    }
+}
+@media (max-width: 575.5px) {
+    .side-popup.form-menu {
+        font-size: 1.2rem;
     }
 }

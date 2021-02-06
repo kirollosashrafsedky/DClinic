@@ -25,6 +25,7 @@ body {
   width: 100%;
   padding-top: 61px;
   height: 100%;
+  overflow: hidden;
 }
 #app-container .side-menu {
   flex-shrink: 0;
@@ -206,7 +207,7 @@ p {
   background-color: transparent;
   padding: 0;
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .top-bar .breadcrumb a {
   color: #ffffff;
@@ -293,6 +294,14 @@ p {
   .top-bar .top-item .form-group select {
     min-width: 120px;
     font-size: 0.8rem;
+  }
+}
+@media (max-width: 350px) {
+  .top-bar .breadcrumb {
+    font-size: 1rem;
+  }
+  .top-bar .back-link img {
+    width: 15px;
   }
 }
 .home-info-cards .container .swiper-container .swiper-slide {
@@ -662,7 +671,7 @@ p {
 }
 .input-with-img .input-group-prepend .input-group-text {
   height: 100%;
-  width: 35px;
+  width: 40px;
   padding: 5px 10px 5px 10px;
   text-align: center;
   display: flex;
@@ -676,11 +685,12 @@ p {
 }
 .input-with-img .input-group-prepend .input-group-text img {
   flex-shrink: 0;
-  width: 17px;
+  width: 25px;
+  max-height: 20px;
 }
 .input-with-img .form-control {
   background-color: #fff;
-  padding-left: 33px;
+  padding-left: 35px;
   border-radius: 5px;
 }
 .input-with-img .form-control.input-text-gray {
@@ -691,7 +701,7 @@ p {
   right: 0;
 }
 .input-with-img.img-other-side .form-control {
-  padding-right: 33px;
+  padding-right: 35px;
   padding-left: 0.75rem;
 }
 .input-with-img > .form-control:not(:first-child) {
@@ -1023,7 +1033,6 @@ table.settings-table.table-striped tbody tr:nth-of-type(even):hover {
   background-color: #e0e0e0;
 }
 table.settings-table-2 thead th {
-  text-align: left;
   padding: 1rem 0.75rem;
 }
 table.settings-table-2 thead th .search {
@@ -1034,11 +1043,15 @@ table.settings-table-2 thead th:first-of-type {
   width: 100px;
 }
 table.settings-table-2 tr td {
-  text-align: left;
   padding: 1rem 0.75rem;
 }
-table.settings-table-2 .last-col {
-  max-width: 90px;
+table.settings-table-2 tr td:nth-of-type(2),
+table.settings-table-2 tr th:nth-of-type(2) {
+  text-align: left;
+}
+table.settings-table-2 tr td:nth-of-type(3),
+table.settings-table-2 tr th:nth-of-type(3) {
+  min-width: 150px;
 }
 
 .table-alternative .card {
@@ -1140,54 +1153,71 @@ table.settings-table-2 .last-col {
 .side-popup {
   background-color: #48a3da;
   color: #fff;
-  position: relative;
-  width: 0;
-  transition: visibility 0s linear 0.05s, width 0.2s ease;
-  visibility: hidden;
+  position: absolute;
+  width: 350px;
+  right: -360px;
+  transition: right 0.2s ease, position 0s ease, opacity 0.1s ease;
   flex-shrink: 0;
-  position: relative;
-  right: 0;
-  top: -1px;
-  bottom: 0;
+  top: 60px;
   height: 100%;
   overflow-y: auto;
-  padding: 0;
+  padding: 45px 0 20px;
+  opacity: 0;
   font-size: 0.9rem;
   font-weight: 300;
 }
 .side-popup .close-popup {
   position: absolute;
   top: 20px;
-  right: 10px;
+  right: 5px;
 }
 .side-popup .close-popup img {
   width: 25px;
 }
+.side-popup .close-popup.close-right {
+  right: auto;
+  left: 5px;
+}
 .side-popup.show {
-  visibility: visible;
-  transform: none;
-  width: 350px;
-  padding: 10px 0 20px;
+  opacity: 1;
+  position: relative;
+  top: -1px;
+  right: 0;
 }
 
 @media (max-width: 1199.5px) {
   .side-popup {
-    position: fixed;
-    right: 0;
     z-index: 1000;
-    height: calc(100% - 61px);
-    top: 60px;
     background-color: rgba(72, 163, 218, 0.95);
+  }
+  .side-popup.show {
+    position: fixed;
+    top: 60px;
+    height: calc(100% - 61px);
   }
 }
 @media (max-width: 575.5px) {
-  .side-popup {
-    right: 0;
-    top: 60px;
-  }
-  .side-popup.show {
+  .side-popup:not(.profile-menu) {
+    background-color: rgba(106, 164, 198, 0.98);
+    opacity: 0;
     width: 100%;
+    right: 0;
+    transform: scale(0);
+    padding: 45px 0 20px;
+    height: 100%;
+    top: 0;
+    transition: visibility 0s linear 0.05s, opacity 0.1s ease, transform 0.2s ease;
   }
+  .side-popup:not(.profile-menu).show {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    opacity: 1;
+    transform: none;
+  }
+}
+.profile-menu {
+  padding: 10px 0 20px;
 }
 .profile-menu h2 {
   font-size: 2rem;
@@ -1239,9 +1269,9 @@ table.settings-table-2 .last-col {
   .profile-menu .profile-nav t li a img {
     width: 22px;
   }
-}
-.chats-menu.show {
-  padding: 45px 0 20px;
+  .profile-menu.show {
+    width: 100%;
+  }
 }
 .chats-menu .chats-nav {
   width: 100%;
@@ -1306,19 +1336,30 @@ table.settings-table-2 .last-col {
 }
 
 @media (max-width: 575.5px) {
-  .chats-menu {
-    width: 100%;
-    visibility: hidden;
-    opacity: 0;
-    transform: scale(0.8);
-    height: 100%;
-    top: 0;
-    transition: visibility 0s linear 0.05s, opacity 0.2s ease, transform 0.2s ease;
+  .side-popup.chats-menu {
+    background-color: rgba(72, 163, 218, 0.95);
   }
-  .chats-menu.show {
-    visibility: visible;
-    opacity: 1;
-    transform: none;
+}
+.side-popup.form-menu {
+  font-size: 1.1rem;
+}
+.side-popup.form-menu.form-white {
+  background-color: #f9f9f9 !important;
+  color: #000000;
+}
+.side-popup.form-menu.form-white h2 {
+  font-weight: 600;
+}
+.side-popup.form-menu.form-white label {
+  color: #000000 !important;
+}
+.side-popup.form-menu.form-white .input-gray {
+  background-color: #e9e9e9;
+}
+
+@media (max-width: 575.5px) {
+  .side-popup.form-menu {
+    font-size: 1.2rem;
   }
 }
 

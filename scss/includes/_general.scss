@@ -27,6 +27,7 @@ body {
     width: 100%;
     padding-top: $offsetTop;
     height: 100%;
+    overflow: hidden;
     .side-menu {
         flex-shrink: 0;
         position: relative;

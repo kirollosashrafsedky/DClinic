@@ -26,7 +26,7 @@
         background-color: transparent;
         padding: 0;
         margin-bottom: 0;
-        font-size: 1rem;
+        font-size: 1.2rem;
         a {
             color: $textLight;
             font-weight: $semibold;
@@ -135,6 +135,19 @@
                     min-width: 120px;
                     font-size: 0.8rem;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .top-bar {
+        .breadcrumb {
+            font-size: 1rem;
+        }
+        .back-link {
+            img {
+                width: 15px;
             }
         }
     }

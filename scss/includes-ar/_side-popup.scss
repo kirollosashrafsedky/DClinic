@@ -1,12 +1,16 @@
-@media (max-width: 991.5px) {
-    .side-popup {
+.side-popup {
+    left: -360px;
+    right: auto;
+    transition: left 0.2s ease, position 0s ease, opacity 0.1s ease;
+    &.show {
         left: 0;
         right: auto;
     }
 }
+
 @media (max-width: 575.5px) {
-    .side-popup {
-        right: auto;
+    .side-popup:not(.profile-menu) {
+        right: 0;
         left: 0;
     }
 }
@@ -16,6 +20,10 @@
         li {
             a {
                 .content {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+                    position: relative;
+                    padding: 10px 0;
+
                     .notification {
                         right: auto;
                         left: 10px;

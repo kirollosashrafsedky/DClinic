@@ -69,16 +69,32 @@ $(document).ready(function() {
         }
     })
 
+    $('.row-check').change(function(){
+        if($(this).prop("checked")){
+            // $(this).parents('tr').addClass('active');
+            $(this).parents('.table-alternative .card').addClass('active');
+        }else{
+            // $(this).parents('tr').removeClass('active');
+            $(this).parents('.table-alternative .card').removeClass('active');
+        }
+    })
+
     $('[data-dblclick-event="true"]').dblclick(function(){
+        // row switch used in business hour page
         if($(this).find('.row-switch').prop('checked')){
             $('#edit-modal').modal('show');
         }else{
             $(this).find('.row-switch').prop('checked', !$(this).find('.row-switch').prop('checked'))
             $('#edit-modal').modal('show');
-
             $(this).removeClass('disabled');
-
         }
+    })
+
+    $('[data-click-event="true"]').on('click', function(){
+        // row check used in other setting pages
+            $(this).find('.row-check').prop('checked', !$(this).find('.row-check').prop('checked'));
+            $(this).toggleClass('active')
+
     })
 
     // for illustrating success and error modals only and will be removed  -- start
@@ -111,6 +127,7 @@ $(document).ready(function() {
 
     function closeSidePopup(){
         $('.side-popup').removeClass('show');
+        $('.side-popup').attr('data-opened-by','')
         sidePopupState = "close";
     }
 
@@ -120,12 +137,22 @@ $(document).ready(function() {
 
     $('[data-type="side-popup"]').on('click', function(e){
         e.preventDefault();
+        e.stopPropagation();
         const popup = $(`#${$(this).data('target')}`)
-        if(popup.hasClass('show')){
-            closeSidePopup()
+        const trigger = $(this).attr('data-unique-id');
+        if(popup.attr('data-opened-by') == trigger || popup.attr('data-opened-by') == ''){
+            if(popup.hasClass('show')){
+                closeSidePopup()
+            }else{
+                popup.attr('data-opened-by', trigger)
+                openSidePopup(popup)
+            }
         }else{
+            closeSidePopup()
+            popup.attr('data-opened-by', trigger)
             openSidePopup(popup)
         }
+        
     })
 
 
