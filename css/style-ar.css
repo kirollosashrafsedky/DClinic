@@ -24,6 +24,11 @@ body {
   margin-top: 5px;
 }
 
+.container-fluid-max-width {
+  margin-left: auto;
+  margin-right: 0;
+}
+
 .top-bar .breadcrumb .breadcrumb-item::after {
   transform: rotate(0deg);
 }
@@ -145,6 +150,16 @@ body {
   right: -1.75rem;
 }
 
+.bootstrap-select {
+  text-align: right !important;
+}
+.bootstrap-select .dropdown-toggle .filter-option {
+  text-align: right;
+}
+.bootstrap-select .dropdown-menu {
+  text-align: right !important;
+}
+
 .nav-tabs li:first-of-type {
   border-right-width: 0;
   border-left: 1px solid #e3e3e3;
@@ -237,6 +252,35 @@ table.settings-table-2 tr th:nth-of-type(2) {
 .chats-menu .chats-nav li a .content .notification {
   right: auto;
   left: 10px;
+}
+
+.visit-item {
+  padding: 0.75rem 1rem 0.75rem 0.5rem;
+}
+.visit-item img {
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+@media (max-width: 1024px) {
+  .visit-item a {
+    padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+  }
+}
+.visits-wrapper .nav-tabs li {
+  border-right-width: 0;
+  border-left: 1px solid #e3e3e3;
+}
+.visits-wrapper .nav-tabs li:last-of-type {
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+@media (max-width: 767.5px) {
+  .visits-grid .nav-tabs li:last-of-type {
+    border-right-width: 0;
+    border-left-width: 0;
+  }
 }
 
 /*# sourceMappingURL=style-ar.css.map */

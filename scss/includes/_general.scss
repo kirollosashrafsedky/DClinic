@@ -58,6 +58,15 @@ body {
     }
 }
 
+.container-fluid-max-width {
+    max-width: 1400px;
+    margin-left: 0;
+}
+
+.max-700 {
+    max-width: 700px;
+}
+
 .card {
     border-width: 0;
     border-color: transparent;
@@ -90,8 +99,16 @@ body {
     background-color: #6cbaea;
 }
 
+.bg-white {
+    background-color: #fff;
+}
+
 .bg-gray {
     background-color: $gray;
+}
+
+.bg-gray2 {
+    background-color: #eaeaea;
 }
 
 .text-light {
@@ -112,16 +129,29 @@ a {
     }
 }
 
+a,
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
 p {
     margin-bottom: 0;
 }
 
 .btn {
+    border-radius: 0.25rem;
     border-width: 0;
     font-weight: $semibold;
     img {
         width: 15px;
         margin-right: 5px;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
     }
     vertical-align: middle;
     &:focus {
@@ -129,6 +159,16 @@ p {
     }
 }
 
+@media (max-width: 400px) {
+    .btn {
+        &.btn-sm-small {
+            font-size: 0.7rem;
+            img {
+                width: 10px;
+            }
+        }
+    }
+}
 .icon {
     max-width: 35px;
     -moz-user-select: none;
@@ -186,4 +226,8 @@ p {
     position: absolute;
     top: -5px;
     right: -5px;
+}
+
+ul {
+    list-style: none;
 }

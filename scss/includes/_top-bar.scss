@@ -89,7 +89,8 @@
             label {
                 margin-bottom: 0;
             }
-            select {
+            select,
+            .dropdown-toggle {
                 min-width: 150px;
                 font-size: 0.8rem;
             }

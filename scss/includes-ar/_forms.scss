@@ -71,3 +71,18 @@
         }
     }
 }
+
+.bootstrap-select {
+    .dropdown-toggle {
+        .filter-option {
+            text-align: right;
+        }
+    }
+    text-align: right !important;
+    .dropdown-menu {
+        // transform: translateX(0);
+        text-align: right !important;
+        // right: 0;
+        // left: auto !important;
+    }
+}

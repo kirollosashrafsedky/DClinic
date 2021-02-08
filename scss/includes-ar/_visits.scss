@@ -1,0 +1,41 @@
+.visit-item {
+    padding: 0.75rem 1rem 0.75rem 0.5rem;
+    img {
+        margin-left: 5px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .visit-item {
+        a {
+            padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+        }
+    }
+}
+
+.visits-wrapper {
+    .nav-tabs {
+        li {
+            border-right-width: 0;
+            border-left: 1px solid #e3e3e3;
+            &:last-of-type {
+                border-right-width: 0;
+                border-left-width: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.5px) {
+    .visits-grid {
+        .nav-tabs {
+            li {
+                &:last-of-type {
+                    border-right-width: 0;
+                    border-left-width: 0;
+                }
+            }
+        }
+    }
+}

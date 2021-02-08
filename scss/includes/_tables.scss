@@ -5,11 +5,12 @@ table {
         table-layout: auto;
         width: 100%;
         thead {
-            background-color: $red;
             border-top-width: 0;
             font-weight: $semibold;
 
             th {
+                background-color: $red;
+
                 text-align: center;
                 vertical-align: middle;
                 border-top-width: 0;

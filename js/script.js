@@ -155,6 +155,31 @@ $(document).ready(function() {
         
     })
 
+    $('[data-target="#profile-tab"]').on('click', function (event) {
+        event.preventDefault()
+        $('#visits-tabs a').removeClass('active')
+        $(this).tab('show')
+        $(this).removeClass('active');
+    })
+    
+
+    // $('[data-toggle="modal"]').on('click', function (event) {
+    //     event.preventDefault();
+    // })
+
+    
+
+    // audio player -- start
+
+
+    // audio player -- end
+
+    // override bootstrap-select library to add svg imgs in the select
+
+    // var myDefaultWhiteList = $.fn.selectpicker.Constructor.DEFAULTS.whiteList;
+    // myDefaultWhiteList.svg= ['xmlns','width','height','viewBox']
+    // myDefaultWhiteList.g= ['data-name','d','transform','fill']
+    // myDefaultWhiteList.path= ['data-name','d','transform','fill']
 
     // function activeImgsOnLoad(){
     //     $("[data-active-img]").each(function(index, el){

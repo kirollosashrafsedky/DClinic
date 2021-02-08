@@ -6,36 +6,62 @@
  * Released under the MIT license
  */
 /* global window alert jQuery gj */
-/**  */gj.timepicker = {
+/**
+  */
+gj.timepicker = {
     plugins: {}
 };
 
 gj.timepicker.config = {
     base: {
 
-        /** The width of the timepicker.         */        width: undefined,
+        /** The width of the timepicker.
+         */
+        width: undefined,
 
-        /** If set to true, the timepicker will have modal behavior.         */        modal: true,
+        /** If set to true, the timepicker will have modal behavior.
+         */
+        modal: true,
 
-        /** If set to true, add header to the timepicker.         */        header: true,
+        /** If set to true, add header to the timepicker.
+         */
+        header: true,
 
-        /** If set to true, add footer with ok and cancel buttons to the timepicker.         */        footer: true,
+        /** If set to true, add footer with ok and cancel buttons to the timepicker.
+         */
+        footer: true,
 
-        /** Specifies the format, which is used to format the value of the timepicker displayed in the input.         */        format: 'HH:MM',
+        /** Specifies the format, which is used to format the value of the timepicker displayed in the input.
+         */
+        format: 'HH:MM',
 
-        /** The name of the UI library that is going to be in use.         */        uiLibrary: 'materialdesign',
+        /** The name of the UI library that is going to be in use.
+         */
+        uiLibrary: 'materialdesign',
 
-        /** The initial timepicker value.         */        value: undefined,
+        /** The initial timepicker value.
+         */
+        value: undefined,
 
-        /** The timepicker mode. Tells the component to display the picker in ampm (12hr) format or 24hr format.         */        mode: '24hr',
+        /** The timepicker mode. Tells the component to display the picker in ampm (12hr) format or 24hr format.
+         */
+        mode: '24hr',
 
-        /** The language that needs to be in use.         */        locale: 'en-us',
+        /** The language that needs to be in use.
+         */
+        locale: 'en-us',
 
-        /** The size of the timepicker input.         */        size: 'default',
+        /** The size of the timepicker input.
+         */
+        size: 'default',
 
-        /** If set to true, show timepicker on input focus.         */        showOnFocus: true,
+        /** If set to true, show timepicker on input focus.
+         */
+        showOnFocus: true,
 
-        /** If set to true, show timepicker icon on the right side of the input.         */        showRightIcon: true,
+        /** If set to true, show timepicker icon on the right side of the input.
+         */
+        showRightIcon: true,
 
         icons: {
             rightIcon: '<i class="gj-icon clock" />'
@@ -214,10 +240,12 @@ gj.timepicker.methods = {
 
     getHour: function (clock) {
         return parseInt(clock.getAttribute('hour'), 10) || 0;
+        // return 12;
     },
 
     getMinute: function (clock) {
         return parseInt(clock.getAttribute('minute'), 10) || 0;
+        // return  0;
     },
 
     setTime: function (picker, clock) {
@@ -510,23 +538,31 @@ gj.timepicker.methods = {
 gj.timepicker.events = {
     /**
      * Triggered when the timepicker value is changed.
-     *     */    change: function (el) {
+     *
+     */
+    change: function (el) {
         return el.dispatchEvent(new Event('change'));
     },
 
     /**
      * Triggered when new value is selected inside the picker.
-     *     */    select: function (el, type) {
+     *
+     */
+    select: function (el, type) {
         return el.dispatchEvent(new CustomEvent('select', { detail: { 'type': type } }));
     },
 
     /**
-     * Event fires when the timepicker is opened.     */    open: function (el) {
+     * Event fires when the timepicker is opened.
+     */
+    open: function (el) {
         return el.dispatchEvent(new Event('open'));
     },
 
     /**
-     * Event fires when the timepicker is closed.     */    close: function (el) {
+     * Event fires when the timepicker is closed.
+     */
+    close: function (el) {
         return el.dispatchEvent(new Event('close'));
     }
 };
@@ -539,19 +575,27 @@ GijgoTimePicker = function (element, jsConfig) {
 
     self.mouseMove = false;
 
-    /** Gets or sets the value of the timepicker.     */    self.value = function (value) {
+    /** Gets or sets the value of the timepicker.
+     */
+    self.value = function (value) {
         return methods.value(this, value);
     };
 
-    /** Remove timepicker functionality from the element.     */    self.destroy = function () {
+    /** Remove timepicker functionality from the element.
+     */
+    self.destroy = function () {
         return gj.picker.widget.prototype.destroy.call(this, 'timepicker');
     };
 
-    /** Open the clock.     */    self.open = function () {
+    /** Open the clock.
+     */
+    self.open = function () {
         return gj.timepicker.methods.open(this);
     };
 
-    /** Close the clock.     */    self.close = function () {
+    /** Close the clock.
+     */
+    self.close = function () {
         return gj.picker.widget.prototype.close.call(this, 'timepicker');
     };
 
