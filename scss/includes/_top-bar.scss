@@ -141,8 +141,11 @@
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 390px) {
     .top-bar {
+        .icon {
+            max-width: 18px;
+        }
         .breadcrumb {
             font-size: 0.8rem;
         }
@@ -150,6 +153,11 @@
             img {
                 width: 15px;
             }
+        }
+        .profile-btn {
+            font-size: 1rem;
+            width: 30px;
+            height: 30px;
         }
     }
 }

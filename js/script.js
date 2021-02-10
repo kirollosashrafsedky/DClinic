@@ -1,10 +1,19 @@
 $(document).ready(function() {
+    // very important - solve chrome mobile height issue -- start
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    $(window).on('resize', function() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+    // very important - solve chrome mobile height issue -- end
+    
     let sideMenuState = "closed";
     let sidePopupState = "closed";
 
     const reservationSwiper = new Swiper('.home-info-cards .swiper-container', {
         slidesPerView: "auto",
-        // spaceBetween: 15,
         watchSlidesVisibility: true,
         freeMode: true,
         resistance : true,
@@ -117,6 +126,8 @@ $(document).ready(function() {
     // side-popup
 
     function openSidePopup(el){
+        // close all modals first
+        $('.modal').modal('hide')
         if(sideMenuState == "opened") closeSideMenu();
         $('.side-popup').removeClass('show');
         setTimeout(function(){
@@ -206,127 +217,34 @@ $(document).ready(function() {
 
     // custom collapse -- end
 
+    // link appointment desktop and mobile tabs -- start
 
+    $('.nav-appointment a[data-toggle="tab"]').on('show.bs.tab', function (event) {
+        $('.nav-appointment a').removeClass('active');
+        var href = $(this).attr('data-target');  
+        $('.nav-appointment a[data-target="'+href+'"]').addClass('active');
 
-
-    // function activeImgsOnLoad(){
-    //     $("[data-active-img]").each(function(index, el){
-    //         $(el).attr('data-main-img', $(el).find('img').attr('src'))
-    //         if($(this).hasClass('active')){
-    //             $(el).find('img').attr('src',$(el).attr('data-active-img'));
-    //         }
-    //     })
-    // }
-    // activeImgsOnLoad();
-    // function activeImgsOnChange(el){
-    //     $("[data-active-img]").each(function(index, el){
-    //         $(el).find('img').attr('src',$(el).attr('data-main-img') )
-    //     })
-    //     $(el).find('img').attr('src',$(el).attr('data-active-img'));
-
-    // }
-    // $("[data-active-img]").on('click', function(){
-    //     if($(window).width() < 767.5){
-    //         if(!$(this).hasClass('active')){
-    //             activeImgsOnChange(this)
-    //         }
-    //     }
-        
-    // })
-
-    // $(window).on('resize', function(){
-    //     if($(window).width() > 767.5){
-    //         $("[data-active-img]").each(function(index, el){
-    //             $(el).find('img').attr('src',$(el).attr('data-main-img') )
-    //         })
-    //     }else{
-    //         activeImgsOnLoad();
-    //     }
-    // })
-
-
-
-
-    // setTimeout(function(){
-    //     AOS.init({
-    //       duration: 400,
-    //       easing:"ease-in-out",
-    //       once: false,
-    //       offset: 100,
-    //       disable: false
-    //     });
-    // },200);
-
-    // (function disableLinks(){
-    //   $('#reservation-swiper .swiper-slide.disabled .stretched-link').on('click',function(){
-    //     return false;
-    //   })
-    // }());
-
-    // (function managePageHash(){
-    //   const hash = new URL(document.URL).hash;
-    //   const tab = $(`#main-content ${hash}`);
-    //   if(tab.length !== 0){
-    //     $(`#main-tabs a[href='${hash}']`).tab('show')
-    //   }
-    // }());
-
-    // const openModal = modal => {
-    //   if($(modal).length !== 0){
-    //     $(modal).addClass("show-modal");
-    //     $("body").addClass("show-modal");
-    //   }  
-    // }
-
-    // const closeModal = modal => {
-    //     modal.removeClass("show-modal");
-    //     $("body").removeClass("show-modal");
-    //     $(".video-overlay").removeClass("show-video");
-    //     $("iframe.video").removeClass("show-video");
-    // }
+      })
     
-    // const validation = form => {
-    //   let valid = true;
-    //   form.find('.required').each( (index, input) => {
-    //     if(input.value == ""){
-    //       input.classList.add('is-invalid');
-    //       valid = false
-    //     }else{
-    //       input.classList.remove('is-invalid')
-    //     }
-    //   })
-    //   return valid;
-    // }
+    // link appointment desktop and mobile tabs -- end
 
-    // $("#written-reservation-form").on('submit',function(e){
-    //   e.preventDefault();
-    //   if(validation($(this))){
-    //     // ajax is set here to send data to the server
-    //     const modal = $("#success-modal");
-    //     openModal(modal);
-    //   }
-      
-           
-    // })
 
-    // $(".custom-modal-trigger").on("click", function(e){
-    //     if($(this).parents('.disabled').length === 0){
-    //       e.preventDefault();
-    //       const modal = $(this).attr('href');
-    //       openModal(modal);     
-  
-    //     }
-    // })
-    
-    // $(".custom-modal .close-btn").on("click", function(){
-    //     const modal = $(this).parents("div.custom-modal");
-    //     closeModal(modal);
-    // })
+    const appointmentsWeekSwiper = new Swiper('.appointments-week-swiper .swiper-container', {
+        slidesPerView: "auto",
+        // spaceBetween: 15,
+        watchSlidesVisibility: true,
+        freeMode: true,
+        resistance : true,
+        resistanceRatio: 0,
+        mousewheel: true,
+        updateOnWindowResize: true,
+        observer: true,
+        observeParents: true,
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+          },
+    });
 
-    // $(".play-video-btn").on("click", function(){
-    //   $(".video-overlay").addClass("show-video");
-    //   $("iframe.video").addClass("show-video");
-    // })
-    
 
 });

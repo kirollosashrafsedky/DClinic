@@ -6,3 +6,17 @@
         }
     }
 }
+
+.side-popup .nav-tabs {
+    li {
+        border-right-width: 0;
+        border-left: 1px solid #e3e3e3;
+    }
+    &.justify-content-center {
+        li {
+            &:last-of-type {
+                border-left-width: 0;
+            }
+        }
+    }
+}

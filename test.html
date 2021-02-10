@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DClinic - Patients</title>
+        <title>DClinic - Appointments</title>
         <!-- <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="vendor/gijgo/css/core.min.css" />
         <link rel="stylesheet" href="vendor/gijgo/css/timepicker.min.css" />
         <link rel="stylesheet" href="vendor/gijgo/css/datepicker.min.css" />
+
         <link
             rel="stylesheet"
             href="vendor/bootstrap-select/css/bootstrap-select.min.css"
@@ -23,15 +24,15 @@
 
         <link rel="shortcut icon" href="favicon.svg" />
         <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/style-ar.css" />
+        <!-- <link rel="stylesheet" href="css/style-ar.css" /> -->
     </head>
-    <body dir="rtl">
+    <body dir="ltr">
         <div class="top-bar bg-blue text-light">
             <div
                 class="container-fluid d-flex align-items-stretch justify-content-between"
             >
                 <div class="d-flex align-items-center py-1">
-                    <a href="index-ar.html" class="ml-4 d-none d-md-block">
+                    <a href="index.html" class="mr-4 d-none d-md-block">
                         <img
                             src="imgs/svg/logo.svg"
                             alt="logo"
@@ -43,8 +44,8 @@
                         class="d-flex align-items-center"
                     >
                         <a
-                            href="index-ar.html"
-                            class="back-link d-block d-md-none ml-2 align-items-center"
+                            href="index.html"
+                            class="back-link d-flex d-md-none mr-2 align-items-center"
                         >
                             <img
                                 src="imgs/svg/back-arrow.svg"
@@ -52,10 +53,9 @@
                                 class="img-fluid"
                             />
                         </a>
-
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index-ar.html">المرضي</a>
+                                <a href="index.html">Appointments</a>
                             </li>
                         </ol>
                     </nav>
@@ -64,18 +64,18 @@
                     class="align-items-center justify-content-center d-none d-lg-flex"
                 >
                     <div class="top-item px-2 px-xl-3">
-                        <p>العيادة الحالية: العيادة الرئيسية</p>
+                        <p>Current Clinic: Main Clinic</p>
                     </div>
                     <div class="top-item px-2 px-xl-3">
                         <div class="form-group d-flex align-items-center">
-                            <label class="text-light ml-2">تغيير العيادة</label>
+                            <label class="text-light mr-2">Change Clinic</label>
                             <select
                                 class="selectpicker input-border input-text-gray"
                                 id="current-clinic-top"
                             >
-                                <option selected>اسم العيادة</option>
-                                <option value="clinic-2">عيادة 2</option>
-                                <option value="clinic-3">عيادة 3</option>
+                                <option selected>Clinic Name</option>
+                                <option value="clinic-2">clinic 2</option>
+                                <option value="clinic-3">clinic 3</option>
                             </select>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                 <div class="d-flex align-items-center py-2">
                     <a
                         href="#"
-                        class="ml-3 position-relative"
+                        class="mr-3 position-relative"
                         data-target="chats-menu-popup"
                         data-type="side-popup"
                     >
@@ -96,21 +96,21 @@
                             class="img-fluid icon"
                         />
                     </a>
-                    <a href="settings-ar.html" class="ml-3">
+                    <a href="settings.html" class="mr-3">
                         <img
                             src="imgs/svg/settings-icon.svg"
                             alt="settings"
                             class="img-fluid icon"
                         />
                     </a>
-                    <a href="appointments-ar.html" class="ml-3">
+                    <a href="appointments.html" class="mr-3">
                         <img
                             src="imgs/svg/appointment-icon.svg"
                             alt="appointment"
                             class="img-fluid icon"
                         />
                     </a>
-                    <a href="visits-ar.html" class="ml-3">
+                    <a href="visits.html" class="mr-3">
                         <img
                             src="imgs/svg/visits-icon.svg"
                             alt="visits"
@@ -127,11 +127,238 @@
                 </div>
             </div>
         </div>
-
-        <div id="app-container">
+        <div id="app-container" class="appointment-wrapper">
             <main class="main-content">
                 <div class="container mt-3 mb-5">
-                    <a
+                    <div
+                        class="d-flex justify-content-between py-4 align-items-center"
+                    >
+                        <div
+                            class="justify-content-center align-items-center d-none d-lg-flex"
+                        >
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-red py-1 mx-1 px-4"
+                            >
+                                Next
+                            </a>
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-hover-gray py-1 mx-1 px-4"
+                            >
+                                Today
+                            </a>
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-blue py-1 mx-1 px-4"
+                            >
+                                Prev
+                            </a>
+                        </div>
+                        <a
+                            href="#"
+                            type="button"
+                            class="btn btn-red py-2 mx-1 px-3 d-flex d-lg-none justify-content-center align-items-center btns-navigation"
+                        >
+                            <img
+                                src="imgs/svg/arrow-right-white.svg"
+                                class="img-fluid icon-sm mx-0"
+                                alt="next"
+                            />
+                        </a>
+                        <h5 class="mb-0 font-weight-bold">January 2021</h5>
+                        <a
+                            href="#"
+                            type="button"
+                            class="btn btn-red py-2 mx-1 px-3 d-flex d-lg-none justify-content-center align-items-center btns-navigation"
+                        >
+                            <img
+                                src="imgs/svg/arrow-left-white.svg"
+                                class="img-fluid icon-sm mx-0"
+                                alt="prev"
+                            />
+                        </a>
+                        <div class="d-none d-lg-flex">
+                            <ul class="nav nav-appointment my-0" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        class="btn btn-blue py-1 mx-1 px-4 active"
+                                        data-toggle="tab"
+                                        data-target="#month-tab"
+                                        role="tab"
+                                    >
+                                        Month
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        class="btn btn-blue py-1 mx-1 px-4"
+                                        data-toggle="tab"
+                                        data-target="#week-tab"
+                                        role="tab"
+                                    >
+                                        Week
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        class="btn btn-blue py-1 mx-1 px-4"
+                                        data-toggle="tab"
+                                        data-target="#day-tab"
+                                        role="tab"
+                                    >
+                                        Day
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Harum recusandae, corrupti, amet eaque distinctio
+                    perferendis molestiae minus excepturi numquam porro et. Sit,
+                    consectetur. Nostrum, quis dicta minus provident officia,
+                    modi dolores libero asperiores vel, unde quia odio! Sunt sit
+                    nihil aut expedita laborum iure, omnis modi, necessitatibus
+                    eligendi, facere magni suscipit? Esse alias modi laborum
+                    autem ex animi magnam earum voluptate sapiente. Odio dolore
+                    minus, similique harum molestias possimus quasi deserunt
+                    libero perspiciatis et reiciendis quos cum aspernatur
+                    fugiat! Distinctio, architecto tenetur delectus quos
+                    recusandae modi deserunt cum itaque voluptates molestias
+                    soluta aliquid vitae possimus, suscipit sequi? Quibusdam
+                    deleniti, eius perferendis aperiam voluptate dolores
+                    voluptatum quisquam rem impedit veniam ea est, illo corrupti
+                    repellat optio veritatis officiis odit sapiente assumenda
+                    dolorem atque ullam. Illo nisi quia exercitationem
+                    recusandae labore. Obcaecati libero corrupti at, sed eius
+                    fuga error accusamus labore nesciunt quis provident dolorem
+                    eligendi quas a recusandae unde repudiandae dignissimos
+                    necessitatibus distinctio eveniet. Tempore ab, nisi debitis
+                    vel numquam perferendis veniam consectetur asperiores iure,
+                    provident fuga minus reiciendis voluptates voluptatum
+                    incidunt atque. Ipsum ducimus sit assumenda fugiat nostrum
+                    vero numquam, distinctio sed voluptatum magnam pariatur
+                    cupiditate exercitationem at dolor soluta accusamus,
+                    voluptatibus delectus facere dignissimos quos? Molestiae
+                    velit quae voluptatem quasi eos alias at veniam libero
+                    corrupti maiores quo modi maxime sunt ex, excepturi
+                    consequuntur nisi enim. Fugiat voluptatem magni maxime
+                    impedit a facilis laboriosam. Atque magni cum quam officia.
+                    Eveniet tempora quo odio! Quia quidem sapiente ipsam
+                    repellat neque rerum voluptates voluptatem repellendus culpa
+                    saepe mollitia tempore quas, quis quibusdam? Consequuntur,
+                    libero commodi voluptatum, illo adipisci doloribus earum,
+                    omnis iusto nostrum officiis fuga rerum at. Quibusdam
+                    dolorem suscipit beatae eius! Nulla suscipit placeat
+                    blanditiis, labore inventore culpa neque magnam saepe quae
+                    facere deserunt earum nemo laborum, odio animi, molestiae
+                    fuga ipsum atque maiores at dolore reprehenderit.
+                    Perferendis atque quod sequi facilis. Quasi, nostrum numquam
+                    nesciunt laboriosam totam quidem amet, laborum provident,
+                    saepe voluptatibus unde ducimus delectus quia molestiae
+                    sint? Possimus, laborum. Possimus provident deleniti,
+                    consectetur iusto nobis, veniam voluptate, temporibus quia
+                    commodi ipsam laborum ipsa hic voluptatibus totam
+                    repudiandae. Assumenda, nesciunt sapiente provident magnam
+                    optio tempora libero saepe porro at dolorum omnis ratione
+                    qui necessitatibus molestiae explicabo similique eum
+                    repudiandae. Magnam, fuga ut maiores officiis eligendi
+                    quaerat eius voluptatum pariatur voluptates mollitia saepe
+                    qui. Quam libero cupiditate tempora explicabo illum
+                    reiciendis iste quasi repellat. Eius, vitae! Harum odio hic
+                    nam unde eius ipsa voluptas ducimus. Ut suscipit fugit modi.
+                    Eligendi delectus libero aliquid repellat, corrupti quia est
+                    necessitatibus officiis consequatur repudiandae. Quaerat
+                    sed, aliquam nemo eum commodi aspernatur autem omnis
+                    inventore dolor a delectus aut atque distinctio reiciendis,
+                    error quibusdam repudiandae, eveniet possimus quisquam
+                    consectetur pariatur deserunt illo obcaecati iste! Eveniet
+                    adipisci neque doloremque soluta nisi similique quibusdam,
+                    dicta asperiores maxime illum itaque quia voluptas
+                    doloribus, praesentium officia? Explicabo vero ducimus a ut
+                    sapiente aliquam fugit ex expedita minus corrupti magni,
+                    atque optio! Quae repudiandae velit libero voluptatem
+                    delectus expedita, numquam officia nisi tempore aliquid
+                    deserunt, molestiae nemo adipisci, nobis enim ea? Quas
+                    quaerat esse, doloremque exercitationem praesentium numquam
+                    qui aliquam! Reprehenderit exercitationem, ut assumenda
+                    culpa deserunt, animi et dolore vitae quam laboriosam
+                    excepturi, perferendis aliquid omnis optio maxime rerum enim
+                    cumque porro. Ut sunt corporis eaque nostrum iste minus
+                    aliquam iure laborum vero mollitia! Nihil non deserunt
+                    suscipit eius iure adipisci alias? Facere ullam natus eum
+                    perspiciatis nesciunt cupiditate explicabo sapiente impedit
+                    repellendus adipisci harum id temporibus, fugit et
+                    aspernatur corrupti. Beatae nihil molestiae, quas
+                    perferendis rerum dolorum sint fugiat doloribus est culpa
+                    similique omnis assumenda sed asperiores porro, dignissimos
+                    animi officiis quo quibusdam eaque autem suscipit hic. Cum
+                    corrupti esse animi ex placeat consectetur suscipit aliquam
+                    nobis, expedita alias distinctio dolorem cupiditate nihil
+                    facilis magnam. Fugiat aut rerum ea ullam veritatis ipsum
+                    autem obcaecati necessitatibus numquam, ipsa delectus
+                    facilis. Explicabo autem quod ducimus. Velit corporis ipsam
+                    iusto est exercitationem impedit tenetur aspernatur
+                    excepturi! Nulla tempore ipsa ipsum itaque iure fugit animi
+                    corrupti nostrum ducimus? Id odio voluptatem vero qui!
+                    Cupiditate suscipit, adipisci, et commodi quasi atque rem
+                    consequatur architecto molestias libero odit doloremque
+                    rerum expedita fugit, sed assumenda eligendi numquam fuga
+                    veniam natus quam? Qui deleniti earum in, velit dolorum
+                    repudiandae tenetur odio! Obcaecati suscipit accusantium
+                    harum voluptas distinctio unde illo minima beatae nemo
+                    veritatis eveniet cupiditate corrupti rem, laboriosam
+                    consequuntur modi laudantium! Similique dignissimos
+                    veritatis harum fuga? Tempora voluptatem nulla, minus ut
+                    libero doloremque asperiores temporibus voluptatum,
+                    recusandae quisquam consectetur aut dicta aperiam odit
+                    magnam molestias reprehenderit rem facere sint dolore?
+                    Dignissimos molestiae, ex, magni eligendi corrupti cumque
+                    quae dolores itaque, numquam commodi omnis enim obcaecati id
+                    inventore sed optio asperiores! Mollitia vel provident
+                    assumenda, distinctio aperiam sed architecto doloribus dolor
+                    eaque asperiores minima facilis deserunt est ab, a
+                    recusandae id eum aspernatur aliquam? Quisquam vitae enim
+                    quod nobis recusandae neque amet, voluptatibus id aperiam
+                    fuga officiis esse ex laboriosam reiciendis eius facere
+                    voluptate eveniet sequi, illum dignissimos perferendis,
+                    tempore nemo ea sit? Alias pariatur odit error at modi, quam
+                    adipisci blanditiis deleniti, ex corporis rerum repudiandae
+                    harum voluptas laboriosam obcaecati, impedit tenetur
+                    doloremque similique inventore tempore? Quas, quaerat magni
+                    delectus laudantium ducimus veritatis cupiditate labore
+                    dicta? Harum doloribus nobis officiis iure eos explicabo
+                    itaque quidem voluptates cumque numquam ipsum aut
+                    cupiditate, delectus facilis esse quae, molestias
+                    reprehenderit eum, qui quod. Libero perferendis quos
+                    laudantium! Similique eaque quibusdam blanditiis eveniet
+                    autem suscipit magni. Nemo veniam rem illum! Cum debitis
+                    doloribus odit eligendi eius beatae? Porro eaque cupiditate
+                    dolore iure aliquid unde cumque molestiae vitae voluptates
+                    dignissimos repudiandae aut distinctio eos mollitia,
+                    asperiores numquam! Molestias natus consequatur, eligendi
+                    nulla laudantium iusto deserunt facere, ea ipsum ex eos sit.
+                    Porro repudiandae cum voluptates dolore illum facere
+                    praesentium maiores accusamus quidem perspiciatis ipsam
+                    quibusdam veritatis dolorem reiciendis modi placeat, fuga
+                    optio totam, alias minima nostrum magni at! Ad voluptas iste
+                    illo aspernatur mollitia ab, tempore aperiam, enim vitae
+                    culpa voluptatibus animi atque maxime at sunt quam qui
+                    explicabo! Pariatur harum cupiditate quibusdam impedit
+                    tempore corporis, libero eos sint nihil vel reiciendis sunt
+                    quam similique quod beatae qui eligendi dolore aperiam
+                    ducimus soluta nesciunt rem laboriosam? Accusantium alias
+                    doloremque odit.
+                    <!-- <a
                         href="#"
                         type="button"
                         class="btn btn-blue py-1 d-none d-md-inline-block my-4 px-4"
@@ -144,7 +371,7 @@
                             alt="add"
                             class="img-fluid icon-sm"
                         />
-                        اضافة
+                        Add
                     </a>
                     <a
                         href="#"
@@ -175,7 +402,7 @@
                                     alt="add"
                                     class="img-fluid icon-sm"
                                 />
-                                اضافة
+                                Add
                             </a>
                             <a
                                 href="#"
@@ -216,12 +443,12 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        المريض: محمد احمد
+                                        Patient: Ahmed Mohamed
                                     </p>
-                                    <p class="mb-">التليفون: 01878999999</p>
-                                    <p class="mb-">الكود: 5</p>
+                                    <p class="mb-">Phone: 01878999999</p>
+                                    <p class="mb-">Code: 5</p>
                                     <p class="mb-">
-                                        الموبايل ابليكيشن :
+                                        Mobile App:
                                         <svg
                                             class="mx-2"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -246,7 +473,7 @@
                                         type="button"
                                         data-toggle="modal"
                                         data-target="#delete-modal"
-                                        class="ml-2"
+                                        class="mr-2"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -334,12 +561,12 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        المريض: محمد احمد
+                                        Patient: Ahmed Mohamed
                                     </p>
-                                    <p class="mb-">التليفون: 01878999999</p>
-                                    <p class="mb-">الكود: 5</p>
+                                    <p class="mb-">Phone: 01878999999</p>
+                                    <p class="mb-">Code: 5</p>
                                     <p class="mb-">
-                                        الموبايل ابليكيشن :
+                                        Mobile App:
                                         <svg
                                             class="mx-2"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -364,7 +591,7 @@
                                         type="button"
                                         data-toggle="modal"
                                         data-target="#delete-modal"
-                                        class="ml-2"
+                                        class="mr-2"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -452,12 +679,12 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        المريض: محمد احمد
+                                        Patient: Ahmed Mohamed
                                     </p>
-                                    <p class="mb-">التليفون: 01878999999</p>
-                                    <p class="mb-">الكود: 5</p>
+                                    <p class="mb-">Phone: 01878999999</p>
+                                    <p class="mb-">Code: 5</p>
                                     <p class="mb-">
-                                        الموبايل ابليكيشن :
+                                        Mobile App:
                                         <svg
                                             class="mx-2"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -482,7 +709,7 @@
                                         type="button"
                                         data-toggle="modal"
                                         data-target="#delete-modal"
-                                        class="ml-2"
+                                        class="mr-2"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -570,12 +797,12 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        المريض: محمد احمد
+                                        Patient: Ahmed Mohamed
                                     </p>
-                                    <p class="mb-">التليفون: 01878999999</p>
-                                    <p class="mb-">الكود: 5</p>
+                                    <p class="mb-">Phone: 01878999999</p>
+                                    <p class="mb-">Code: 5</p>
                                     <p class="mb-">
-                                        الموبايل ابليكيشن :
+                                        Mobile App:
                                         <svg
                                             class="mx-2"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -600,7 +827,7 @@
                                         type="button"
                                         data-toggle="modal"
                                         data-target="#delete-modal"
-                                        class="ml-2"
+                                        class="mr-2"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -688,12 +915,12 @@
                             >
                                 <div class="col-8">
                                     <p class="font-weight-bold mb-1">
-                                        المريض: محمد احمد
+                                        Patient: Ahmed Mohamed
                                     </p>
-                                    <p class="mb-">التليفون: 01878999999</p>
-                                    <p class="mb-">الكود: 5</p>
+                                    <p class="mb-">Phone: 01878999999</p>
+                                    <p class="mb-">Code: 5</p>
                                     <p class="mb-">
-                                        الموبايل ابليكيشن :
+                                        Mobile App:
                                         <svg
                                             class="mx-2"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -718,7 +945,7 @@
                                         type="button"
                                         data-toggle="modal"
                                         data-target="#delete-modal"
-                                        class="ml-2"
+                                        class="mr-2"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -808,10 +1035,10 @@
                         <thead>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col">المريض</th>
-                                <th scope="col">التليفون</th>
-                                <th scope="col">الكود</th>
-                                <th scope="col">الموبايل ابليكيشن</th>
+                                <th scope="col">Patient</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Code</th>
+                                <th scope="col">Mobile App</th>
                                 <th scope="col">
                                     <form>
                                         <div class="form-group mb-0">
@@ -860,7 +1087,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>محمد احمد</td>
+                                <td>Ahmed Adel</td>
                                 <td>01878999999</td>
                                 <td>5</td>
                                 <td>
@@ -879,7 +1106,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="ml-5"
+                                            class="mr-5"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -919,7 +1146,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>محمد احمد</td>
+                                <td>Ahmed Adel</td>
                                 <td>01878999999</td>
                                 <td>5</td>
                                 <td>
@@ -938,7 +1165,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="ml-5"
+                                            class="mr-5"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -978,7 +1205,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>محمد احمد</td>
+                                <td>Ahmed Adel</td>
                                 <td>01878999999</td>
                                 <td>5</td>
                                 <td>
@@ -997,7 +1224,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="ml-5"
+                                            class="mr-5"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1037,7 +1264,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>محمد احمد</td>
+                                <td>Ahmed Adel</td>
                                 <td>01878999999</td>
                                 <td>5</td>
                                 <td>
@@ -1056,7 +1283,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="ml-5"
+                                            class="mr-5"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1096,7 +1323,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>محمد احمد</td>
+                                <td>Ahmed Adel</td>
                                 <td>01878999999</td>
                                 <td>5</td>
                                 <td>
@@ -1115,7 +1342,7 @@
                                             type="button"
                                             data-toggle="modal"
                                             data-target="#delete-modal"
-                                            class="ml-5"
+                                            class="mr-5"
                                         >
                                             <img
                                                 src="imgs/svg/delete-icon.svg"
@@ -1138,9 +1365,49 @@
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table> -->
                 </div>
             </main>
+            <div class="d-flex d-lg-none w-100 justify-content-center hh">
+                <ul class="nav nav-appointment my-0" role="tablist">
+                    <li class="nav-item mx-1" role="presentation">
+                        <a
+                            href="#"
+                            type="button"
+                            class="btn btn-blue py-1 px-4 active"
+                            data-toggle="tab"
+                            data-target="#month-tab"
+                            role="tab"
+                        >
+                            Month
+                        </a>
+                    </li>
+                    <li class="nav-item mx-1" role="presentation">
+                        <a
+                            href="#"
+                            type="button"
+                            class="btn btn-blue py-1 px-4"
+                            data-toggle="tab"
+                            data-target="#week-tab"
+                            role="tab"
+                        >
+                            Week
+                        </a>
+                    </li>
+                    <li class="nav-item mx-1" role="presentation">
+                        <a
+                            href="#"
+                            type="button"
+                            class="btn btn-blue py-1 px-4"
+                            data-toggle="tab"
+                            data-target="#day-tab"
+                            role="tab"
+                        >
+                            Day
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div class="side-popup profile-menu" id="profile-menu-popup">
                 <button class="btn close-popup">
                     <img
@@ -1150,63 +1417,63 @@
                     />
                 </button>
 
-                <div class="text-left">
-                    <h2 class="mt-4 mb-2 px-3">Dr Demo</h2>
-                    <p class="px-3 mb-3">mohamed@yahoo.com</p>
-                </div>
+                <h2 class="mt-4 mb-2 px-3">Dr Demo</h2>
+                <p class="px-3 mb-3">mohamed@yahoo.com</p>
                 <div class="d-block d-lg-none px-3 mt-3 pt-2">
-                    <p class="mb-3">العيادة الحالية : العيادة الرئيسية</p>
+                    <p class="mb-3">Current Clinic: Main Clinic</p>
                     <div class="form-group d-flex align-items-center">
-                        <label class="text-light ml-2 mb-0">تغييرالعيادة</label>
+                        <label class="text-light mr-2 mb-0"
+                            >Change Clinic</label
+                        >
                         <select
                             class="selectpicker input-border input-text-gray"
                             id="current-clinic-side"
                         >
-                            <option selected>اسم العيادة</option>
-                            <option value="clinic-2">عيادة 2</option>
-                            <option value="clinic-3">عيادة 3</option>
+                            <option selected>Clinic Name</option>
+                            <option value="clinic-2">clinic 2</option>
+                            <option value="clinic-3">clinic 3</option>
                         </select>
                     </div>
                 </div>
                 <ul class="profile-nav py-3">
                     <li>
-                        <a href="patients.html">
+                        <a href="appointments-ar.html">
                             <img
                                 src="imgs/svg/profile-menu/language.svg"
                                 alt="language"
                                 class="img-fluid mx-2"
                             />
-                            تغيير اللغة الي: الإنجليزية</a
+                            Change language to: Arabic</a
                         >
                     </li>
                     <li>
-                        <a href="settings-ar.html">
+                        <a href="settings.html">
                             <img
                                 src="imgs/svg/settings-icon.svg"
                                 alt="settings"
                                 class="img-fluid mx-2"
                             />
-                            الاعدادات</a
+                            Settings</a
                         >
                     </li>
                     <li>
-                        <a href="appointments-ar.html">
+                        <a href="appointments.html">
                             <img
                                 src="imgs/svg/appointment-icon.svg"
                                 alt="appointments"
                                 class="img-fluid mx-2"
                             />
-                            المواعيد</a
+                            Appointments</a
                         >
                     </li>
                     <li>
-                        <a href="visits-ar.html">
+                        <a href="visits.html">
                             <img
                                 src="imgs/svg/profile-menu/eye.svg"
                                 alt="visits"
                                 class="img-fluid mx-2"
                             />
-                            الزيارات</a
+                            Visits</a
                         >
                     </li>
                     <li>
@@ -1216,7 +1483,7 @@
                                 alt="change password"
                                 class="img-fluid mx-2"
                             />
-                            تغيير كلمة المرور</a
+                            Change Password</a
                         >
                     </li>
                     <li>
@@ -1226,7 +1493,7 @@
                                 alt="logout"
                                 class="img-fluid mx-2"
                             />
-                            تسجيل الخروج</a
+                            Logout</a
                         >
                     </li>
                 </ul>
@@ -1242,86 +1509,86 @@
 
                 <ul class="chats-nav mt-4 mb-3">
                     <li>
-                        <a href="settings.html" class="px-3">
+                        <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">قيد التنفيذ</span>
-                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
                                 <span class="notification">2</span>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="settings-business-hours-ar.html" class="px-3">
+                        <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">قيد التنفيذ</span>
-                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
                                 <span class="notification">2</span>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="settings-business-hours-ar.html" class="px-3">
+                        <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">قيد التنفيذ</span>
-                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="settings-business-hours-ar.html" class="px-3">
+                        <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">قيد التنفيذ</span>
-                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
                                 <span class="notification">2</span>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="settings-business-hours-ar.html" class="px-3">
+                        <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">قيد التنفيذ</span>
-                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="settings-business-hours-ar.html" class="px-3">
+                        <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">قيد التنفيذ</span>
-                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="settings-business-hours-ar.html" class="px-3">
+                        <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">انتهت</span>
-                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="status">finished</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="settings-business-hours-ar.html" class="px-3">
+                        <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">قيد التنفيذ</span>
-                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="settings-business-hours-ar.html" class="px-3">
+                        <a href="#" class="px-3">
                             <div class="content">
                                 <span class="date">01-03-2012</span>
-                                <span class="status">قيد التنفيذ</span>
-                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
                             </div>
                         </a>
                     </li>
@@ -1337,7 +1604,7 @@
                 </button>
                 <form class="my-4">
                     <div class="form-group mb-3 px-3">
-                        <label>كود المريض</label>
+                        <label>Patient Code</label>
                         <input
                             type="text"
                             readonly
@@ -1347,7 +1614,7 @@
                     </div>
 
                     <div class="form-group mb-3 px-3">
-                        <label>المريض</label>
+                        <label>Patient</label>
                         <input
                             type="text"
                             class="form-control"
@@ -1356,7 +1623,7 @@
                     </div>
 
                     <div class="form-group mb-3 px-3">
-                        <label>التليفون</label>
+                        <label>Phone</label>
                         <input
                             type="text"
                             class="form-control"
@@ -1364,17 +1631,17 @@
                         />
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>المدينة</label>
+                        <label>City</label>
                         <div class="d-flex align-items-stretch">
                             <select class="selectpicker">
-                                <option selected>اختر المدينة</option>
+                                <option selected>Choose city</option>
                                 <option value="1">Giza</option>
                                 <option value="2">Cairo</option>
                             </select>
 
                             <a
                                 href="#"
-                                class="btn btn-red mr-2 btn-add"
+                                class="btn btn-red ml-2 btn-add"
                                 data-toggle="modal"
                                 data-target="#add-city-modal"
                             >
@@ -1386,17 +1653,17 @@
                         </div>
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>المنطقة</label>
+                        <label>Region</label>
                         <div class="d-flex align-items-stretch">
                             <select class="selectpicker">
-                                <option selected>اختر المنطقة</option>
+                                <option selected>Choose REgion</option>
                                 <option value="1">Giza</option>
                                 <option value="2">Cairo</option>
                             </select>
 
                             <a
                                 href="#"
-                                class="btn btn-red mr-2 btn-add"
+                                class="btn btn-red ml-2 btn-add"
                                 data-toggle="modal"
                                 data-target="#add-city-modal"
                             >
@@ -1408,7 +1675,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>تاريخ الميلاد</label>
+                        <label>Date of birth</label>
                         <div class="input-group input-with-img img-other-side">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
@@ -1428,27 +1695,27 @@
                         </div>
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>النوع</label>
+                        <label>Gender</label>
                         <select class="selectpicker">
-                            <option selected>اختر النوع</option>
-                            <option value="1">ذكر</option>
-                            <option value="2">انثى</option>
+                            <option selected>Choose Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
                         </select>
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>الايميل</label>
+                        <label>Email</label>
                         <input type="email" class="form-control" value="" />
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>ملاحظات</label>
+                        <label>Notes</label>
                         <textarea rows="4" class="form-control"></textarea>
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>اسم العائلة</label>
+                        <label>Family Name</label>
                         <input type="text" class="form-control" value="" />
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>عدد الاطفال</label>
+                        <label>Number of children</label>
                         <div class="input-group input-with-img img-other-side">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
@@ -1467,7 +1734,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>العمر</label>
+                        <label>Age</label>
                         <div class="input-group input-with-img img-other-side">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
@@ -1486,9 +1753,9 @@
                         </div>
                     </div>
                     <div class="form-group mb-3 px-3">
-                        <label>فصيلة الدم</label>
+                        <label>Blood Type</label>
                         <select class="selectpicker">
-                            <option selected>اختر فصيلة الدم</option>
+                            <option selected>Choose Blood Type</option>
                             <option value="1">A</option>
                             <option value="2">B</option>
                             <option value="3">AB</option>
@@ -1497,7 +1764,7 @@
                     </div>
                     <div class="text-center mt-4">
                         <button type="submit" class="btn btn-red px-3">
-                            حفظ
+                            Save
                         </button>
                     </div>
                 </form>
@@ -1562,7 +1829,7 @@
                     >
                         <form class="my-4">
                             <div class="form-group mb-3 px-3">
-                                <label>كود المريض</label>
+                                <label>Patient Code</label>
                                 <input
                                     type="text"
                                     readonly
@@ -1572,7 +1839,7 @@
                             </div>
 
                             <div class="form-group mb-3 px-3">
-                                <label>المريض</label>
+                                <label>Patient</label>
                                 <input
                                     type="text"
                                     class="form-control"
@@ -1581,7 +1848,7 @@
                             </div>
 
                             <div class="form-group mb-3 px-3">
-                                <label>التليفون</label>
+                                <label>Phone</label>
                                 <input
                                     type="text"
                                     class="form-control"
@@ -1589,17 +1856,17 @@
                                 />
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>المدينة</label>
+                                <label>City</label>
                                 <div class="d-flex align-items-stretch">
                                     <select class="selectpicker">
-                                        <option selected>اختر المدينة</option>
+                                        <option selected>Choose city</option>
                                         <option value="1">Giza</option>
                                         <option value="2">Cairo</option>
                                     </select>
 
                                     <a
                                         href="#"
-                                        class="btn btn-red mr-2 btn-add"
+                                        class="btn btn-red ml-2 btn-add"
                                         data-toggle="modal"
                                         data-target="#add-city-modal"
                                     >
@@ -1611,17 +1878,17 @@
                                 </div>
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>المنطقة</label>
+                                <label>Region</label>
                                 <div class="d-flex align-items-stretch">
                                     <select class="selectpicker">
-                                        <option selected>اختر المنطقة</option>
+                                        <option selected>Choose REgion</option>
                                         <option value="1">Giza</option>
                                         <option value="2">Cairo</option>
                                     </select>
 
                                     <a
                                         href="#"
-                                        class="btn btn-red mr-2 btn-add"
+                                        class="btn btn-red ml-2 btn-add"
                                         data-toggle="modal"
                                         data-target="#add-city-modal"
                                     >
@@ -1633,7 +1900,7 @@
                                 </div>
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>تاريخ الميلاد</label>
+                                <label>Date of birth</label>
                                 <div
                                     class="input-group input-with-img img-other-side"
                                 >
@@ -1655,15 +1922,15 @@
                                 </div>
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>النوع</label>
+                                <label>Gender</label>
                                 <select class="selectpicker">
-                                    <option selected>اختر النوع</option>
-                                    <option value="1">ذكر</option>
-                                    <option value="2">انثى</option>
+                                    <option selected>Choose Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
                                 </select>
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>الايميل</label>
+                                <label>Email</label>
                                 <input
                                     type="email"
                                     class="form-control"
@@ -1671,14 +1938,14 @@
                                 />
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>ملاحظات</label>
+                                <label>Notes</label>
                                 <textarea
                                     rows="4"
                                     class="form-control"
                                 ></textarea>
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>اسم العائلة</label>
+                                <label>Family Name</label>
                                 <input
                                     type="text"
                                     class="form-control"
@@ -1686,7 +1953,7 @@
                                 />
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>عدد الاطفال</label>
+                                <label>Number of children</label>
                                 <div
                                     class="input-group input-with-img img-other-side"
                                 >
@@ -1707,7 +1974,7 @@
                                 </div>
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>العمر</label>
+                                <label>Age</label>
                                 <div
                                     class="input-group input-with-img img-other-side"
                                 >
@@ -1728,9 +1995,9 @@
                                 </div>
                             </div>
                             <div class="form-group mb-3 px-3">
-                                <label>فصيلة الدم</label>
+                                <label>Blood Type</label>
                                 <select class="selectpicker">
-                                    <option selected>اختر فصيلة الدم</option>
+                                    <option selected>Choose Blood Type</option>
                                     <option value="1">A</option>
                                     <option value="2">B</option>
                                     <option value="3">AB</option>
@@ -1739,7 +2006,7 @@
                             </div>
                             <div class="text-center mt-4">
                                 <button type="submit" class="btn btn-red px-3">
-                                    حفظ
+                                    Save
                                 </button>
                             </div>
                         </form>
@@ -1750,7 +2017,7 @@
                         role="tabpanel"
                     >
                         <p class="my-5 py-3 mx-5 text-center font-weight-bold">
-                            لا يوجد زيارات حالية
+                            There are no visits at the current time
                         </p>
                     </div>
                     <div
@@ -1760,6 +2027,14 @@
                     >
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item" role="presentation">
+                                <!-- <a href="#" class="nav-link">
+                                    <img
+                                        src="imgs/svg/attachments.svg"
+                                        alt="attachments"
+                                        class="img-fluid mx-1"
+                                    />
+                                    <span>Attachment</span>
+                                </a> -->
                                 <div class="custom-file">
                                     <input
                                         type="file"
@@ -1775,7 +2050,7 @@
                                             alt="attachments"
                                             class="img-fluid mx-1"
                                         />
-                                        <span>ارفاق مستندات</span>
+                                        <span>Attachment</span>
                                     </label>
                                 </div>
                             </li>
@@ -1786,7 +2061,7 @@
                                         alt="Visits"
                                         class="img-fluid mx-1"
                                     />
-                                    <span>اخذ صورة</span>
+                                    <span>Take Image</span>
                                 </a>
                             </li>
                         </ul>
@@ -1818,7 +2093,7 @@
                         />
                     </button>
                     <h4 class="text-blue font-weight-bold text-center mb-4">
-                        ارسال اشعار
+                        Send Notification
                     </h4>
                     <form class="form">
                         <div
@@ -1833,9 +2108,9 @@
                                     checked
                                 />
                                 <label
-                                    class="custom-control-label ml-5"
+                                    class="custom-control-label mr-5"
                                     for="all-patients"
-                                    >كل المرضي</label
+                                    >All Patients</label
                                 >
                             </div>
                             <div class="custom-control custom-radio mb-3">
@@ -1848,7 +2123,7 @@
                                 <label
                                     class="custom-control-label"
                                     for="selected-only"
-                                    >المختار فقط</label
+                                    >Selected Only</label
                                 >
                             </div>
                         </div>
@@ -1856,13 +2131,13 @@
                             <textarea
                                 rows="5"
                                 class="form-control input-gray input-border"
-                                placeholder="اكتب نص الاشعار"
+                                placeholder="Write Notification text"
                             ></textarea>
                         </div>
 
                         <div class="text-center">
                             <button type="submit" class="btn btn-red px-4 py-2">
-                                ارسال
+                                Send
                             </button>
                         </div>
                     </form>
@@ -1893,11 +2168,11 @@
                         />
                     </button>
                     <h4 class="text-blue font-weight-bold text-center mb-4">
-                        اضف مدينة
+                        Add City
                     </h4>
                     <form class="form">
                         <div class="form-group">
-                            <label>اكتب اسم المدينة</label>
+                            <label>Type City Name</label>
                             <input
                                 class="form-control input-gray input-border"
                             />
@@ -1905,7 +2180,7 @@
 
                         <div class="text-center">
                             <button type="submit" class="btn btn-red px-4 py-2">
-                                اضف
+                                Add
                             </button>
                         </div>
                     </form>
@@ -1936,7 +2211,7 @@
                         />
                     </button>
                     <h4 class="font-weight-bold text-center mb-4">
-                        هل انت متأكد من حذف الخدمة
+                        Are you sure you want to delete?
                     </h4>
                     <img
                         src="imgs/svg/delete-red-icon.svg"
@@ -1948,9 +2223,11 @@
                             class="btn btn-blue px-4 py-2 mx-2"
                             data-dismiss="modal"
                         >
-                            اغلاق
+                            Close
                         </button>
-                        <button class="btn btn-red px-4 py-2 mx-2">حذف</button>
+                        <button class="btn btn-red px-4 py-2 mx-2">
+                            Delete
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1978,7 +2255,7 @@
                             class="img-fluid"
                         />
                     </button>
-                    <h4 class="font-weight-bold text-center mb-4">تم الحفظ</h4>
+                    <h4 class="font-weight-bold text-center mb-4">Saved</h4>
                     <img
                         src="imgs/svg/success-icon.svg"
                         alt="success"
@@ -2010,7 +2287,9 @@
                             class="img-fluid"
                         />
                     </button>
-                    <h4 class="font-weight-bold text-center mb-4">رسالة خطأ</h4>
+                    <h4 class="font-weight-bold text-center mb-4">
+                        An error occured
+                    </h4>
                     <img
                         src="imgs/svg/error-icon.svg"
                         alt="error"
@@ -2040,6 +2319,7 @@
         <script src="vendor/gijgo/js/timepicker.min.js"></script>
         <script src="vendor/gijgo/js/datepicker.min.js"></script>
         <!-- time picker -->
+
         <script src="js/script.js"></script>
         <script>
             $("#date-of-birth").datepicker({

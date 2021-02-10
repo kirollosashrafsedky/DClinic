@@ -161,3 +161,58 @@ table {
 .edit-btn {
     margin-left: 1rem;
 }
+
+.table-appointments {
+    border: 1px solid #fff;
+    color: #fff;
+    tbody {
+        tr {
+            cursor: pointer;
+            td {
+                border: 1px solid #fff;
+                &:first-of-type {
+                    width: 50px;
+                    text-align: center;
+                }
+            }
+            &.status-green {
+                td {
+                    background-color: #5fbe7d;
+
+                    &:first-of-type {
+                        background-color: #56a659;
+                    }
+                }
+            }
+            &.status-orange {
+                td {
+                    background-color: #ff8c00;
+
+                    &:first-of-type {
+                        background-color: #fb6f25;
+                    }
+                }
+            }
+            &.status-brown {
+                td {
+                    background-color: #795548;
+
+                    &:first-of-type {
+                        background-color: #795548;
+                    }
+                }
+            }
+            // for more colors copy and paste this
+
+            // &.status-{color} {
+            //     td {
+            //         background-color: {color-light};
+
+            //         &:first-of-type {
+            //             background-color: {color-dark};
+            //         }
+            //     }
+            // }
+        }
+    }
+}

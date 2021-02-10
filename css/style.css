@@ -28,7 +28,9 @@ body {
   bottom: 0;
   width: 100%;
   padding-top: 61px;
-  height: 100%;
+  height: 100vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
 }
 #app-container .side-menu {
@@ -214,6 +216,15 @@ p {
   color: #000000;
 }
 
+.btn-hover-gray {
+  color: #000000;
+  background-color: transparent;
+  transition: all 0.25s ease;
+}
+.btn-hover-gray:hover, .btn-hover-gray:not(:disabled):not(.disabled):active, .btn-hover-gray:focus, .btn-hover-gray:not(:disabled):not(.disabled):active:focus {
+  background-color: #e3e3e3;
+}
+
 .notification {
   background-color: #ea6666;
   color: #fff;
@@ -356,12 +367,20 @@ ul {
     font-size: 0.8rem;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 390px) {
+  .top-bar .icon {
+    max-width: 18px;
+  }
   .top-bar .breadcrumb {
     font-size: 0.8rem;
   }
   .top-bar .back-link img {
     width: 15px;
+  }
+  .top-bar .profile-btn {
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
   }
 }
 .home-info-cards .container .swiper-container .swiper-slide {
@@ -995,6 +1014,25 @@ textarea.not-resized {
   width: calc(1rem + 2px);
   height: calc(1rem + 2px);
 }
+.custom-switch.custom-switch-bar.custom-switch-bar-white .custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  background-color: #fff;
+}
+.custom-switch.custom-switch-bar.custom-switch-bar-white .custom-control-input:checked ~ .custom-control-label::after {
+  background-color: #ea6666;
+}
+.custom-switch.custom-switch-bar.custom-switch-bar-white .custom-control-label {
+  transform: scale(0.8);
+  cursor: pointer;
+}
+.custom-switch.custom-switch-bar.custom-switch-bar-white .custom-control-label::before {
+  background-color: #cfcfcf;
+  border-width: 0 !important;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+.custom-switch.custom-switch-bar.custom-switch-bar-white .custom-control-label::after {
+  background-color: #b5b5b5;
+}
 .custom-switch.custom-switch-box {
   padding-left: 2rem;
 }
@@ -1313,6 +1351,18 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .side-popup .tab-pane .nav-tabs li .nav-link img {
   width: 20px;
 }
+.side-popup .tab-pane .nav-tabs li .nav-link .img-bg-red {
+  background-color: #ea6666;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.side-popup .tab-pane .nav-tabs li .nav-link .img-bg-red img {
+  width: 15px;
+}
 
 @media (max-width: 767.5px) {
   .side-popup .nav-tabs {
@@ -1331,6 +1381,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .side-popup .nav-tabs li .nav-link.active svg path,
 .side-popup .nav-tabs li .nav-link.active svg text {
     fill: #fff;
+  }
+}
+@media (max-width: 400px) {
+  .side-popup .nav-tabs li .nav-link img {
+    width: 30px;
   }
 }
 table.settings-table {
@@ -1454,6 +1509,39 @@ table.settings-table-2 tr th:nth-of-type(2) {
 
 .edit-btn {
   margin-left: 1rem;
+}
+
+.table-appointments {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.table-appointments tbody tr {
+  cursor: pointer;
+}
+.table-appointments tbody tr td {
+  border: 1px solid #fff;
+}
+.table-appointments tbody tr td:first-of-type {
+  width: 50px;
+  text-align: center;
+}
+.table-appointments tbody tr.status-green td {
+  background-color: #5fbe7d;
+}
+.table-appointments tbody tr.status-green td:first-of-type {
+  background-color: #56a659;
+}
+.table-appointments tbody tr.status-orange td {
+  background-color: #ff8c00;
+}
+.table-appointments tbody tr.status-orange td:first-of-type {
+  background-color: #fb6f25;
+}
+.table-appointments tbody tr.status-brown td {
+  background-color: #795548;
+}
+.table-appointments tbody tr.status-brown td:first-of-type {
+  background-color: #795548;
 }
 
 .modal.fade .modal-dialog {
@@ -2262,6 +2350,74 @@ table.settings-table-2 tr th:nth-of-type(2) {
   .collapse-card .collapse-row .collapse-indicator img {
     width: 8px;
   }
+}
+.nav-appointment .btn-blue {
+  min-width: 90px;
+}
+.nav-appointment .btn-blue.active {
+  color: #ffffff;
+  background-color: #ea6666;
+}
+.nav-appointment .btn-blue.active:hover, .nav-appointment .btn-blue.active:not(:disabled):not(.disabled):active, .nav-appointment .btn-blue.active:focus, .nav-appointment .btn-blue.active:not(:disabled):not(.disabled):active:focus {
+  background-color: #c54e4e;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  color: #ffffff;
+}
+
+.btns-navigation img {
+  width: 10px;
+}
+
+@media (max-width: 991.5px) {
+  #app-container.appointment-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+  #app-container.appointment-wrapper main.main-content {
+    flex: 1;
+  }
+
+  .nav-appointment {
+    height: 70px;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  .nav-appointment li {
+    flex: 1;
+  }
+  .nav-appointment li a {
+    width: 100%;
+  }
+  .nav-appointment li a.btn-blue {
+    min-width: 0;
+  }
+}
+.appointments-week-swiper .swiper-container {
+  padding-bottom: 30px;
+}
+.appointments-week-swiper .swiper-container .swiper-wrapper {
+  align-items: stretch;
+}
+.appointments-week-swiper .swiper-container .swiper-slide {
+  min-width: 300px;
+  flex: 1;
+  height: auto;
+  border: 1px solid #dee2e6;
+  border-right-width: 0;
+}
+.appointments-week-swiper .swiper-container .swiper-slide .slide-heading {
+  text-align: center;
+  padding: 5px 10px;
+  background-color: #48a3da;
+  color: #ffffff;
+}
+.appointments-week-swiper .swiper-container .swiper-slide .slide-content {
+  padding: 0 10px;
+}
+.appointments-week-swiper .swiper-container .swiper-slide:last-of-type {
+  border-right-width: 1px;
 }
 
 /*# sourceMappingURL=style.css.map */
