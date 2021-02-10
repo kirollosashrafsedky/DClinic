@@ -52,3 +52,14 @@
         }
     }
 }
+@media (max-width: 575.5px) {
+    .branches-grid.max-700 {
+        .card {
+            border-left: 1px solid #e3e3e3;
+            border-right-width: 0;
+            &:last-of-type {
+                border-left-width: 0;
+            }
+        }
+    }
+}

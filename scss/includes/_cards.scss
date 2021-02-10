@@ -128,7 +128,8 @@
 }
 
 .home-grid,
-.settings-grid {
+.settings-grid,
+.branches-grid {
     width: 100%;
     margin: 0 auto;
     display: grid;
@@ -172,6 +173,105 @@
         }
         img {
             width: 40%;
+        }
+    }
+}
+
+#app-container main.branches-grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    &::after {
+        display: none;
+    }
+    & > .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 325px;
+        max-height: 600px;
+    }
+}
+.branches-grid {
+    max-width: 900px;
+    grid-template-columns: repeat(3, 1fr);
+    .card {
+        .content {
+            width: 100%;
+        }
+        img {
+            height: 90px;
+            width: auto;
+        }
+    }
+    &.max-700 {
+        .card {
+            img {
+                height: 65px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.5px) {
+    .branches-grid {
+        .card {
+            img {
+                height: 65px;
+            }
+        }
+    }
+}
+
+@media (max-width: 575.5px) {
+    #app-container main.branches-grid-container {
+        display: block;
+        & > .container {
+            display: block;
+            min-height: 325px;
+            max-height: none;
+        }
+    }
+    .branches-grid:not(.max-700) {
+        justify-items: center;
+        // max-width: 900px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+        .card {
+            padding: 20px 10px;
+            flex-direction: row;
+            max-width: 350px;
+            width: 100%;
+
+            .content {
+                width: 100%;
+            }
+            img {
+                height: auto;
+                width: 45px;
+            }
+        }
+    }
+    .branches-grid.max-700 {
+        grid-gap: 0;
+        border-bottom: 1px solid #e3e3e3;
+        .card {
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            border-radius: 0;
+            background-color: #fff;
+            padding: 10px 5px;
+            flex-direction: column;
+            width: 100%;
+            border-right: 1px solid #e3e3e3;
+            &:last-of-type {
+                border-right-width: 0;
+            }
+            .content {
+                font-size: 0.8rem;
+            }
+            img {
+                height: 30px;
+            }
         }
     }
 }

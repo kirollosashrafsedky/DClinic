@@ -1,0 +1,206 @@
+.collapse-card {
+    font-weight: $regular;
+
+    .collapse-card-header {
+        width: 100%;
+        border-radius: 3px;
+        color: $textLight;
+        background-color: $blue;
+        transition: $defaultTransition;
+        .collapse-indicator {
+            width: 25px;
+            height: 25px;
+            background-color: $red;
+            flex-shrink: 0;
+            position: relative;
+            color: $textLight;
+            border-radius: 3px;
+            font-size: 1.6rem;
+            &::after {
+                transition: $defaultTransition;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                content: "+";
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    .collapse-card-btns {
+        a {
+            font-size: 0.7rem;
+
+            img {
+                width: 18px;
+            }
+            &.btn-lg {
+                font-size: 0.9rem;
+            }
+        }
+    }
+    &.open {
+        .collapse-card-header {
+            background-color: $red;
+            .collapse-indicator {
+                background-color: $blue;
+                &::after {
+                    content: "-";
+                }
+            }
+            .collapse-card-btns {
+                .btn-red {
+                    color: $textLight;
+                    background-color: $blue;
+                    &:hover,
+                    &:not(:disabled):not(.disabled):active,
+                    &:focus,
+                    &:not(:disabled):not(.disabled):active:focus {
+                        background-color: #3b91c7;
+                        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+                        color: $textLight;
+                    }
+                }
+            }
+        }
+    }
+    .collapse-row {
+        &.bg-gray-dark {
+            background-color: #e2e2e2;
+        }
+        &.bg-gray-light {
+            background-color: #f5f5f5;
+        }
+        .collapse-indicator {
+            width: 20px;
+            height: 20px;
+            background-color: $blue;
+            flex-shrink: 0;
+            position: relative;
+            color: $textLight;
+            border-radius: 3px;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(180deg);
+            img {
+                width: 10px;
+            }
+            &.collapse-indicator-clock {
+                background-color: transparent;
+                width: 25px;
+                height: 25px;
+                transform: rotate(0deg);
+                img {
+                    width: 15px;
+                }
+            }
+        }
+        &:hover {
+            background-color: #d6d6d6;
+        }
+    }
+}
+
+@media (max-width: 575.5px) {
+    .collapse-card {
+        font-size: 0.8rem;
+
+        .collapse-card-header {
+            .collapse-indicator {
+                width: 20px;
+                height: 20px;
+                font-size: 1.2rem;
+            }
+            .btn-red {
+                background-color: transparent;
+                &:hover,
+                &:not(:disabled):not(.disabled):active,
+                &:focus,
+                &:not(:disabled):not(.disabled):active:focus {
+                    background-color: transparent;
+                    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+                    color: $textLight;
+                }
+            }
+        }
+        .collapse-card-btns {
+            a {
+                img {
+                    width: 15px;
+                }
+                &.btn-lg {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+        .collapse-row {
+            .collapse-indicator {
+                width: 18px;
+                height: 18px;
+                font-size: 1.2rem;
+                &.collapse-indicator-clock {
+                    width: 15px;
+                    height: 15px;
+                    img {
+                        width: 12px;
+                    }
+                }
+            }
+        }
+        &.open {
+            .collapse-card-header {
+                .collapse-card-btns {
+                    .btn-red {
+                        background-color: transparent;
+                        &:hover,
+                        &:not(:disabled):not(.disabled):active,
+                        &:focus,
+                        &:not(:disabled):not(.disabled):active:focus {
+                            background-color: transparent;
+                            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+                            color: $textLight;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .collapse-card {
+        font-size: 0.7rem;
+        .collapse-card-header {
+            .collapse-indicator {
+                width: 15px;
+                height: 15px;
+                font-size: 1rem;
+            }
+        }
+        .collapse-card-btns {
+            a {
+                font-size: 0.6rem;
+
+                img {
+                    width: 15px;
+                }
+            }
+        }
+        .collapse-row {
+            .collapse-indicator {
+                width: 12px;
+                height: 12px;
+                font-size: 1rem;
+                img {
+                    width: 8px;
+                }
+            }
+        }
+    }
+}

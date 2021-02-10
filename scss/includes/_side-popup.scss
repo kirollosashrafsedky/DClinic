@@ -3,7 +3,7 @@
     color: #fff;
     position: absolute;
     width: 350px;
-    right: -360px;
+    right: -500px;
     transition: right 0.2s ease, position 0s ease, opacity 0.1s ease;
     flex-shrink: 0;
     top: $offsetTop - 1;
@@ -30,6 +30,9 @@
         position: relative;
         top: -1px;
         right: 0;
+    }
+    &.form-menu-lg {
+        width: 450px;
     }
 }
 
@@ -208,6 +211,9 @@
 
 .side-popup.form-menu {
     font-size: 1.1rem;
+    label {
+        color: $textLight;
+    }
     &.form-white {
         background-color: #f9f9f9 !important;
         color: $textDark;

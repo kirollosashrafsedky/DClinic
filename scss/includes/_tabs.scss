@@ -108,40 +108,71 @@
         }
     }
 }
-// @media (max-width: 767.5px) {
-//     .nav-tabs {
-//         border-bottom-width: 0;
 
-//         li {
-//             flex: none;
-//         }
-//     }
-// }
+.side-popup .nav-tabs {
+    margin-top: 25px;
+    width: 100%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    li {
+        margin-bottom: 0;
+        border-right: 1px solid #e3e3e3;
+        .nav-link {
+            color: $textLight;
+            padding: 0.5rem 0.5rem;
+            background-color: transparent;
+            img {
+                width: 35px;
+            }
+            &.active {
+                color: $textLight;
+                background-color: $red;
+            }
+        }
+    }
+    &.justify-content-center {
+        li {
+            &:last-of-type {
+                border-right-width: 0;
+            }
+        }
+    }
+}
 
-// @media (max-width: 767.5px) {
-//     .nav-tabs {
-//         flex: 1;
-//         min-width: 200px;
-//         border-bottom-width: 0;
-//         li {
-//             .nav-link {
-//                 font-size: 0.9rem;
-//                 padding: 0.6rem 0.5rem;
-//             }
-//             flex: 1;
-//             &:last-of-type {
-//                 border-right-width: 0;
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 400px) {
-//     .nav-tabs {
-//         li {
-//             .nav-link {
-//                 font-size: 0.8rem;
-//             }
-//         }
-//     }
-// }
+.side-popup .tab-pane {
+    .nav-tabs {
+        margin-top: 0;
+        border-top-width: 0;
+        li {
+            .nav-link {
+                font-size: 0.8rem;
+                img {
+                    width: 20px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767.5px) {
+    .side-popup .nav-tabs {
+        border-bottom: 1px solid #fff;
+        li {
+            flex: none;
+            .nav-link {
+                img {
+                    transform: scale(0.8);
+                }
+                &.active {
+                    color: #fff;
+                    background-color: $red;
+                    svg {
+                        path,
+                        text {
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

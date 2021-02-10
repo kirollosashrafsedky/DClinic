@@ -17,6 +17,9 @@ body {
     height: 100vh;
 }
 
+.flex-1 {
+    flex: 1;
+}
 #app-container {
     position: relative;
     display: flex;
@@ -53,7 +56,7 @@ body {
             content: "";
             display: block;
             width: 100%;
-            height: 2rem;
+            height: 3rem;
         }
     }
 }
@@ -64,7 +67,7 @@ body {
 }
 
 .max-700 {
-    max-width: 700px;
+    max-width: 700px !important;
 }
 
 .card {
@@ -206,6 +209,22 @@ p {
         background-color: #3b91c7;
         box-shadow: 0 0 0 rgba(0, 0, 0, 0);
         color: $textLight;
+    }
+}
+
+.btn-border-gray {
+    color: $textDark;
+    background-color: $textLight;
+    font-size: 1.5rem;
+    font-weight: $regular;
+    border: 1px solid #dadada;
+    &:hover,
+    &:not(:disabled):not(.disabled):active,
+    &:focus,
+    &:not(:disabled):not(.disabled):active:focus {
+        background-color: #dadada;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        color: $textDark;
     }
 }
 

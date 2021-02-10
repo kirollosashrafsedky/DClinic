@@ -162,24 +162,52 @@ $(document).ready(function() {
         $(this).removeClass('active');
     })
     
+    // add inputs to branches modal on "add btn click" -- start
+    // please note the input placeholder here is hard coded in english "Enter Branch Name" and needs to be changed in arabic as well
+    $('.modal').on('click','.add-input-btn', function (event) {
+        event.preventDefault();
+        const html = `
+        <div class="form-group mb-3 px-0 px-sm-3 px-md-5">
+                                <div
+                                    class="row align-items-center justify-content-center no-gutters"
+                                >
+                                    <div class="col-10">
+                                        <input
+                                            type="text"
+                                            class="form-control input-border input-gray"
+                                            placeholder="Enter Branch Name"
+                                        />
+                                    </div>
+                                    <div
+                                        class="col-2 d-flex align-items-center justify-content-center"
+                                    >
+                                        <button
+                                            class="btn rounded-circle btn-border-gray add-input-btn"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+        `;
+        $(this).parents('form .form-inputs').append(html);
+    })
+    // add inputs to branches modal on "add btn click" -- end
 
-    // $('[data-toggle="modal"]').on('click', function (event) {
-    //     event.preventDefault();
-    // })
+    // custom collapse -- start
 
+    $('.custom-collapse').on('show.bs.collapse', function () {
+        $(this).parents('.collapse-card').addClass('open');
+    })
     
+    $('.custom-collapse').on('hide.bs.collapse', function () {
+        $(this).parents('.collapse-card').removeClass('open');
+    })
 
-    // audio player -- start
+    // custom collapse -- end
 
 
-    // audio player -- end
 
-    // override bootstrap-select library to add svg imgs in the select
-
-    // var myDefaultWhiteList = $.fn.selectpicker.Constructor.DEFAULTS.whiteList;
-    // myDefaultWhiteList.svg= ['xmlns','width','height','viewBox']
-    // myDefaultWhiteList.g= ['data-name','d','transform','fill']
-    // myDefaultWhiteList.path= ['data-name','d','transform','fill']
 
     // function activeImgsOnLoad(){
     //     $("[data-active-img]").each(function(index, el){

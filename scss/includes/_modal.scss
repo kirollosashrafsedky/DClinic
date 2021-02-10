@@ -47,6 +47,16 @@
         width: 60px;
         margin: auto;
     }
+    .modal-note {
+        font-size: 0.8rem;
+        font-weight: $regular;
+        max-width: 300px;
+        margin: auto;
+    }
+    .modal-info {
+        margin: auto;
+        min-width: 352px;
+    }
 }
 
 .modal-dialog {
@@ -56,5 +66,13 @@
     .modal-dialog {
         max-width: 500px;
         margin: 1.75rem auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-dialog {
+        h4 {
+            font-size: 1rem;
+        }
     }
 }

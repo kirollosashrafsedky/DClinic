@@ -84,12 +84,8 @@ table {
                     margin: auto;
                 }
                 &:first-of-type {
-                    width: 100px;
+                    width: 50px;
                 }
-                // &:last-of-type {
-                //     // max-width: 90px;
-                //     // min-width: 50px;
-                // }
             }
         }
         tr {
@@ -101,9 +97,9 @@ table {
                 &:nth-of-type(2) {
                     text-align: left;
                 }
-                &:nth-of-type(3) {
-                    min-width: 150px;
-                }
+                // &:nth-of-type(3) {
+                //     min-width: 150px;
+                // }
             }
         }
     }
