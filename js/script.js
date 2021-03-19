@@ -207,12 +207,14 @@ $(document).ready(function() {
 
     // custom collapse -- start
 
-    $('.custom-collapse').on('show.bs.collapse', function () {
-        $(this).parents('.collapse-card').addClass('open');
+    $('.custom-collapse').on('show.bs.collapse', function (e) {
+        e.stopPropagation()
+        $(this).closest('.collapse-card').addClass('open');
     })
     
-    $('.custom-collapse').on('hide.bs.collapse', function () {
-        $(this).parents('.collapse-card').removeClass('open');
+    $('.custom-collapse').on('hide.bs.collapse', function (e) {
+        e.stopPropagation()
+        $(this).closest('.collapse-card').removeClass('open');
     })
 
     // custom collapse -- end
@@ -246,5 +248,15 @@ $(document).ready(function() {
           },
     });
 
+    $('#current-clinic-top.selectpicker').on('show.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+        openSidePopup($('#selectbox-mobile-popup'));
+    });
 
+    $('#selectbox-mobile-popup [data-type="select-option"]').on('click', function(e){
+        e.preventDefault();
+        $('#current-clinic-top.selectpicker').selectpicker('val', $(this).attr('data-option-id'));
+        // here goes the code to change the ui based on the selected option 
+        closeSidePopup()
+    })
+      
 });

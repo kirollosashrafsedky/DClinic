@@ -67,6 +67,12 @@ body {
     }
 }
 
+@media (max-width: 390px) {
+    #app-container {
+        padding-top: 46px;
+    }
+}
+
 .container-fluid-max-width {
     max-width: 1400px;
     margin-left: 0;

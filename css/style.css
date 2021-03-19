@@ -65,6 +65,11 @@ body {
   padding-top: 0;
 }
 
+@media (max-width: 390px) {
+  #app-container {
+    padding-top: 46px;
+  }
+}
 .container-fluid-max-width {
   max-width: 1400px;
   margin-left: 0;
@@ -1840,6 +1845,10 @@ table.settings-table-2 tr th:nth-of-type(2) {
     font-size: 1.2rem;
   }
 }
+.selectbox-mobile {
+  background-color: #e8e8e8 !important;
+}
+
 .visits-grid {
   display: flex;
   flex-direction: column;
@@ -1933,23 +1942,71 @@ table.settings-table-2 tr th:nth-of-type(2) {
   transition: all 0.1s ease;
 }
 .visit-item .current-tag {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   background-color: #ea6666;
   border-radius: 3px;
   color: #ffffff;
   padding: 2px 7px;
-  margin: 0 10px;
+  margin: 0 7px;
 }
 .visit-item img {
   width: 15px;
   margin-right: 5px;
 }
 
-.side-content ul .visit-item:hover, .side-content ul .visit-item.active {
+.visits-collapse {
+  font-size: 0.9rem;
+}
+.visits-collapse .collapse-card {
+  border-bottom: 1px solid #d3d3d3;
+}
+.visits-collapse .collapse-card .collapse-card-header {
+  color: #000;
+  background-color: transparent;
+}
+.visits-collapse .collapse-card .collapse-card-header .collapse-indicator {
+  width: 20px;
+  height: 20px;
+  background-color: #48a3da;
+  border-radius: 2px;
+  font-size: 1.3rem;
+}
+.visits-collapse .collapse-card.open .collapse-card-header {
+  background-color: transparent;
+}
+.visits-collapse .collapse-card.open .collapse-card-header .collapse-indicator {
+  background-color: #ea6666;
+}
+.visits-collapse .collapse-card.open .collapse-card-header .collapse-indicator::after {
+  content: "-";
+}
+.visits-collapse .collapse-card:last-of-type {
+  border-bottom: 0;
+}
+.visits-collapse .collapse-card .collapse-row:hover {
+  background: transparent;
+}
+.visits-collapse .collapse-card .collapse-row.sub-collapse a {
+  padding-left: 50px;
+}
+.visits-collapse .collapse-card .collapse-indicator-carret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #ea6666;
+  transition: all 0.25s ease;
+  margin: 0 5px;
+}
+.visits-collapse .collapse-card .sub-collapse-card.open .collapse-indicator-carret {
+  transform: rotate(180deg);
+}
+
+.side-content .visit-item:hover, .side-content .visit-item.active {
   background-color: #48a3da;
   color: #ffffff;
 }
-.side-content ul .visit-item:hover svg path, .side-content ul .visit-item.active svg path {
+.side-content .visit-item:hover svg path, .side-content .visit-item.active svg path {
   fill: #fff;
 }
 
@@ -1989,7 +2046,7 @@ table.settings-table-2 tr th:nth-of-type(2) {
     margin: 0 8px;
   }
   .visit-item a .current-tag {
-    margin: 0 8px;
+    margin: 0 6px;
   }
 }
 .btn.rounded-circle {
@@ -2068,19 +2125,26 @@ table.settings-table-2 tr th:nth-of-type(2) {
   .visits-main-nav .nav-tabs li .nav-link svg {
     width: 25px;
   }
+}
+@media (max-width: 830px) {
   .visits-main-nav .stretched-link.rounded-circle {
-    width: 25px;
-    height: 25px;
+    width: 18px;
+    height: 18px;
+  }
+  .visits-main-nav .stretched-link.rounded-circle img {
+    width: 10px;
   }
   .visits-main-nav .stretched-link.rounded-circle + span {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 }
 @media (max-width: 767.5px) {
   .visits-grid .nav-tabs {
     flex: 1;
-    min-width: 200px;
     border-bottom-width: 0;
+  }
+  .visits-grid .nav-tabs#visits-tabs {
+    min-width: 500px;
   }
   .visits-grid .nav-tabs li {
     flex: 1;
@@ -2101,6 +2165,11 @@ table.settings-table-2 tr th:nth-of-type(2) {
   }
   .visits-main-nav .nav-tabs li .nav-link svg {
     width: 55%;
+  }
+}
+@media (max-width: 500px) {
+  .visits-grid .nav-tabs#visits-tabs {
+    min-width: 145%;
   }
 }
 @media (max-width: 400px) {
@@ -2163,6 +2232,9 @@ table.settings-table-2 tr th:nth-of-type(2) {
 }
 
 @media (max-width: 400px) {
+  .visits-content-fixed .info-sm {
+    font-size: 0.8rem;
+  }
   .visits-content-fixed .nav-tabs {
     min-width: 150px;
   }
@@ -2195,6 +2267,10 @@ table.settings-table-2 tr th:nth-of-type(2) {
 .img-grid p {
   display: flex;
   align-items: center;
+}
+
+[data-id=current-clinic-top] + .dropdown-menu {
+  display: none;
 }
 
 .collapse-card {

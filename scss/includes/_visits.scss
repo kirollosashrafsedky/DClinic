@@ -95,12 +95,12 @@
         }
     }
     .current-tag {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         background-color: $red;
         border-radius: 3px;
         color: $textLight;
         padding: 2px 7px;
-        margin: 0 10px;
+        margin: 0 7px;
     }
     img {
         width: 15px;
@@ -108,7 +108,63 @@
     }
 }
 
-.side-content ul {
+.visits-collapse {
+    font-size: 0.9rem;
+    .collapse-card {
+        border-bottom: 1px solid #d3d3d3;
+        .collapse-card-header {
+            color: #000;
+            background-color: transparent;
+            .collapse-indicator {
+                width: 20px;
+                height: 20px;
+                background-color: $blue;
+                border-radius: 2px;
+                font-size: 1.3rem;
+            }
+        }
+        &.open {
+            .collapse-card-header {
+                background-color: transparent;
+                .collapse-indicator {
+                    background-color: $red;
+                    &::after {
+                        content: "-";
+                    }
+                }
+            }
+        }
+        &:last-of-type {
+            border-bottom: 0;
+        }
+        .collapse-row {
+            &:hover {
+                background: transparent;
+            }
+            &.sub-collapse {
+                a {
+                    padding-left: 50px;
+                }
+            }
+        }
+        .collapse-indicator-carret {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid $red;
+            transition: $defaultTransition;
+            margin: 0 5px;
+        }
+        .sub-collapse-card.open {
+            .collapse-indicator-carret {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.side-content {
     .visit-item {
         &:hover,
         &.active {
@@ -168,7 +224,7 @@
                 margin: 0 8px;
             }
             .current-tag {
-                margin: 0 8px;
+                margin: 0 6px;
             }
         }
     }
@@ -272,11 +328,19 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 830px) {
+    .visits-main-nav {
         .stretched-link.rounded-circle {
-            width: 25px;
-            height: 25px;
+            width: 18px;
+            height: 18px;
+            img {
+                width: 10px;
+            }
             & + span {
-                font-size: 0.8rem;
+                font-size: 0.6rem;
             }
         }
     }
@@ -286,8 +350,10 @@
     .visits-grid {
         .nav-tabs {
             flex: 1;
-            min-width: 200px;
             border-bottom-width: 0;
+            &#visits-tabs {
+                min-width: 500px;
+            }
             li {
                 .nav-link {
                     font-size: 0.9rem;
@@ -315,6 +381,16 @@
     }
 }
 
+@media (max-width: 500px) {
+    .visits-grid {
+        .nav-tabs {
+            &#visits-tabs {
+                min-width: 145%;
+            }
+        }
+    }
+}
+
 @media (max-width: 400px) {
     .visits-grid {
         .nav-tabs {
@@ -332,6 +408,7 @@
     align-items: center;
     justify-content: stretch;
     border-bottom: 1px solid #e3e3e3;
+
     .tab-heading {
         font-weight: $semibold;
         font-size: 1.1rem;
@@ -401,6 +478,9 @@
 
 @media (max-width: 400px) {
     .visits-content-fixed {
+        .info-sm {
+            font-size: 0.8rem;
+        }
         .nav-tabs {
             min-width: 150px;
             li {
@@ -439,4 +519,8 @@
         display: flex;
         align-items: center;
     }
+}
+
+[data-id="current-clinic-top"] + .dropdown-menu {
+    display: none;
 }
