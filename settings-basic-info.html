@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DClinic - Settings - Basic Info</title>
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/core.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/timepicker.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/datepicker.min.css" />
+
+        <link
+            rel="stylesheet"
+            href="vendor/bootstrap-select/css/bootstrap-select.min.css"
+        />
+
+        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- <link rel="stylesheet" href="css/style-ar.css" /> -->
+    </head>
+    <body dir="ltr">
+        <div class="top-bar bg-blue text-light">
+            <div
+                class="container-fluid d-flex align-items-stretch justify-content-between"
+            >
+                <div class="d-flex align-items-center py-1">
+                    <a href="index.html" class="mr-4 d-none d-md-block">
+                        <img
+                            src="imgs/svg/logo.svg"
+                            alt="logo"
+                            class="img-fluid logo"
+                        />
+                    </a>
+                    <nav
+                        aria-label="breadcrumb"
+                        class="d-flex align-items-center"
+                    >
+                        <a
+                            href="settings.html"
+                            class="back-link d-flex d-md-none mr-2 align-items-center"
+                        >
+                            <img
+                                src="imgs/svg/back-arrow.svg"
+                                alt="back"
+                                class="img-fluid"
+                            />
+                        </a>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="settings.html">Settings</a>
+                            </li>
+                            <li
+                                class="breadcrumb-item active d-none d-md-block"
+                                aria-current="page"
+                            >
+                                Basic Info
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div
+                    class="align-items-center justify-content-center d-none d-lg-flex"
+                >
+                    <div class="top-item px-2 px-xl-3">
+                        <p>Current Clinic: Main Clinic</p>
+                    </div>
+                    <div class="top-item px-2 px-xl-3">
+                        <div class="form-group d-flex align-items-center">
+                            <label class="text-light mr-2">Change Clinic</label>
+                            <select
+                                class="selectpicker input-border input-text-gray"
+                                id="current-clinic-top"
+                            >
+                                <option selected>Clinic Name</option>
+                                <option value="clinic-2">clinic 2</option>
+                                <option value="clinic-3">clinic 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center py-2">
+                    <a
+                        href="#"
+                        class="mr-3 position-relative"
+                        data-target="chats-menu-popup"
+                        data-type="side-popup"
+                    >
+                        <span class="notification floating-notification"
+                            >3</span
+                        >
+                        <img
+                            src="imgs/svg/chat-icon.svg"
+                            alt="chat"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="settings.html" class="mr-3">
+                        <img
+                            src="imgs/svg/settings-icon.svg"
+                            alt="settings"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="appointments.html" class="mr-3">
+                        <img
+                            src="imgs/svg/appointment-icon.svg"
+                            alt="appointment"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="visits.html" class="mr-3">
+                        <img
+                            src="imgs/svg/visits-icon.svg"
+                            alt="visits"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a
+                        href="#"
+                        class="profile-btn"
+                        data-target="profile-menu-popup"
+                        data-type="side-popup"
+                        ><span class="solve-font-issue"> KI </span></a
+                    >
+                </div>
+            </div>
+        </div>
+        <div id="app-container">
+            <div class="side-menu">
+                <div class="tooltip-menu"></div>
+                <div
+                    class="side-menu-content d-flex flex-column justify-content-between"
+                >
+                    <a href="#" class="slide-menu-toggler py-2">
+                        <img
+                            src="imgs/svg/settings/white/more-icon.svg"
+                            alt="more-icon"
+                            class="img-fluid"
+                        />
+                        <span data-alternate="Hide">Show</span>
+                    </a>
+                    <a href="settings-basic-info.html" class="active">
+                        <img
+                            src="imgs/svg/settings/white/basic-info.svg"
+                            alt="basic-info"
+                            class="img-fluid"
+                        />
+                        <span>Basic Info</span>
+                    </a>
+                    <a href="settings-business-hours.html">
+                        <img
+                            src="imgs/svg/settings/white/business-hours.svg"
+                            alt="business-hours"
+                            class="img-fluid"
+                        />
+                        <span>Business Hours</span>
+                    </a>
+                    <a href="settings-services.html">
+                        <img
+                            src="imgs/svg/settings/white/services.svg"
+                            alt="services"
+                            class="img-fluid"
+                        />
+                        <span>Services</span>
+                    </a>
+                    <a href="settings-staff.html">
+                        <img
+                            src="imgs/svg/settings/white/staff.svg"
+                            alt="staff"
+                            class="img-fluid"
+                        />
+                        <span>Staff</span>
+                    </a>
+                    <a href="settings-expenses.html">
+                        <img
+                            src="imgs/svg/settings/white/expenses.svg"
+                            alt="expenses"
+                            class="img-fluid"
+                        />
+                        <span>Expenses</span>
+                    </a>
+                    <a href="settings-insurance.html">
+                        <img
+                            src="imgs/svg/settings/white/insurance.svg"
+                            alt="insurance"
+                            class="img-fluid"
+                        />
+                        <span>Insurance</span>
+                    </a>
+                    <a href="settings-extra-patient-profile-fields.html">
+                        <img
+                            src="imgs/svg/settings/white/extra-patient-profile-fields.svg"
+                            alt="extra-patient-profile-fields"
+                            class="img-fluid"
+                        />
+                        <span>Extra patient profile fields</span>
+                    </a>
+                    <a href="settings-extra-visit-fields.html">
+                        <img
+                            src="imgs/svg/settings/white/extra-visit-fields.svg"
+                            alt="extra-visit-fields"
+                            class="img-fluid"
+                        />
+                        <span>Extra visit fields</span>
+                    </a>
+                    <a href="settings-prescription.html">
+                        <img
+                            src="imgs/svg/settings/white/prescription.svg"
+                            alt="prescription"
+                            class="img-fluid"
+                        />
+                        <span>Prescription</span>
+                    </a>
+                    <a href="settings-patients-locations.html">
+                        <img
+                            src="imgs/svg/settings/white/patients-locations.svg"
+                            alt="patients-locations"
+                            class="img-fluid"
+                        />
+                        <span>Patients locations</span>
+                    </a>
+                    <a href="settings-learning-videos.html">
+                        <img
+                            src="imgs/svg/settings/white/learning-videos.svg"
+                            alt="learning-videos"
+                            class="img-fluid"
+                        />
+                        <span>learning videos</span>
+                    </a>
+                    <a href="settings-subscription.html">
+                        <img
+                            src="imgs/svg/settings/white/subscription.svg"
+                            alt="subscription"
+                            class="img-fluid"
+                        />
+                        <span>Subscription</span>
+                    </a>
+                    <a href="settings-additional-clinic-locations.html">
+                        <img
+                            src="imgs/svg/settings/white/additional-clinic-locations.svg"
+                            alt="additional-clinic-locations"
+                            class="img-fluid"
+                        />
+                        <span>Additional clinic locations</span>
+                    </a>
+                    <a href="settings-branches.html">
+                        <img
+                            src="imgs/svg/settings/white/branches.svg"
+                            alt="branches"
+                            class="img-fluid"
+                        />
+                        <span>Branches</span>
+                    </a>
+                    <a href="settings-patients-mobile-app.html">
+                        <img
+                            src="imgs/svg/settings/white/patients-mobile-app.svg"
+                            alt="patients-mobile-app"
+                            class="img-fluid"
+                        />
+                        <span>Patients mobile app</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/expenses-types.svg"
+                            alt="expenses-types"
+                            class="img-fluid"
+                        />
+                        <span>Expenses Types</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/expenses-items.svg"
+                            alt="expenses-items"
+                            class="img-fluid"
+                        />
+                        <span>Expenses Items</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/prescription-type.svg"
+                            alt="prescription-type"
+                            class="img-fluid"
+                        />
+                        <span>Prescription Type</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/medicine-list.svg"
+                            alt="medicine-list"
+                            class="img-fluid"
+                        />
+                        <span>Medicine List</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/tests.svg"
+                            alt="tests"
+                            class="img-fluid"
+                        />
+                        <span>Tests</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/x-rays.svg"
+                            alt="x-rays"
+                            class="img-fluid"
+                        />
+                        <span>X-rays</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/dimensions.svg"
+                            alt="dimensions"
+                            class="img-fluid"
+                        />
+                        <span>Dimensions</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/city.svg"
+                            alt="city"
+                            class="img-fluid"
+                        />
+                        <span>City</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/region.svg"
+                            alt="region"
+                            class="img-fluid"
+                        />
+                        <span>Region</span>
+                    </a>
+                    <a href="settings-reports.html">
+                        <img
+                            src="imgs/svg/settings/white/reports.svg"
+                            alt="reports"
+                            class="img-fluid"
+                        />
+                        <span>Reports</span>
+                    </a>
+                </div>
+            </div>
+            <main class="main-content">
+                <form class="my-5">
+                    <div class="container pb-5 pt-3 pt-md-5">
+                        <div class="form-group mb-4">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="doctor-name">Doctor Name</label>
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <input
+                                        type="text"
+                                        id="doctor-name"
+                                        class="form-control input-gray input-border"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="gender">Gender</label>
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <select
+                                        class="selectpicker input-gray input-border"
+                                        id="gender"
+                                    >
+                                        <option selected disabled></option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div
+                                class="row align-items-start justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="address">Address</label>
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <textarea
+                                        class="form-control not-resized input-gray input-border"
+                                        id="address"
+                                        placeholder=""
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="specialization"
+                                        >Specialization</label
+                                    >
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <select
+                                        class="selectpicker input-gray input-border"
+                                        id="specialization"
+                                    >
+                                        <option selected disabled></option>
+                                        <option value="option1">
+                                            option 1
+                                        </option>
+                                        <option value="option2">
+                                            option 2
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div
+                                class="row align-items-center justify-content-center no-gutters"
+                            >
+                                <div
+                                    class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                                >
+                                    <label for="phone-number"
+                                        >Phone Number</label
+                                    >
+                                </div>
+                                <div class="col-lg-6 col-sm-9 col-12">
+                                    <input
+                                        type="text"
+                                        id="phone-number"
+                                        class="form-control input-gray input-border"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="row align-items-center justify-content-center no-gutters"
+                        >
+                            <div
+                                class="col-lg-2 col-sm-3 col-12 d-flex align-items-center mb-2 mb-sm-0"
+                            ></div>
+                            <div
+                                class="col-lg-6 col-sm-9 col-12 text-center mt-0 mb-3 pt-0 pb-2"
+                            >
+                                <button
+                                    type="submit"
+                                    class="btn btn-red px-4 py-2"
+                                >
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </main>
+            <div class="side-popup profile-menu" id="profile-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <h2 class="mt-4 mb-2 px-3">Dr Demo</h2>
+                <p class="px-3 mb-3">mohamed@yahoo.com</p>
+                <div class="d-block d-lg-none px-3 mt-3 pt-2">
+                    <p class="mb-3">Current Clinic: Main Clinic</p>
+                    <div class="form-group d-flex align-items-center">
+                        <label class="text-light mr-2 mb-0"
+                            >Change Clinic</label
+                        >
+                        <select
+                            class="selectpicker input-border input-text-gray"
+                            id="current-clinic-side"
+                        >
+                            <option selected>Clinic Name</option>
+                            <option value="clinic-2">clinic 2</option>
+                            <option value="clinic-3">clinic 3</option>
+                        </select>
+                    </div>
+                </div>
+                <ul class="profile-nav py-3">
+                    <li>
+                        <a href="settings-basic-info-ar.html">
+                            <img
+                                src="imgs/svg/profile-menu/language.svg"
+                                alt="language"
+                                class="img-fluid mx-2"
+                            />
+                            Change language to: Arabic</a
+                        >
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <img
+                                src="imgs/svg/settings-icon.svg"
+                                alt="settings"
+                                class="img-fluid mx-2"
+                            />
+                            Settings</a
+                        >
+                    </li>
+                    <li>
+                        <a href="appointments.html">
+                            <img
+                                src="imgs/svg/appointment-icon.svg"
+                                alt="appointments"
+                                class="img-fluid mx-2"
+                            />
+                            Appointments</a
+                        >
+                    </li>
+                    <li>
+                        <a href="visits.html">
+                            <img
+                                src="imgs/svg/profile-menu/eye.svg"
+                                alt="visits"
+                                class="img-fluid mx-2"
+                            />
+                            Visits</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/change-password.svg"
+                                alt="change password"
+                                class="img-fluid mx-2"
+                            />
+                            Change Password</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/logout.svg"
+                                alt="logout"
+                                class="img-fluid mx-2"
+                            />
+                            Logout</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="side-popup chats-menu" id="chats-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <ul class="chats-nav mt-4 mb-3">
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">finished</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+        <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <!-- time picker -->
+        <script src="vendor/gijgo/js/core.js"></script>
+        <script src="vendor/gijgo/js/timepicker.min.js"></script>
+        <!-- time picker -->
+        <script src="js/script.js"></script>
+    </body>
+</html>

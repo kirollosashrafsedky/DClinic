@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DClinic - Login</title>
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/core.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/timepicker.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/datepicker.min.css" />
+        <link
+            rel="stylesheet"
+            href="vendor/bootstrap-select/css/bootstrap-select.min.css"
+        />
+        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- <link rel="stylesheet" href="css/style-ar.css" /> -->
+    </head>
+    <body dir="ltr">
+        <div id="app-container" class="full-height">
+            <main
+                class="main-content login w-100 h-100 d-flex flex-column justify-content-start align-items-center"
+            >
+                <div
+                    class="container d-flex flex-column justify-content-start align-items-center px-4 w-100 py-4"
+                >
+                    <a href="index.html">
+                        <img
+                            src="imgs/svg/logo.svg"
+                            alt="DClink"
+                            class="img-fluid logo"
+                        />
+                    </a>
+                    <div class="login-card w-100">
+                        <form>
+                            <div class="form-group mb-3">
+                                <label class="font-weight-bold"
+                                    >Phone number</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control input-gray py-4"
+                                />
+                                <div class="invalid-feedback">
+                                    <p>Please provide a valid phone number.</p>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="font-weight-bold">Password</label>
+                                <input
+                                    type="password"
+                                    class="form-control input-gray py-4"
+                                />
+                                <div class="invalid-feedback">
+                                    <p>Error msg.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="form-group mb-0 d-flex align-items-center flex-column flex-md-row align-items-stretch justify-content-md-between"
+                            >
+                                <div
+                                    class="d-flex flex-1 login-links order-1 order-md-0 align-items-center justify-content-center justify-content-md-start"
+                                >
+                                    <div>
+                                        <a
+                                            href="forgot-password.html"
+                                            class="mr-2"
+                                            >Forgot Password?</a
+                                        >
+                                        <a href="#">Create a new account</a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="d-flex justify-content-end order-0 order-md-1 float-right mb-md-0 mb-4"
+                                >
+                                    <a href="#" class="btn btn-red px-5"
+                                        >Login</a
+                                    >
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

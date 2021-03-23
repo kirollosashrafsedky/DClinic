@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DClinic - Branches</title>
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/core.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/timepicker.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/datepicker.min.css" />
+
+        <link
+            rel="stylesheet"
+            href="vendor/bootstrap-select/css/bootstrap-select.min.css"
+        />
+
+        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- <link rel="stylesheet" href="css/style-ar.css" /> -->
+    </head>
+    <body dir="ltr">
+        <div class="top-bar bg-blue text-light">
+            <div
+                class="container-fluid d-flex align-items-stretch justify-content-between"
+            >
+                <div class="d-flex align-items-center py-1">
+                    <a href="index.html" class="mr-4 d-none d-md-block">
+                        <img
+                            src="imgs/svg/logo.svg"
+                            alt="logo"
+                            class="img-fluid logo"
+                        />
+                    </a>
+                    <nav
+                        aria-label="breadcrumb"
+                        class="d-flex align-items-center"
+                    >
+                        <a
+                            href="index.html"
+                            class="back-link d-flex d-md-none mr-2 align-items-center"
+                        >
+                            <img
+                                src="imgs/svg/back-arrow.svg"
+                                alt="back"
+                                class="img-fluid"
+                            />
+                        </a>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Branches</a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div
+                    class="align-items-center justify-content-center d-none d-lg-flex"
+                >
+                    <div class="top-item px-2 px-xl-3">
+                        <p>Current Clinic: Main Clinic</p>
+                    </div>
+                    <div class="top-item px-2 px-xl-3">
+                        <div class="form-group d-flex align-items-center">
+                            <label class="text-light mr-2">Change Clinic</label>
+                            <select
+                                class="selectpicker input-border input-text-gray"
+                                id="current-clinic-top"
+                            >
+                                <option selected>Clinic Name</option>
+                                <option value="clinic-2">clinic 2</option>
+                                <option value="clinic-3">clinic 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center py-2">
+                    <a
+                        href="#"
+                        class="mr-3 position-relative"
+                        data-target="chats-menu-popup"
+                        data-type="side-popup"
+                    >
+                        <span class="notification floating-notification"
+                            >3</span
+                        >
+                        <img
+                            src="imgs/svg/chat-icon.svg"
+                            alt="chat"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="settings.html" class="mr-3">
+                        <img
+                            src="imgs/svg/settings-icon.svg"
+                            alt="settings"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="appointments.html" class="mr-3">
+                        <img
+                            src="imgs/svg/appointment-icon.svg"
+                            alt="appointment"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="visits.html" class="mr-3">
+                        <img
+                            src="imgs/svg/visits-icon.svg"
+                            alt="visits"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a
+                        href="#"
+                        class="profile-btn"
+                        data-target="profile-menu-popup"
+                        data-type="side-popup"
+                        ><span class="solve-font-issue"> KI </span></a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div id="app-container">
+            <main class="main-content branches-grid-container">
+                <div
+                    class="container pb-5 d-sm-flex justify-content-center align-items-center"
+                >
+                    <div class="branches-grid my-5">
+                        <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#add-branches-modal"
+                            class="card bg-gray"
+                        >
+                            <div
+                                class="content d-flex flex-sm-column flex-row align-items-center justify-content-sm-center justify-content-start"
+                            >
+                                <img
+                                    src="imgs/svg/branches/branches.svg"
+                                    alt="branches"
+                                    class="img-fluid mb-sm-3 mb-0 ml-sm-0 ml-3"
+                                />
+                                <span class="mx-auto mx-sm-0"
+                                    >Add Branches</span
+                                >
+                            </div>
+                        </a>
+                        <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#add-clinics-modal"
+                            class="card bg-gray"
+                        >
+                            <div
+                                class="content d-flex flex-sm-column flex-row align-items-center justify-content-sm-center justify-content-start"
+                            >
+                                <img
+                                    src="imgs/svg/branches/clinics.svg"
+                                    alt="clinics"
+                                    class="img-fluid mb-sm-3 mb-0 ml-sm-0 ml-3"
+                                />
+                                <span class="mx-auto mx-sm-0">Add Clinics</span>
+                            </div>
+                        </a>
+                        <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#add-doctors-modal"
+                            class="card bg-gray"
+                        >
+                            <div
+                                class="content d-flex flex-sm-column flex-row align-items-center justify-content-sm-center justify-content-start"
+                            >
+                                <img
+                                    src="imgs/svg/branches/doctors.svg"
+                                    alt="branches"
+                                    class="img-fluid mb-sm-3 mb-0 ml-sm-0 ml-3"
+                                />
+                                <span class="mx-auto mx-sm-0">Add Doctors</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </main>
+            <div class="side-popup profile-menu" id="profile-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <h2 class="mt-4 mb-2 px-3">Dr Demo</h2>
+                <p class="px-3 mb-3">mohamed@yahoo.com</p>
+                <div class="d-block d-lg-none px-3 mt-3 pt-2">
+                    <p class="mb-3">Current Clinic: Main Clinic</p>
+                    <div class="form-group d-flex align-items-center">
+                        <label class="text-light mr-2 mb-0"
+                            >Change Clinic</label
+                        >
+                        <select
+                            class="selectpicker input-border input-text-gray"
+                            id="current-clinic-side"
+                        >
+                            <option selected>Clinic Name</option>
+                            <option value="clinic-2">clinic 2</option>
+                            <option value="clinic-3">clinic 3</option>
+                        </select>
+                    </div>
+                </div>
+                <ul class="profile-nav py-3">
+                    <li>
+                        <a href="branches-empty-ar.html">
+                            <img
+                                src="imgs/svg/profile-menu/language.svg"
+                                alt="language"
+                                class="img-fluid mx-2"
+                            />
+                            Change language to: Arabic</a
+                        >
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <img
+                                src="imgs/svg/settings-icon.svg"
+                                alt="settings"
+                                class="img-fluid mx-2"
+                            />
+                            Settings</a
+                        >
+                    </li>
+                    <li>
+                        <a href="appointments.html">
+                            <img
+                                src="imgs/svg/appointment-icon.svg"
+                                alt="appointments"
+                                class="img-fluid mx-2"
+                            />
+                            Appointments</a
+                        >
+                    </li>
+                    <li>
+                        <a href="visits.html">
+                            <img
+                                src="imgs/svg/profile-menu/eye.svg"
+                                alt="visits"
+                                class="img-fluid mx-2"
+                            />
+                            Visits</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/change-password.svg"
+                                alt="change password"
+                                class="img-fluid mx-2"
+                            />
+                            Change Password</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/logout.svg"
+                                alt="logout"
+                                class="img-fluid mx-2"
+                            />
+                            Logout</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="side-popup chats-menu" id="chats-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <ul class="chats-nav mt-4 mb-3">
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">finished</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">Underway</span>
+                                <p class="mt-1">Mohamed Ibrahim</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- add branches Modal -->
+        <div
+            class="modal fade"
+            id="add-branches-modal"
+            tabindex="-1"
+            aria-labelledby="add-branches-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content pt-5 pb-2 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="text-blue font-weight-bold text-center mb-4">
+                        Add New Branches
+                    </h4>
+                    <form>
+                        <div class="form-inputs">
+                            <div class="form-group mb-3 px-0 px-sm-3 px-md-5">
+                                <div
+                                    class="row align-items-center justify-content-center no-gutters"
+                                >
+                                    <div class="col-10">
+                                        <input
+                                            type="text"
+                                            class="form-control input-border input-gray"
+                                            placeholder="Enter Branch Name"
+                                        />
+                                    </div>
+                                    <div
+                                        class="col-2 d-flex align-items-center justify-content-center"
+                                    >
+                                        <button
+                                            class="btn rounded-circle btn-border-gray add-input-btn"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center pt-3">
+                            <button type="submit" class="btn btn-red px-4 py-2">
+                                Add
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-center mt-4 modal-note">
+                        <strong class="font-weight-bold"
+                            >"Marinet Nasr Branch"</strong
+                        >
+                        was added successfully
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- add clinics Modal -->
+        <div
+            class="modal fade"
+            id="add-clinics-modal"
+            tabindex="-1"
+            aria-labelledby="add-clinics-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content pt-5 pb-2 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="text-blue font-weight-bold text-center mb-4">
+                        Add Clinic to Branch
+                    </h4>
+                    <form>
+                        <div class="form-inputs">
+                            <div class="form-group mb-3 px-0 px-sm-3 px-md-5">
+                                <select
+                                    class="selectpicker input-gray input-border"
+                                >
+                                    <option selected disabled>
+                                        Select Branch
+                                    </option>
+                                    <option value="1">branch 1</option>
+                                    <option value="1">branch 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3 px-0 px-sm-3 px-md-5">
+                                <select
+                                    class="selectpicker input-gray input-border"
+                                >
+                                    <option selected disabled>
+                                        Select Clinic
+                                    </option>
+                                    <option value="1">Clinic 1</option>
+                                    <option value="1">Clinic 2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-center pt-3">
+                            <button type="submit" class="btn btn-red px-4 py-2">
+                                Add
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-center mt-4 modal-note">
+                        <strong class="font-weight-bold"
+                            >"Nsa w Tawleed Clinic"</strong
+                        >
+                        was added to Madinet Nasr Branch
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- add doctors Modal -->
+        <div
+            class="modal fade"
+            id="add-doctors-modal"
+            tabindex="-1"
+            aria-labelledby="add-doctors-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content pt-5 pb-2 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="text-blue font-weight-bold text-center mb-4">
+                        Add New Doctor
+                    </h4>
+                    <form>
+                        <div class="form-inputs">
+                            <div class="form-group mb-3 px-0 px-sm-3 px-md-5">
+                                <select
+                                    class="selectpicker input-gray input-border"
+                                >
+                                    <option selected disabled>
+                                        Select Branch
+                                    </option>
+                                    <option value="1">branch 1</option>
+                                    <option value="1">branch 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3 px-0 px-sm-3 px-md-5">
+                                <select
+                                    class="selectpicker input-gray input-border"
+                                >
+                                    <option selected disabled>
+                                        Select Clinic
+                                    </option>
+                                    <option value="1">Clinic 1</option>
+                                    <option value="1">Clinic 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3 px-0 px-sm-3 px-md-5">
+                                <input
+                                    type="text"
+                                    class="form-control input-gray input-border"
+                                    placeholder="Type Dr's Name"
+                                />
+                            </div>
+                        </div>
+                        <div class="text-center pt-3">
+                            <button type="submit" class="btn btn-red px-4 py-2">
+                                Add
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-center mt-4 modal-note">
+                        <strong class="font-weight-bold"
+                            >"Dr Ahmed Adel"</strong
+                        >
+                        was added to Nsa w Tawleed Clinic, Madinet Nasr Branch
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+        <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <!-- time picker -->
+        <script src="vendor/gijgo/js/core.js"></script>
+        <script src="vendor/gijgo/js/timepicker.min.js"></script>
+        <!-- time picker -->
+        <script src="js/script.js"></script>
+    </body>
+</html>

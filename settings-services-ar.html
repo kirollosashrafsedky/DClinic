@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DClinic - Settings - Services</title>
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/core.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/timepicker.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/datepicker.min.css" />
+
+        <link
+            rel="stylesheet"
+            href="vendor/bootstrap-select/css/bootstrap-select.min.css"
+        />
+
+        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-ar.css" />
+    </head>
+    <body dir="rtl">
+        <div class="top-bar bg-blue text-light">
+            <div
+                class="container-fluid d-flex align-items-stretch justify-content-between"
+            >
+                <div class="d-flex align-items-center py-1">
+                    <a href="index-ar.html" class="ml-4 d-none d-md-block">
+                        <img
+                            src="imgs/svg/logo.svg"
+                            alt="logo"
+                            class="img-fluid logo"
+                        />
+                    </a>
+                    <nav
+                        aria-label="breadcrumb"
+                        class="d-flex align-items-center"
+                    >
+                        <a
+                            href="settings-ar.html"
+                            class="back-link d-block d-md-none ml-2 align-items-center"
+                        >
+                            <img
+                                src="imgs/svg/back-arrow.svg"
+                                alt="back"
+                                class="img-fluid"
+                            />
+                        </a>
+
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="settings-ar.html">الاعدادات</a>
+                            </li>
+                            <li
+                                class="breadcrumb-item active d-none d-md-block"
+                                aria-current="page"
+                            >
+                                الخدمات
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div
+                    class="align-items-center justify-content-center d-none d-lg-flex"
+                >
+                    <div class="top-item px-2 px-xl-3">
+                        <p>العيادة الحالية: العيادة الرئيسية</p>
+                    </div>
+                    <div class="top-item px-2 px-xl-3">
+                        <div class="form-group d-flex align-items-center">
+                            <label class="text-light ml-2">تغيير العيادة</label>
+                            <select
+                                class="selectpicker input-border input-text-gray"
+                                id="current-clinic-top"
+                            >
+                                <option selected>اسم العيادة</option>
+                                <option value="clinic-2">عيادة 2</option>
+                                <option value="clinic-3">عيادة 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center py-2">
+                    <a
+                        href="#"
+                        class="ml-3 position-relative"
+                        data-target="chats-menu-popup"
+                        data-type="side-popup"
+                    >
+                        <span class="notification floating-notification"
+                            >3</span
+                        >
+                        <img
+                            src="imgs/svg/chat-icon.svg"
+                            alt="chat"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="settings-ar.html" class="ml-3">
+                        <img
+                            src="imgs/svg/settings-icon.svg"
+                            alt="settings"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="appointments-ar.html" class="ml-3">
+                        <img
+                            src="imgs/svg/appointment-icon.svg"
+                            alt="appointment"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="visits-ar.html" class="ml-3">
+                        <img
+                            src="imgs/svg/visits-icon.svg"
+                            alt="visits"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a
+                        href="#"
+                        class="profile-btn"
+                        data-target="profile-menu-popup"
+                        data-type="side-popup"
+                        ><span class="solve-font-issue"> KI </span></a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div id="app-container">
+            <div class="side-menu">
+                <div class="tooltip-menu"></div>
+
+                <div
+                    class="side-menu-content d-flex flex-column justify-content-between"
+                >
+                    <a href="#" class="slide-menu-toggler py-2">
+                        <img
+                            src="imgs/svg/settings/white/more-icon.svg"
+                            alt="more-icon"
+                            class="img-fluid"
+                        />
+                        <span data-alternate="إخفاء">إظهار</span>
+                    </a>
+                    <a href="settings-basic-info-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/basic-info.svg"
+                            alt="basic-info"
+                            class="img-fluid"
+                        />
+                        <span>معلومات اساسية</span>
+                    </a>
+                    <a href="settings-business-hours-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/business-hours.svg"
+                            alt="business-hours"
+                            class="img-fluid"
+                        />
+                        <span>ساعات العمل</span>
+                    </a>
+                    <a href="settings-services-ar.html" class="active">
+                        <img
+                            src="imgs/svg/settings/white/services.svg"
+                            alt="services"
+                            class="img-fluid"
+                        />
+                        <span>الخدمات</span>
+                    </a>
+                    <a href="settings-staff-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/staff.svg"
+                            alt="staff"
+                            class="img-fluid"
+                        />
+                        <span>فريق العمل</span>
+                    </a>
+                    <a href="settings-expenses-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/expenses.svg"
+                            alt="expenses"
+                            class="img-fluid"
+                        />
+                        <span>المصروفات</span>
+                    </a>
+                    <a href="settings-insurance-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/insurance.svg"
+                            alt="insurance"
+                            class="img-fluid"
+                        />
+                        <span>التأمينات</span>
+                    </a>
+                    <a href="settings-extra-patient-profile-fields-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/extra-patient-profile-fields.svg"
+                            alt="extra-patient-profile-fields"
+                            class="img-fluid"
+                        />
+                        <span>حقول إضافية لملف المريض</span>
+                    </a>
+                    <a href="settings-extra-visit-fields-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/extra-visit-fields.svg"
+                            alt="extra-visit-fields"
+                            class="img-fluid"
+                        />
+                        <span>حقول إضافية للزيارة</span>
+                    </a>
+                    <a href="settings-prescription-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/prescription.svg"
+                            alt="prescription"
+                            class="img-fluid"
+                        />
+                        <span>الروشتة الطبية</span>
+                    </a>
+                    <a href="settings-patients-locations-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/patients-locations.svg"
+                            alt="patients-locations"
+                            class="img-fluid"
+                        />
+                        <span>عناوين المرضي</span>
+                    </a>
+                    <a href="settings-learning-videos-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/learning-videos.svg"
+                            alt="learning-videos"
+                            class="img-fluid"
+                        />
+                        <span>فيديوهات تعليمية</span>
+                    </a>
+                    <a href="settings-subscription-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/subscription.svg"
+                            alt="subscription"
+                            class="img-fluid"
+                        />
+                        <span>الاشتراكات</span>
+                    </a>
+                    <a href="settings-additional-clinic-locations-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/additional-clinic-locations.svg"
+                            alt="additional-clinic-locations"
+                            class="img-fluid"
+                        />
+                        <span>مواقع إضافية للعيادة</span>
+                    </a>
+                    <a href="settings-branches-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/branches.svg"
+                            alt="branches"
+                            class="img-fluid"
+                        />
+                        <span>الفروع</span>
+                    </a>
+                    <a href="settings-patients-mobile-app-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/patients-mobile-app.svg"
+                            alt="patients-mobile-app"
+                            class="img-fluid"
+                        />
+                        <span>موبايل ابليكشن للمرضي</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/expenses-types.svg"
+                            alt="expenses-types"
+                            class="img-fluid"
+                        />
+                        <span>فئة المصروفات</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/expenses-items.svg"
+                            alt="expenses-items"
+                            class="img-fluid"
+                        />
+                        <span>بنود المصروفات</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/prescription-type.svg"
+                            alt="prescription-type"
+                            class="img-fluid"
+                        />
+                        <span>نوع الوصفة الطبية</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/medicine-list.svg"
+                            alt="medicine-list"
+                            class="img-fluid"
+                        />
+                        <span>قائمة الادوية</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/tests.svg"
+                            alt="tests"
+                            class="img-fluid"
+                        />
+                        <span>التحاليل</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/x-rays.svg"
+                            alt="x-rays"
+                            class="img-fluid"
+                        />
+                        <span>الاشعة</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/dimensions.svg"
+                            alt="dimensions"
+                            class="img-fluid"
+                        />
+                        <span>الابعاد</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/city.svg"
+                            alt="city"
+                            class="img-fluid"
+                        />
+                        <span>المدينة</span>
+                    </a>
+                    <a href="#">
+                        <img
+                            src="imgs/svg/settings/white/region.svg"
+                            alt="region"
+                            class="img-fluid"
+                        />
+                        <span>المنطقة</span>
+                    </a>
+                    <a href="settings-reports-ar.html">
+                        <img
+                            src="imgs/svg/settings/white/reports.svg"
+                            alt="reports"
+                            class="img-fluid"
+                        />
+                        <span>التقارير</span>
+                    </a>
+                </div>
+            </div>
+            <main class="main-content">
+                <div class="container mt-3 mb-5">
+                    <a
+                        href="#"
+                        type="button"
+                        class="btn btn-blue py-1 d-none d-md-inline-block my-4 px-4"
+                        data-type="side-popup"
+                        data-target="new-menu-popup"
+                        data-unique-id="add-new"
+                    >
+                        <img
+                            src="imgs/svg/add-icon.svg"
+                            alt="add"
+                            class="img-fluid icon-sm"
+                        />
+                        اضافة
+                    </a>
+
+                    <div class="table-alternative d-md-none">
+                        <div
+                            class="d-flex justify-content-between align-items-center my-3"
+                        >
+                            <h4 class="mb-0 tab-heading">الخدمات</h4>
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-blue py-1 px-4"
+                                data-type="side-popup"
+                                data-target="new-menu-popup"
+                                data-unique-id="add-new"
+                            >
+                                <img
+                                    src="imgs/svg/add-icon.svg"
+                                    alt="add"
+                                    class="img-fluid icon-sm"
+                                />
+                                اضافة
+                            </a>
+                        </div>
+                        <form class="">
+                            <div class="form-group mb-3">
+                                <div
+                                    class="input-group input-with-img img-other-side"
+                                >
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <img
+                                                src="imgs/svg/search-icon.svg"
+                                                alt="search"
+                                                class="img-fluid"
+                                            />
+                                        </div>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        class="form-control input-border input-text-gray"
+                                    />
+                                </div>
+                            </div>
+                        </form>
+                        <div class="card mb-3" data-click-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        كشف عادي
+                                    </p>
+                                    <p class="mb-">150 جنيه</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#delete-modal"
+                                        class="ml-2"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="27.2"
+                                            height="33.477"
+                                            viewBox="0 0 27.2 33.477"
+                                        >
+                                            <g
+                                                id="trash"
+                                                transform="translate(-48)"
+                                            >
+                                                <path
+                                                    id="Path_151"
+                                                    data-name="Path 151"
+                                                    d="M72.585,4.185H66.831V3.138A3.138,3.138,0,0,0,63.692,0H59.508a3.138,3.138,0,0,0-3.138,3.138V4.185H50.615A2.615,2.615,0,0,0,48,6.8V8.892a1.046,1.046,0,0,0,1.046,1.046H74.154A1.046,1.046,0,0,0,75.2,8.892V6.8A2.615,2.615,0,0,0,72.585,4.185ZM58.462,3.138a1.048,1.048,0,0,1,1.046-1.046h4.185a1.048,1.048,0,0,1,1.046,1.046V4.185H58.462Z"
+                                                    fill="#EA6666"
+                                                />
+                                                <path
+                                                    id="Path_152"
+                                                    data-name="Path 152"
+                                                    d="M73.691,184a.327.327,0,0,0-.327.342l.863,18.114a3.135,3.135,0,0,0,3.135,2.989H93.249a3.135,3.135,0,0,0,3.135-2.989l.863-18.114a.327.327,0,0,0-.327-.342Zm15.8,2.615a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Z"
+                                                    transform="translate(-23.706 -171.969)"
+                                                    fill="#EA6666"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-target="new-menu-popup"
+                                        data-type="side-popup"
+                                        data-unique-id="edit-table-alternative-1"
+                                        class=""
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="28.03"
+                                            height="28"
+                                            viewBox="0 0 28.03 28"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                    transform="translate(0 -77.546)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                    transform="translate(-315.301 0)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+
+                                    <div class="form-group mb-0 mx-3">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-alternative-1"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-alternative-1"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-click-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        كشف عادي
+                                    </p>
+                                    <p class="mb-">150 جنيه</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#delete-modal"
+                                        class="ml-2"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="27.2"
+                                            height="33.477"
+                                            viewBox="0 0 27.2 33.477"
+                                        >
+                                            <g
+                                                id="trash"
+                                                transform="translate(-48)"
+                                            >
+                                                <path
+                                                    id="Path_151"
+                                                    data-name="Path 151"
+                                                    d="M72.585,4.185H66.831V3.138A3.138,3.138,0,0,0,63.692,0H59.508a3.138,3.138,0,0,0-3.138,3.138V4.185H50.615A2.615,2.615,0,0,0,48,6.8V8.892a1.046,1.046,0,0,0,1.046,1.046H74.154A1.046,1.046,0,0,0,75.2,8.892V6.8A2.615,2.615,0,0,0,72.585,4.185ZM58.462,3.138a1.048,1.048,0,0,1,1.046-1.046h4.185a1.048,1.048,0,0,1,1.046,1.046V4.185H58.462Z"
+                                                    fill="#EA6666"
+                                                />
+                                                <path
+                                                    id="Path_152"
+                                                    data-name="Path 152"
+                                                    d="M73.691,184a.327.327,0,0,0-.327.342l.863,18.114a3.135,3.135,0,0,0,3.135,2.989H93.249a3.135,3.135,0,0,0,3.135-2.989l.863-18.114a.327.327,0,0,0-.327-.342Zm15.8,2.615a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Z"
+                                                    transform="translate(-23.706 -171.969)"
+                                                    fill="#EA6666"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-target="new-menu-popup"
+                                        data-type="side-popup"
+                                        data-unique-id="edit-table-alternative-2"
+                                        class=""
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="28.03"
+                                            height="28"
+                                            viewBox="0 0 28.03 28"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                    transform="translate(0 -77.546)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                    transform="translate(-315.301 0)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+
+                                    <div class="form-group mb-0 mx-3">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-alternative-2"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-alternative-2"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-click-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        كشف عادي
+                                    </p>
+                                    <p class="mb-">150 جنيه</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#delete-modal"
+                                        class="ml-2"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="27.2"
+                                            height="33.477"
+                                            viewBox="0 0 27.2 33.477"
+                                        >
+                                            <g
+                                                id="trash"
+                                                transform="translate(-48)"
+                                            >
+                                                <path
+                                                    id="Path_151"
+                                                    data-name="Path 151"
+                                                    d="M72.585,4.185H66.831V3.138A3.138,3.138,0,0,0,63.692,0H59.508a3.138,3.138,0,0,0-3.138,3.138V4.185H50.615A2.615,2.615,0,0,0,48,6.8V8.892a1.046,1.046,0,0,0,1.046,1.046H74.154A1.046,1.046,0,0,0,75.2,8.892V6.8A2.615,2.615,0,0,0,72.585,4.185ZM58.462,3.138a1.048,1.048,0,0,1,1.046-1.046h4.185a1.048,1.048,0,0,1,1.046,1.046V4.185H58.462Z"
+                                                    fill="#EA6666"
+                                                />
+                                                <path
+                                                    id="Path_152"
+                                                    data-name="Path 152"
+                                                    d="M73.691,184a.327.327,0,0,0-.327.342l.863,18.114a3.135,3.135,0,0,0,3.135,2.989H93.249a3.135,3.135,0,0,0,3.135-2.989l.863-18.114a.327.327,0,0,0-.327-.342Zm15.8,2.615a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Z"
+                                                    transform="translate(-23.706 -171.969)"
+                                                    fill="#EA6666"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-target="new-menu-popup"
+                                        data-type="side-popup"
+                                        data-unique-id="edit-table-alternative-3"
+                                        class=""
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="28.03"
+                                            height="28"
+                                            viewBox="0 0 28.03 28"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                    transform="translate(0 -77.546)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                    transform="translate(-315.301 0)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+
+                                    <div class="form-group mb-0 mx-3">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-alternative-3"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-alternative-3"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-click-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        كشف عادي
+                                    </p>
+                                    <p class="mb-">150 جنيه</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#delete-modal"
+                                        class="ml-2"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="27.2"
+                                            height="33.477"
+                                            viewBox="0 0 27.2 33.477"
+                                        >
+                                            <g
+                                                id="trash"
+                                                transform="translate(-48)"
+                                            >
+                                                <path
+                                                    id="Path_151"
+                                                    data-name="Path 151"
+                                                    d="M72.585,4.185H66.831V3.138A3.138,3.138,0,0,0,63.692,0H59.508a3.138,3.138,0,0,0-3.138,3.138V4.185H50.615A2.615,2.615,0,0,0,48,6.8V8.892a1.046,1.046,0,0,0,1.046,1.046H74.154A1.046,1.046,0,0,0,75.2,8.892V6.8A2.615,2.615,0,0,0,72.585,4.185ZM58.462,3.138a1.048,1.048,0,0,1,1.046-1.046h4.185a1.048,1.048,0,0,1,1.046,1.046V4.185H58.462Z"
+                                                    fill="#EA6666"
+                                                />
+                                                <path
+                                                    id="Path_152"
+                                                    data-name="Path 152"
+                                                    d="M73.691,184a.327.327,0,0,0-.327.342l.863,18.114a3.135,3.135,0,0,0,3.135,2.989H93.249a3.135,3.135,0,0,0,3.135-2.989l.863-18.114a.327.327,0,0,0-.327-.342Zm15.8,2.615a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Z"
+                                                    transform="translate(-23.706 -171.969)"
+                                                    fill="#EA6666"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-target="new-menu-popup"
+                                        data-type="side-popup"
+                                        data-unique-id="edit-table-alternative-4"
+                                        class=""
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="28.03"
+                                            height="28"
+                                            viewBox="0 0 28.03 28"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                    transform="translate(0 -77.546)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                    transform="translate(-315.301 0)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+
+                                    <div class="form-group mb-0 mx-3">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-alternative-4"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-alternative-4"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-click-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        كشف عادي
+                                    </p>
+                                    <p class="mb-">150 جنيه</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#delete-modal"
+                                        class="ml-2"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="27.2"
+                                            height="33.477"
+                                            viewBox="0 0 27.2 33.477"
+                                        >
+                                            <g
+                                                id="trash"
+                                                transform="translate(-48)"
+                                            >
+                                                <path
+                                                    id="Path_151"
+                                                    data-name="Path 151"
+                                                    d="M72.585,4.185H66.831V3.138A3.138,3.138,0,0,0,63.692,0H59.508a3.138,3.138,0,0,0-3.138,3.138V4.185H50.615A2.615,2.615,0,0,0,48,6.8V8.892a1.046,1.046,0,0,0,1.046,1.046H74.154A1.046,1.046,0,0,0,75.2,8.892V6.8A2.615,2.615,0,0,0,72.585,4.185ZM58.462,3.138a1.048,1.048,0,0,1,1.046-1.046h4.185a1.048,1.048,0,0,1,1.046,1.046V4.185H58.462Z"
+                                                    fill="#EA6666"
+                                                />
+                                                <path
+                                                    id="Path_152"
+                                                    data-name="Path 152"
+                                                    d="M73.691,184a.327.327,0,0,0-.327.342l.863,18.114a3.135,3.135,0,0,0,3.135,2.989H93.249a3.135,3.135,0,0,0,3.135-2.989l.863-18.114a.327.327,0,0,0-.327-.342Zm15.8,2.615a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Z"
+                                                    transform="translate(-23.706 -171.969)"
+                                                    fill="#EA6666"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-target="new-menu-popup"
+                                        data-type="side-popup"
+                                        data-unique-id="edit-table-alternative-5"
+                                        class=""
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="28.03"
+                                            height="28"
+                                            viewBox="0 0 28.03 28"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                    transform="translate(0 -77.546)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                    transform="translate(-315.301 0)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+
+                                    <div class="form-group mb-0 mx-3">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-alternative-5"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-alternative-5"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-click-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        كشف عادي
+                                    </p>
+                                    <p class="mb-">150 جنيه</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#delete-modal"
+                                        class="ml-2"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="27.2"
+                                            height="33.477"
+                                            viewBox="0 0 27.2 33.477"
+                                        >
+                                            <g
+                                                id="trash"
+                                                transform="translate(-48)"
+                                            >
+                                                <path
+                                                    id="Path_151"
+                                                    data-name="Path 151"
+                                                    d="M72.585,4.185H66.831V3.138A3.138,3.138,0,0,0,63.692,0H59.508a3.138,3.138,0,0,0-3.138,3.138V4.185H50.615A2.615,2.615,0,0,0,48,6.8V8.892a1.046,1.046,0,0,0,1.046,1.046H74.154A1.046,1.046,0,0,0,75.2,8.892V6.8A2.615,2.615,0,0,0,72.585,4.185ZM58.462,3.138a1.048,1.048,0,0,1,1.046-1.046h4.185a1.048,1.048,0,0,1,1.046,1.046V4.185H58.462Z"
+                                                    fill="#EA6666"
+                                                />
+                                                <path
+                                                    id="Path_152"
+                                                    data-name="Path 152"
+                                                    d="M73.691,184a.327.327,0,0,0-.327.342l.863,18.114a3.135,3.135,0,0,0,3.135,2.989H93.249a3.135,3.135,0,0,0,3.135-2.989l.863-18.114a.327.327,0,0,0-.327-.342Zm15.8,2.615a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Z"
+                                                    transform="translate(-23.706 -171.969)"
+                                                    fill="#EA6666"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-target="new-menu-popup"
+                                        data-type="side-popup"
+                                        data-unique-id="edit-table-alternative-6"
+                                        class=""
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="28.03"
+                                            height="28"
+                                            viewBox="0 0 28.03 28"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                    transform="translate(0 -77.546)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                    transform="translate(-315.301 0)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+
+                                    <div class="form-group mb-0 mx-3">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-alternative-6"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-alternative-6"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" data-click-event="true">
+                            <div
+                                class="row no-gutters p-3 justify-content-between"
+                            >
+                                <div class="col-8">
+                                    <p class="font-weight-bold mb-1">
+                                        كشف عادي
+                                    </p>
+                                    <p class="mb-">150 جنيه</p>
+                                </div>
+                                <div
+                                    class="col-3 d-flex justify-content-center align-items-center"
+                                >
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-toggle="modal"
+                                        data-target="#delete-modal"
+                                        class="ml-2"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="27.2"
+                                            height="33.477"
+                                            viewBox="0 0 27.2 33.477"
+                                        >
+                                            <g
+                                                id="trash"
+                                                transform="translate(-48)"
+                                            >
+                                                <path
+                                                    id="Path_151"
+                                                    data-name="Path 151"
+                                                    d="M72.585,4.185H66.831V3.138A3.138,3.138,0,0,0,63.692,0H59.508a3.138,3.138,0,0,0-3.138,3.138V4.185H50.615A2.615,2.615,0,0,0,48,6.8V8.892a1.046,1.046,0,0,0,1.046,1.046H74.154A1.046,1.046,0,0,0,75.2,8.892V6.8A2.615,2.615,0,0,0,72.585,4.185ZM58.462,3.138a1.048,1.048,0,0,1,1.046-1.046h4.185a1.048,1.048,0,0,1,1.046,1.046V4.185H58.462Z"
+                                                    fill="#EA6666"
+                                                />
+                                                <path
+                                                    id="Path_152"
+                                                    data-name="Path 152"
+                                                    d="M73.691,184a.327.327,0,0,0-.327.342l.863,18.114a3.135,3.135,0,0,0,3.135,2.989H93.249a3.135,3.135,0,0,0,3.135-2.989l.863-18.114a.327.327,0,0,0-.327-.342Zm15.8,2.615a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Zm-5.231,0a1.046,1.046,0,0,1,2.092,0v13.6a1.046,1.046,0,0,1-2.092,0Z"
+                                                    transform="translate(-23.706 -171.969)"
+                                                    fill="#EA6666"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        data-target="new-menu-popup"
+                                        data-type="side-popup"
+                                        data-unique-id="edit-table-alternative-7"
+                                        class=""
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="28.03"
+                                            height="28"
+                                            viewBox="0 0 28.03 28"
+                                        >
+                                            <g
+                                                id="pencil"
+                                                transform="translate(0 -0.246)"
+                                            >
+                                                <path
+                                                    id="Path_140"
+                                                    data-name="Path 140"
+                                                    d="M17.309,82.473,1.887,97.9a.615.615,0,0,0-.16.282L.017,105.039a.607.607,0,0,0,.589.754.6.6,0,0,0,.147-.018l6.861-1.71a.606.606,0,0,0,.282-.16L23.319,88.483Zm0,0"
+                                                    transform="translate(0 -77.546)"
+                                                    fill="#585858"
+                                                />
+                                                <path
+                                                    id="Path_141"
+                                                    data-name="Path 141"
+                                                    d="M342.441,2.823l-1.717-1.717a3.109,3.109,0,0,0-4.293,0l-2.1,2.1,6.01,6.01,2.1-2.1a3.037,3.037,0,0,0,0-4.293Zm0,0"
+                                                    transform="translate(-315.301 0)"
+                                                    fill="#585858"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </a>
+
+                                    <div class="form-group mb-0 mx-3">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-alternative-7"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-alternative-7"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table
+                        class="table table-hover table-striped settings-table settings-table-2 d-none d-md-table"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">اسم الخدمة</th>
+                                <th scope="col">التكلفة</th>
+                                <th scope="col">
+                                    <form>
+                                        <div class="form-group mb-0">
+                                            <div
+                                                class="input-group input-with-img search img-other-side"
+                                            >
+                                                <div
+                                                    class="input-group-prepend"
+                                                >
+                                                    <div
+                                                        class="input-group-text"
+                                                    >
+                                                        <img
+                                                            src="imgs/svg/search-icon.svg"
+                                                            alt="search"
+                                                            class="img-fluid"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <input
+                                                    type="text"
+                                                    class="form-control input-border input-text-gray"
+                                                />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-click-event="true" class="">
+                                <td>
+                                    <div class="form-group mb-0">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-1"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-1"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>كشف عادي</td>
+                                <td>150</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#delete-modal"
+                                            class="ml-3"
+                                        >
+                                            <img
+                                                src="imgs/svg/delete-icon.svg"
+                                                alt="delete"
+                                                class="img-fluid icon"
+                                        /></a>
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-target="new-menu-popup"
+                                            data-type="side-popup"
+                                            data-unique-id="edit-table-1"
+                                        >
+                                            <img
+                                                src="imgs/svg/edit-icon.svg"
+                                                alt="edit"
+                                                class="img-fluid icon"
+                                        /></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-click-event="true" class="">
+                                <td>
+                                    <div class="form-group mb-0">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-2"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-2"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>كشف عادي</td>
+                                <td>150</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#delete-modal"
+                                            class="ml-3"
+                                        >
+                                            <img
+                                                src="imgs/svg/delete-icon.svg"
+                                                alt="delete"
+                                                class="img-fluid icon"
+                                        /></a>
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-target="new-menu-popup"
+                                            data-type="side-popup"
+                                            data-unique-id="edit-table-2"
+                                        >
+                                            <img
+                                                src="imgs/svg/edit-icon.svg"
+                                                alt="edit"
+                                                class="img-fluid icon"
+                                        /></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-click-event="true" class="">
+                                <td>
+                                    <div class="form-group mb-0">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-3"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-3"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>كشف عادي</td>
+                                <td>150</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#delete-modal"
+                                            class="ml-3"
+                                        >
+                                            <img
+                                                src="imgs/svg/delete-icon.svg"
+                                                alt="delete"
+                                                class="img-fluid icon"
+                                        /></a>
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-target="new-menu-popup"
+                                            data-type="side-popup"
+                                            data-unique-id="edit-table-3"
+                                        >
+                                            <img
+                                                src="imgs/svg/edit-icon.svg"
+                                                alt="edit"
+                                                class="img-fluid icon"
+                                        /></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-click-event="true" class="">
+                                <td>
+                                    <div class="form-group mb-0">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-4"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-4"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>كشف عادي</td>
+                                <td>150</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#delete-modal"
+                                            class="ml-3"
+                                        >
+                                            <img
+                                                src="imgs/svg/delete-icon.svg"
+                                                alt="delete"
+                                                class="img-fluid icon"
+                                        /></a>
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-target="new-menu-popup"
+                                            data-type="side-popup"
+                                            data-unique-id="edit-table-4"
+                                        >
+                                            <img
+                                                src="imgs/svg/edit-icon.svg"
+                                                alt="edit"
+                                                class="img-fluid icon"
+                                        /></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-click-event="true" class="">
+                                <td>
+                                    <div class="form-group mb-0">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-5"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-5"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>كشف عادي</td>
+                                <td>150</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#delete-modal"
+                                            class="ml-3"
+                                        >
+                                            <img
+                                                src="imgs/svg/delete-icon.svg"
+                                                alt="delete"
+                                                class="img-fluid icon"
+                                        /></a>
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-target="new-menu-popup"
+                                            data-type="side-popup"
+                                            data-unique-id="edit-table-5"
+                                        >
+                                            <img
+                                                src="imgs/svg/edit-icon.svg"
+                                                alt="edit"
+                                                class="img-fluid icon"
+                                        /></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-click-event="true" class="">
+                                <td>
+                                    <div class="form-group mb-0">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-6"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-6"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>كشف عادي</td>
+                                <td>150</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#delete-modal"
+                                            class="ml-3"
+                                        >
+                                            <img
+                                                src="imgs/svg/delete-icon.svg"
+                                                alt="delete"
+                                                class="img-fluid icon"
+                                        /></a>
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-target="new-menu-popup"
+                                            data-type="side-popup"
+                                            data-unique-id="edit-table-6"
+                                        >
+                                            <img
+                                                src="imgs/svg/edit-icon.svg"
+                                                alt="edit"
+                                                class="img-fluid icon"
+                                        /></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-click-event="true" class="">
+                                <td>
+                                    <div class="form-group mb-0">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-box"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input row-check"
+                                                id="checkbox-table-7"
+                                            />
+                                            <label
+                                                class="custom-control-label"
+                                                for="checkbox-table-7"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>كشف عادي</td>
+                                <td>150</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#delete-modal"
+                                            class="ml-3"
+                                        >
+                                            <img
+                                                src="imgs/svg/delete-icon.svg"
+                                                alt="delete"
+                                                class="img-fluid icon"
+                                        /></a>
+                                        <a
+                                            href="#"
+                                            type="button"
+                                            data-target="new-menu-popup"
+                                            data-type="side-popup"
+                                            data-unique-id="edit-table-7"
+                                        >
+                                            <img
+                                                src="imgs/svg/edit-icon.svg"
+                                                alt="edit"
+                                                class="img-fluid icon"
+                                        /></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+            <div class="side-popup profile-menu" id="profile-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <div class="text-left">
+                    <h2 class="mt-4 mb-2 px-3">Dr Demo</h2>
+                    <p class="px-3 mb-3">mohamed@yahoo.com</p>
+                </div>
+                <div class="d-block d-lg-none px-3 mt-3 pt-2">
+                    <p class="mb-3">العيادة الحالية : العيادة الرئيسية</p>
+                    <div class="form-group d-flex align-items-center">
+                        <label class="text-light ml-2 mb-0">تغييرالعيادة</label>
+                        <select
+                            class="selectpicker input-border input-text-gray"
+                            id="current-clinic-side"
+                        >
+                            <option selected>اسم العيادة</option>
+                            <option value="clinic-2">عيادة 2</option>
+                            <option value="clinic-3">عيادة 3</option>
+                        </select>
+                    </div>
+                </div>
+                <ul class="profile-nav py-3">
+                    <li>
+                        <a href="settings-services.html">
+                            <img
+                                src="imgs/svg/profile-menu/language.svg"
+                                alt="language"
+                                class="img-fluid mx-2"
+                            />
+                            تغيير اللغة الي: الإنجليزية</a
+                        >
+                    </li>
+                    <li>
+                        <a href="settings-ar.html">
+                            <img
+                                src="imgs/svg/settings-icon.svg"
+                                alt="settings"
+                                class="img-fluid mx-2"
+                            />
+                            الاعدادات</a
+                        >
+                    </li>
+                    <li>
+                        <a href="appointments-ar.html">
+                            <img
+                                src="imgs/svg/appointment-icon.svg"
+                                alt="appointments"
+                                class="img-fluid mx-2"
+                            />
+                            المواعيد</a
+                        >
+                    </li>
+                    <li>
+                        <a href="visits-ar.html">
+                            <img
+                                src="imgs/svg/profile-menu/eye.svg"
+                                alt="visits"
+                                class="img-fluid mx-2"
+                            />
+                            الزيارات</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/change-password.svg"
+                                alt="change password"
+                                class="img-fluid mx-2"
+                            />
+                            تغيير كلمة المرور</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/logout.svg"
+                                alt="logout"
+                                class="img-fluid mx-2"
+                            />
+                            تسجيل الخروج</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="side-popup chats-menu" id="chats-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <ul class="chats-nav mt-4 mb-3">
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">انتهت</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="side-popup form-menu" id="new-menu-popup">
+                <button class="btn close-popup close-left">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <form class="py-4 px-3">
+                    <h2 class="d-block d-sm-none text-center mb-4">
+                        اضافة خدمة
+                    </h2>
+                    <div class="form-group mb-3">
+                        <label class="text-light" for="service-name"
+                            >اسم الخدمة :</label
+                        >
+                        <input
+                            type="text"
+                            id="service-name"
+                            class="form-control input-border"
+                        />
+                        <div class="invalid-feedback">
+                            <p>رسالة خطا</p>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="text-light" for="service-cost">
+                            التكلفة :</label
+                        >
+                        <div class="input-group input-with-img img-other-side">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <img
+                                        src="imgs/svg/number-input-icon.svg"
+                                        alt="number"
+                                        class="img-fluid"
+                                    />
+                                </div>
+                            </div>
+                            <input
+                                type="number"
+                                id="service-cost"
+                                class="form-control input-border"
+                                placeholder=""
+                            />
+                        </div>
+                    </div>
+                    <div class="text-center pt-3">
+                        <button type="submit" class="btn btn-red px-4 py-2">
+                            حفظ
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- delete Modal -->
+        <div
+            class="modal fade"
+            id="delete-modal"
+            tabindex="-1"
+            aria-labelledby="delete-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="font-weight-bold text-center mb-4">
+                        هل انت متأكد من حذف الخدمة
+                    </h4>
+                    <img
+                        src="imgs/svg/delete-red-icon.svg"
+                        alt="delete"
+                        class="img-fluid img-success"
+                    />
+                    <div class="text-center pt-5 d-flex justify-content-center">
+                        <button
+                            class="btn btn-blue px-4 py-2 mx-2"
+                            data-dismiss="modal"
+                        >
+                            اغلاق
+                        </button>
+                        <button class="btn btn-red px-4 py-2 mx-2">حذف</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- success Modal -->
+        <div
+            class="modal fade success-modal"
+            id="success-modal"
+            tabindex="-1"
+            aria-labelledby="success-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="font-weight-bold text-center mb-4">تم الحفظ</h4>
+                    <img
+                        src="imgs/svg/success-icon.svg"
+                        alt="success"
+                        class="img-fluid img-success"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- error Modal -->
+        <div
+            class="modal fade success-modal"
+            id="error-modal"
+            tabindex="-1"
+            aria-labelledby="error-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="font-weight-bold text-center mb-4">رسالة خطأ</h4>
+                    <img
+                        src="imgs/svg/error-icon.svg"
+                        alt="error"
+                        class="img-fluid img-error"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+        <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <!-- time picker -->
+        <script src="vendor/gijgo/js/core.js"></script>
+        <script src="vendor/gijgo/js/timepicker.min.js"></script>
+        <!-- time picker -->
+        <script src="js/script.js"></script>
+        <script>
+            $("#from-time").timepicker({
+                mode: "ampm",
+            });
+            $("#to-time").timepicker({
+                mode: "ampm",
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DClinic - appointments</title>
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/core.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/timepicker.min.css" />
+        <link rel="stylesheet" href="vendor/gijgo/css/datepicker.min.css" />
+        <link
+            rel="stylesheet"
+            href="vendor/bootstrap-select/css/bootstrap-select.min.css"
+        />
+
+        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-ar.css" />
+    </head>
+    <body dir="rtl">
+        <div class="top-bar bg-blue text-light">
+            <div
+                class="container-fluid d-flex align-items-stretch justify-content-between"
+            >
+                <div class="d-flex align-items-center py-1">
+                    <a href="index-ar.html" class="ml-4 d-none d-md-block">
+                        <img
+                            src="imgs/svg/logo.svg"
+                            alt="logo"
+                            class="img-fluid logo"
+                        />
+                    </a>
+                    <nav
+                        aria-label="breadcrumb"
+                        class="d-flex align-items-center"
+                    >
+                        <a
+                            href="index-ar.html"
+                            class="back-link d-block d-md-none ml-2 align-items-center"
+                        >
+                            <img
+                                src="imgs/svg/back-arrow.svg"
+                                alt="back"
+                                class="img-fluid"
+                            />
+                        </a>
+
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index-ar.html">الحجوزات</a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div
+                    class="align-items-center justify-content-center d-none d-lg-flex"
+                >
+                    <div class="top-item px-2 px-xl-3">
+                        <p>العيادة الحالية: العيادة الرئيسية</p>
+                    </div>
+                    <div class="top-item px-2 px-xl-3">
+                        <div class="form-group d-flex align-items-center">
+                            <label class="text-light ml-2">تغيير العيادة</label>
+                            <select
+                                class="selectpicker input-border input-text-gray"
+                                id="current-clinic-top"
+                            >
+                                <option selected>اسم العيادة</option>
+                                <option value="clinic-2">عيادة 2</option>
+                                <option value="clinic-3">عيادة 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center py-2">
+                    <a
+                        href="#"
+                        class="ml-3 position-relative"
+                        data-target="chats-menu-popup"
+                        data-type="side-popup"
+                    >
+                        <span class="notification floating-notification"
+                            >3</span
+                        >
+                        <img
+                            src="imgs/svg/chat-icon.svg"
+                            alt="chat"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="settings-ar.html" class="ml-3">
+                        <img
+                            src="imgs/svg/settings-icon.svg"
+                            alt="settings"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="appointments-ar.html" class="ml-3">
+                        <img
+                            src="imgs/svg/appointment-icon.svg"
+                            alt="appointment"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a href="visits-ar.html" class="ml-3">
+                        <img
+                            src="imgs/svg/visits-icon.svg"
+                            alt="visits"
+                            class="img-fluid icon"
+                        />
+                    </a>
+                    <a
+                        href="#"
+                        class="profile-btn"
+                        data-target="profile-menu-popup"
+                        data-type="side-popup"
+                        ><span class="solve-font-issue"> KI </span></a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div id="app-container" class="appointment-wrapper">
+            <main class="main-content">
+                <div class="container mt-3 mb-5">
+                    <div
+                        class="d-flex justify-content-between py-4 align-items-center"
+                    >
+                        <div
+                            class="justify-content-center align-items-center d-none d-lg-flex"
+                        >
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-red py-1 mx-1 px-4"
+                            >
+                                التالي
+                            </a>
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-hover-gray py-1 mx-1 px-4"
+                            >
+                                اليوم
+                            </a>
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-blue py-1 mx-1 px-4"
+                            >
+                                السابق
+                            </a>
+                        </div>
+                        <a
+                            href="#"
+                            type="button"
+                            class="btn btn-red py-2 mx-1 px-3 d-flex d-lg-none justify-content-center align-items-center btns-navigation"
+                        >
+                            <img
+                                src="imgs/svg/arrow-left-white.svg"
+                                class="img-fluid icon-sm mx-0"
+                                alt="next"
+                            />
+                        </a>
+                        <h5 class="mb-0 font-weight-bold">يناير 2021</h5>
+                        <a
+                            href="#"
+                            type="button"
+                            class="btn btn-red py-2 mx-1 px-3 d-flex d-lg-none justify-content-center align-items-center btns-navigation"
+                        >
+                            <img
+                                src="imgs/svg/arrow-right-white.svg"
+                                class="img-fluid icon-sm mx-0"
+                                alt="prev"
+                            />
+                        </a>
+                        <div class="d-none d-lg-flex">
+                            <ul class="nav nav-appointment my-0" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        class="btn btn-blue py-1 mx-1 px-4 active"
+                                        data-toggle="tab"
+                                        data-target="#month-tab"
+                                        role="tab"
+                                    >
+                                        الشهر
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        class="btn btn-blue py-1 mx-1 px-4"
+                                        data-toggle="tab"
+                                        data-target="#week-tab"
+                                        role="tab"
+                                    >
+                                        الاسبوع
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a
+                                        href="#"
+                                        type="button"
+                                        class="btn btn-blue py-1 mx-1 px-4"
+                                        data-toggle="tab"
+                                        data-target="#day-tab"
+                                        role="tab"
+                                    >
+                                        اليوم
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content appointment-content">
+                        <div
+                            class="tab-pane fade show active"
+                            id="month-tab"
+                            role="tabpanel"
+                        >
+                            <!-- calender component -->
+                            <p class="text-center my-5">Calender Component</p>
+                        </div>
+                        <div
+                            class="tab-pane fade"
+                            id="week-tab"
+                            role="tabpanel"
+                        >
+                            <div class="appointments-week-swiper">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="slide-heading">
+                                                <p>
+                                                    الاحد <br />
+                                                    31 يناير
+                                                </p>
+                                            </div>
+                                            <div class="slide-content">
+                                                <div class="text-center my-3">
+                                                    <a
+                                                        href="#"
+                                                        type="button"
+                                                        class="btn btn-red py-1 my-2 px-3"
+                                                        data-toggle="modal"
+                                                        data-target="#add-modal"
+                                                    >
+                                                        <img
+                                                            src="imgs/svg/add-icon.svg"
+                                                            alt="add"
+                                                            class="img-fluid icon-sm"
+                                                        />
+                                                        اضافة
+                                                    </a>
+                                                </div>
+                                                <table
+                                                    class="table table-bordered table-appointments"
+                                                >
+                                                    <tbody>
+                                                        <tr
+                                                            class="status-green"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>1</td>
+                                                            <td>احمد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                            class="status-orange"
+                                                        >
+                                                            <td>2</td>
+                                                            <td>سيد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                            class="status-brown"
+                                                        >
+                                                            <td>3</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <!-- for more status colors add a class "status-{color}" and also see _tables.scss to add the color value -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="slide-heading">
+                                                <p>
+                                                    الاحد <br />
+                                                    31 يناير
+                                                </p>
+                                            </div>
+                                            <div class="slide-content">
+                                                <div class="text-center my-3">
+                                                    <a
+                                                        href="#"
+                                                        type="button"
+                                                        class="btn btn-red py-1 my-2 px-3"
+                                                        data-toggle="modal"
+                                                        data-target="#add-modal"
+                                                    >
+                                                        <img
+                                                            src="imgs/svg/add-icon.svg"
+                                                            alt="add"
+                                                            class="img-fluid icon-sm"
+                                                        />
+                                                        اضافة
+                                                    </a>
+                                                </div>
+                                                <table
+                                                    class="table table-bordered table-appointments"
+                                                >
+                                                    <tbody>
+                                                        <tr
+                                                            class="status-green"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>1</td>
+                                                            <td>احمد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-orange"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>2</td>
+                                                            <td>سيد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>3</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>4</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>5</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <!-- for more status colors add a class "status-{color}" and also see _tables.scss to add the color value -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="slide-heading">
+                                                <p>
+                                                    الاحد <br />
+                                                    31 يناير
+                                                </p>
+                                            </div>
+                                            <div class="slide-content">
+                                                <div class="text-center my-3">
+                                                    <a
+                                                        href="#"
+                                                        type="button"
+                                                        class="btn btn-red py-1 my-2 px-3"
+                                                        data-toggle="modal"
+                                                        data-target="#add-modal"
+                                                    >
+                                                        <img
+                                                            src="imgs/svg/add-icon.svg"
+                                                            alt="add"
+                                                            class="img-fluid icon-sm"
+                                                        />
+                                                        اضافة
+                                                    </a>
+                                                </div>
+                                                <table
+                                                    class="table table-bordered table-appointments"
+                                                >
+                                                    <tbody>
+                                                        <tr
+                                                            class="status-green"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>1</td>
+                                                            <td>احمد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-orange"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>2</td>
+                                                            <td>سيد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>3</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>4</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>5</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <!-- for more status colors add a class "status-{color}" and also see _tables.scss to add the color value -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="slide-heading">
+                                                <p>
+                                                    الاحد <br />
+                                                    31 يناير
+                                                </p>
+                                            </div>
+                                            <div class="slide-content">
+                                                <div class="text-center my-3">
+                                                    <a
+                                                        href="#"
+                                                        type="button"
+                                                        class="btn btn-red py-1 my-2 px-3"
+                                                        data-toggle="modal"
+                                                        data-target="#add-modal"
+                                                    >
+                                                        <img
+                                                            src="imgs/svg/add-icon.svg"
+                                                            alt="add"
+                                                            class="img-fluid icon-sm"
+                                                        />
+                                                        اضافة
+                                                    </a>
+                                                </div>
+                                                <table
+                                                    class="table table-bordered table-appointments"
+                                                >
+                                                    <tbody>
+                                                        <tr
+                                                            class="status-green"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>1</td>
+                                                            <td>احمد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-orange"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>2</td>
+                                                            <td>سيد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>3</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>4</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>5</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <!-- for more status colors add a class "status-{color}" and also see _tables.scss to add the color value -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="slide-heading">
+                                                <p>
+                                                    الاحد <br />
+                                                    31 يناير
+                                                </p>
+                                            </div>
+                                            <div class="slide-content">
+                                                <div class="text-center my-3">
+                                                    <a
+                                                        href="#"
+                                                        type="button"
+                                                        class="btn btn-red py-1 my-2 px-3"
+                                                        data-toggle="modal"
+                                                        data-target="#add-modal"
+                                                    >
+                                                        <img
+                                                            src="imgs/svg/add-icon.svg"
+                                                            alt="add"
+                                                            class="img-fluid icon-sm"
+                                                        />
+                                                        اضافة
+                                                    </a>
+                                                </div>
+                                                <table
+                                                    class="table table-bordered table-appointments"
+                                                >
+                                                    <tbody>
+                                                        <tr
+                                                            class="status-green"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>1</td>
+                                                            <td>احمد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-orange"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>2</td>
+                                                            <td>سيد محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>3</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>4</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <tr
+                                                            class="status-brown"
+                                                            data-type="side-popup"
+                                                            data-target="details-menu-popup"
+                                                            data-unique-id="day-1-row-1"
+                                                        >
+                                                            <td>5</td>
+                                                            <td>عادل محمد</td>
+                                                        </tr>
+                                                        <!-- for more status colors add a class "status-{color}" and also see _tables.scss to add the color value -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-scrollbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="day-tab" role="tabpanel">
+                            <div class="text-center mb-3">
+                                <a
+                                    href="#"
+                                    type="button"
+                                    class="btn btn-blue py-1 my-2 px-3"
+                                    data-toggle="modal"
+                                    data-target="#add-modal"
+                                >
+                                    <img
+                                        src="imgs/svg/add-icon.svg"
+                                        alt="add"
+                                        class="img-fluid icon-sm"
+                                    />
+                                    اضافة
+                                </a>
+                                <a
+                                    href="#"
+                                    type="button"
+                                    class="btn btn-red my-2 py-1 px-3 mx-2"
+                                    data-toggle="modal"
+                                    data-target="#notification-modal"
+                                >
+                                    <img
+                                        src="imgs/svg/visits/bell-icon.svg"
+                                        alt="add"
+                                        class="img-fluid icon-sm m-0"
+                                    />
+                                    اشعار
+                                </a>
+                            </div>
+                            <table
+                                class="table table-bordered table-appointments"
+                            >
+                                <tbody>
+                                    <tr
+                                        class="status-green"
+                                        data-type="side-popup"
+                                        data-target="details-menu-popup"
+                                        data-unique-id="day-1-row-1"
+                                    >
+                                        <td>1</td>
+                                        <td>احمد محمد</td>
+                                    </tr>
+                                    <tr
+                                        class="status-orange"
+                                        data-type="side-popup"
+                                        data-target="details-menu-popup"
+                                        data-unique-id="day-1-row-2"
+                                    >
+                                        <td>2</td>
+                                        <td>سيد محمد</td>
+                                    </tr>
+                                    <tr
+                                        class="status-brown"
+                                        data-type="side-popup"
+                                        data-target="details-menu-popup"
+                                        data-unique-id="day-1-row-3"
+                                    >
+                                        <td>3</td>
+                                        <td>عادل محمد</td>
+                                    </tr>
+                                    <!-- for more status colors add a class "status-{color}" and also see _tables.scss to add the color value -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- bottom tabs in mobile -->
+            <div class="d-flex d-lg-none w-100 justify-content-center">
+                <div class="container">
+                    <ul class="nav nav-appointment my-0" role="tablist">
+                        <li class="nav-item mx-1" role="presentation">
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-blue py-1 px-4 active"
+                                data-toggle="tab"
+                                data-target="#month-tab"
+                                role="tab"
+                            >
+                                شهر
+                            </a>
+                        </li>
+                        <li class="nav-item mx-1" role="presentation">
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-blue py-1 px-4"
+                                data-toggle="tab"
+                                data-target="#week-tab"
+                                role="tab"
+                            >
+                                اسبوع
+                            </a>
+                        </li>
+                        <li class="nav-item mx-1" role="presentation">
+                            <a
+                                href="#"
+                                type="button"
+                                class="btn btn-blue py-1 px-4"
+                                data-toggle="tab"
+                                data-target="#day-tab"
+                                role="tab"
+                            >
+                                يوم
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- bottom tabs in mobile -->
+            <div class="side-popup profile-menu" id="profile-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <div class="text-left">
+                    <h2 class="mt-4 mb-2 px-3">Dr Demo</h2>
+                    <p class="px-3 mb-3">mohamed@yahoo.com</p>
+                </div>
+                <div class="d-block d-lg-none px-3 mt-3 pt-2">
+                    <p class="mb-3">العيادة الحالية : العيادة الرئيسية</p>
+                    <div class="form-group d-flex align-items-center">
+                        <label class="text-light ml-2 mb-0">تغييرالعيادة</label>
+                        <select
+                            class="selectpicker input-border input-text-gray"
+                            id="current-clinic-side"
+                        >
+                            <option selected>اسم العيادة</option>
+                            <option value="clinic-2">عيادة 2</option>
+                            <option value="clinic-3">عيادة 3</option>
+                        </select>
+                    </div>
+                </div>
+                <ul class="profile-nav py-3">
+                    <li>
+                        <a href="appointments.html">
+                            <img
+                                src="imgs/svg/profile-menu/language.svg"
+                                alt="language"
+                                class="img-fluid mx-2"
+                            />
+                            تغيير اللغة الي: الإنجليزية</a
+                        >
+                    </li>
+                    <li>
+                        <a href="settings-ar.html">
+                            <img
+                                src="imgs/svg/settings-icon.svg"
+                                alt="settings"
+                                class="img-fluid mx-2"
+                            />
+                            الاعدادات</a
+                        >
+                    </li>
+                    <li>
+                        <a href="appointments-ar.html">
+                            <img
+                                src="imgs/svg/appointment-icon.svg"
+                                alt="appointments"
+                                class="img-fluid mx-2"
+                            />
+                            المواعيد</a
+                        >
+                    </li>
+                    <li>
+                        <a href="visits-ar.html">
+                            <img
+                                src="imgs/svg/profile-menu/eye.svg"
+                                alt="visits"
+                                class="img-fluid mx-2"
+                            />
+                            الزيارات</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/change-password.svg"
+                                alt="change password"
+                                class="img-fluid mx-2"
+                            />
+                            تغيير كلمة المرور</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img
+                                src="imgs/svg/profile-menu/logout.svg"
+                                alt="logout"
+                                class="img-fluid mx-2"
+                            />
+                            تسجيل الخروج</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="side-popup chats-menu" id="chats-menu-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <ul class="chats-nav mt-4 mb-3">
+                    <li>
+                        <a href="settings.html" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings-business-hours-ar.html" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings-business-hours-ar.html" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings-business-hours-ar.html" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                                <span class="notification">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings-business-hours-ar.html" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings-business-hours-ar.html" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings-business-hours-ar.html" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">انتهت</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings-business-hours-ar.html" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings-business-hours-ar.html" class="px-3">
+                            <div class="content">
+                                <span class="date">01-03-2012</span>
+                                <span class="status">قيد التنفيذ</span>
+                                <p class="mt-1">أحمد عادل محمد</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="side-popup form-menu form-menu-lg" id="add-new-popup">
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+
+                <form class="my-4">
+                    <div class="form-group mb-3 px-3">
+                        <label>الاسم</label>
+                        <input type="text" class="form-control" value="" />
+                    </div>
+                    <div class="form-group mb-3 px-3">
+                        <label>التليفون</label>
+                        <input type="text" class="form-control" value="" />
+                    </div>
+                    <div class="form-group mb-3 px-3">
+                        <label>الخدمة</label>
+                        <select class="selectpicker" multiple>
+                            <option value="1" disabled>اختر الخدمة</option>
+                            <option value="2">الخدمة 2</option>
+                            <option value="3">الخدمة 3</option>
+                            <option value="4">الخدمة 4</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-3 px-3">
+                        <div
+                            class="custom-control custom-switch custom-switch-bar custom-switch-bar-white"
+                        >
+                            <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="custom-switch-bar-6"
+                            />
+                            <label
+                                class="custom-control-label mt-1"
+                                for="custom-switch-bar-6"
+                            ></label>
+                            <label for="custom-switch-bar-6" class="mx-2">
+                                التأمين
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3 px-3">
+                        <select class="selectpicker">
+                            <option value="1">اختر التأمين</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3 px-3">
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="custom-switch-bar-5" class="mx-2">
+                                    مدفوع
+                                </label>
+                            </div>
+                            <div class="col-2">
+                                <div
+                                    class="custom-control custom-switch custom-switch-bar custom-switch-bar-white mb-2"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="custom-switch-bar-5"
+                                    />
+                                    <label
+                                        class="custom-control-label mt-1"
+                                        for="custom-switch-bar-5"
+                                    ></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3 px-3">
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="custom-switch-bar-4" class="mx-2">
+                                    تم التأكيد
+                                </label>
+                            </div>
+                            <div class="col-2">
+                                <div
+                                    class="custom-control custom-switch custom-switch-bar custom-switch-bar-white mb-2"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="custom-switch-bar-4"
+                                    />
+                                    <label
+                                        class="custom-control-label mt-1"
+                                        for="custom-switch-bar-4"
+                                    ></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3 px-3">
+                        <label>ملاحظات</label>
+                        <textarea rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="text-center my-3">
+                        <a href="#" class="btn btn-red mx-1">اضافة</a>
+                        <a href="#" class="btn btn-red mx-1">الغاء</a>
+                    </div>
+                </form>
+            </div>
+            <div
+                class="side-popup form-menu form-menu-lg"
+                id="details-menu-popup"
+            >
+                <button class="btn close-popup">
+                    <img
+                        src="imgs/svg/close-lg-icon.svg"
+                        alt="close"
+                        class="img-fluid"
+                    />
+                </button>
+                <ul class="nav nav-tabs justify-content-center" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a
+                            class="nav-link active"
+                            data-toggle="tab"
+                            href="#appointment-details-tab"
+                            role="tab"
+                        >
+                            <img
+                                src="imgs/svg/patients/user.svg"
+                                alt="current profile"
+                                class="img-fluid"
+                            />
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a
+                            class="nav-link"
+                            data-toggle="tab"
+                            href="#appointment-profile-tab"
+                            role="tab"
+                        >
+                            <img
+                                src="imgs/svg/patients/user.svg"
+                                alt="current profile"
+                                class="img-fluid"
+                            />
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a
+                            class="nav-link"
+                            data-toggle="tab"
+                            href="#appointment-prescription-tab"
+                            role="tab"
+                        >
+                            <img
+                                src="imgs/svg/prescription.svg"
+                                alt="current profile"
+                                class="img-fluid"
+                            />
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a
+                            class="nav-link"
+                            data-toggle="tab"
+                            href="#appointment-results-tab"
+                            role="tab"
+                        >
+                            <img
+                                src="imgs/svg/results.svg"
+                                alt="current profile"
+                                class="img-fluid"
+                            />
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a
+                            class="nav-link"
+                            data-toggle="modal"
+                            data-target="#delete-modal"
+                        >
+                            <img
+                                src="imgs/svg/delete-white-icon.svg"
+                                alt="current profile"
+                                class="img-fluid"
+                            />
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a
+                            class="nav-link"
+                            data-toggle="tab"
+                            href="#appointment-edit-tab"
+                            role="tab"
+                        >
+                            <img
+                                src="imgs/svg/edit-white.svg"
+                                alt="current profile"
+                                class="img-fluid"
+                            />
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div
+                        class="tab-pane fade active show"
+                        id="appointment-details-tab"
+                        role="tabpanel"
+                    >
+                        <form class="my-4">
+                            <div class="form-group mb-3 px-3">
+                                <label>الاسم</label>
+                                <input
+                                    type="text"
+                                    readonly
+                                    class="form-control"
+                                    value="Ahmad Mohamed"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>التليفون</label>
+                                <input
+                                    readonly
+                                    type="text"
+                                    class="form-control"
+                                    value="012222222223"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>الخدمة</label>
+                                <input
+                                    type="text"
+                                    readonly
+                                    class="form-control"
+                                    value="Test inside Clinic"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>التكلفة</label>
+                                <input
+                                    type="text"
+                                    readonly
+                                    class="form-control"
+                                    value="150"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>التاريخ</label>
+                                <input
+                                    type="text"
+                                    readonly
+                                    class="form-control"
+                                    value="Feb 7, 2021, 8:42:05 PM"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label
+                                            for="custom-switch-bar-20"
+                                            class="mx-2"
+                                        >
+                                            مدفوع
+                                        </label>
+                                    </div>
+                                    <div class="col-2">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-bar custom-switch-bar-white mb-2"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input"
+                                                id="custom-switch-bar-20"
+                                            />
+                                            <label
+                                                class="custom-control-label mt-1"
+                                                for="custom-switch-bar-20"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>ملاحظات</label>
+                                <textarea
+                                    readonly
+                                    rows="5"
+                                    class="form-control"
+                                ></textarea>
+                            </div>
+                            <div class="text-center my-3">
+                                <a href="#" class="btn btn-red mx-2">اضافة</a>
+                                <a href="#" class="btn btn-red mx-2">الغاء</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div
+                        class="tab-pane fade"
+                        id="appointment-profile-tab"
+                        role="tabpanel"
+                    >
+                        <ul
+                            class="nav nav-tabs justify-content-between"
+                            role="tablist"
+                        >
+                            <li
+                                class="nav-item active border-0"
+                                role="presentation"
+                            >
+                                <a
+                                    class="nav-link active"
+                                    data-toggle="tab"
+                                    href="#appointment-profile-current-tab"
+                                    role="tab"
+                                >
+                                    <img
+                                        src="imgs/svg/user-icon.svg"
+                                        alt="user"
+                                        class="img-fluid mx-1"
+                                    />
+                                    <span>ملف المريض</span>
+                                </a>
+                            </li>
+                            <li
+                                class="nav-item position-relative d-flex align-items-center"
+                                role="presentation"
+                            >
+                                <a
+                                    class="nav-link border-0"
+                                    data-toggle="tab"
+                                    href="#appointment-profile-old-tab"
+                                    role="tab"
+                                >
+                                    <span class="img-bg-red mx-2"
+                                        ><img
+                                            src="imgs/svg/user-icon.svg"
+                                            alt="old-profile"
+                                            class="img-fluid mx-0"
+                                    /></span>
+
+                                    <span>الملف القديم</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div
+                                class="tab-pane fade show active"
+                                id="appointment-profile-current-tab"
+                                role="tabpanel"
+                            >
+                                <form class="my-4">
+                                    <div class="form-group mb-3 px-3">
+                                        <label>الكود</label>
+                                        <input
+                                            type="text"
+                                            readonly
+                                            class="form-control"
+                                            value="94"
+                                        />
+                                    </div>
+
+                                    <div class="form-group mb-3 px-3">
+                                        <label>الاسم</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            value="Ahemd Mohamed"
+                                        />
+                                    </div>
+
+                                    <div class="form-group mb-3 px-3">
+                                        <label>التليفون</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            value="01212123456"
+                                        />
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>المدينة</label>
+                                        <div class="d-flex align-items-stretch">
+                                            <select class="selectpicker">
+                                                <option selected>
+                                                    اختر المدينة
+                                                </option>
+                                                <option value="1">Giza</option>
+                                                <option value="2">Cairo</option>
+                                            </select>
+
+                                            <a
+                                                href="#"
+                                                class="btn btn-red mr-2 btn-add"
+                                                data-toggle="modal"
+                                                data-target="#add-city-modal"
+                                            >
+                                                <img
+                                                    src="imgs/svg/add-icon.svg"
+                                                    alt="add"
+                                                    class="img-fluid icon m-0"
+                                            /></a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>المنطقة</label>
+                                        <div class="d-flex align-items-stretch">
+                                            <select class="selectpicker">
+                                                <option selected>
+                                                    اختر المنطة
+                                                </option>
+                                                <option value="1">Giza</option>
+                                                <option value="2">Cairo</option>
+                                            </select>
+
+                                            <a
+                                                href="#"
+                                                class="btn btn-red mr-2 btn-add"
+                                                data-toggle="modal"
+                                                data-target="#add-city-modal"
+                                            >
+                                                <img
+                                                    src="imgs/svg/add-icon.svg"
+                                                    alt="add"
+                                                    class="img-fluid icon m-0"
+                                            /></a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>تاريخ الميلاد</label>
+                                        <div
+                                            class="input-group input-with-img img-other-side"
+                                        >
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <img
+                                                        src="imgs/svg/calender-icon.svg"
+                                                        alt="calender"
+                                                        class="img-fluid"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <input
+                                                id="date-of-birth-2"
+                                                readonly
+                                                class="form-control date-input"
+                                                placeholder=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>النوع</label>
+                                        <select class="selectpicker">
+                                            <option selected>اختر النوع</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>ايميل</label>
+                                        <input
+                                            type="email"
+                                            class="form-control"
+                                            value=""
+                                        />
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>ملاحظات</label>
+                                        <textarea
+                                            rows="4"
+                                            class="form-control"
+                                        ></textarea>
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>اسم العائلة</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            value=""
+                                        />
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>عدد الاطفال</label>
+                                        <div
+                                            class="input-group input-with-img img-other-side"
+                                        >
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <img
+                                                        src="imgs/svg/number-input-icon.svg"
+                                                        alt="number"
+                                                        class="img-fluid"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <input
+                                                type="number"
+                                                class="form-control"
+                                                placeholder=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>السن</label>
+                                        <div
+                                            class="input-group input-with-img img-other-side"
+                                        >
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <img
+                                                        src="imgs/svg/number-input-icon.svg"
+                                                        alt="number"
+                                                        class="img-fluid"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <input
+                                                type="number"
+                                                class="form-control"
+                                                placeholder=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 px-3">
+                                        <label>فصيلة الدم</label>
+                                        <select class="selectpicker">
+                                            <option selected>
+                                                اختر فصيلة الدم
+                                            </option>
+                                            <option value="1">A</option>
+                                            <option value="2">B</option>
+                                            <option value="3">AB</option>
+                                            <option value="4">O</option>
+                                        </select>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-red px-3"
+                                        >
+                                            حفظ
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="appointment-profile-old-tab"
+                                role="tabpanel"
+                            >
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <div class="custom-file">
+                                            <input
+                                                type="file"
+                                                class="custom-file-input"
+                                                id="patients-old-profile-attachments"
+                                            />
+                                            <label
+                                                class="nav-link mb-0"
+                                                for="patients-old-profile-attachments"
+                                            >
+                                                <img
+                                                    src="imgs/svg/attachments.svg"
+                                                    alt="attachments"
+                                                    class="img-fluid mx-1"
+                                                />
+                                                <span>ارفاق مستندات</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a href="#" class="nav-link">
+                                            <img
+                                                src="imgs/svg/take-image.svg"
+                                                alt="Visits"
+                                                class="img-fluid mx-1"
+                                            />
+                                            <span>اخذ صورة</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="tab-pane fade"
+                        id="appointment-prescription-tab"
+                        role="tabpanel"
+                    >
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <div class="custom-file">
+                                    <input
+                                        type="file"
+                                        class="custom-file-input"
+                                        id="patients-old-profile-attachments"
+                                    />
+                                    <label
+                                        class="nav-link mb-0"
+                                        for="patients-old-profile-attachments"
+                                    >
+                                        <img
+                                            src="imgs/svg/attachments.svg"
+                                            alt="attachments"
+                                            class="img-fluid mx-1"
+                                        />
+                                        <span>ارفاق مستندات</span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a href="#" class="nav-link">
+                                    <img
+                                        src="imgs/svg/take-image.svg"
+                                        alt="Visits"
+                                        class="img-fluid mx-1"
+                                    />
+                                    <span>اخذ صورة</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="tab-pane fade"
+                        id="appointment-results-tab"
+                        role="tabpanel"
+                    >
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <div class="custom-file">
+                                    <input
+                                        type="file"
+                                        class="custom-file-input"
+                                        id="patients-old-profile-attachments"
+                                    />
+                                    <label
+                                        class="nav-link mb-0"
+                                        for="patients-old-profile-attachments"
+                                    >
+                                        <img
+                                            src="imgs/svg/attachments.svg"
+                                            alt="attachments"
+                                            class="img-fluid mx-1"
+                                        />
+                                        <span>ارفاق مستندات</span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a href="#" class="nav-link">
+                                    <img
+                                        src="imgs/svg/take-image.svg"
+                                        alt="Visits"
+                                        class="img-fluid mx-1"
+                                    />
+                                    <span>اخذ صورة</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="tab-pane fade"
+                        id="appointment-edit-tab"
+                        role="tabpanel"
+                    >
+                        <form class="my-4">
+                            <div class="form-group mb-3 px-3">
+                                <label>الاسم</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    value="Ahmad Mohamed"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>التليفون</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    value="012222222223"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>الخدمة</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    value="Test inside Clinic"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>التكلفة</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    value="150"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>التاريخ</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    value="Feb 7, 2021, 8:42:05 PM"
+                                />
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label
+                                            for="custom-switch-bar-2"
+                                            class="mx-2"
+                                        >
+                                            مدفوع
+                                        </label>
+                                    </div>
+                                    <div class="col-2">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-bar custom-switch-bar-white mb-2"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input"
+                                                id="custom-switch-bar-2"
+                                            />
+                                            <label
+                                                class="custom-control-label mt-1"
+                                                for="custom-switch-bar-2"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label
+                                            for="custom-switch-bar-3"
+                                            class="mx-2"
+                                        >
+                                            التأمين
+                                        </label>
+                                    </div>
+                                    <div class="col-2">
+                                        <div
+                                            class="custom-control custom-switch custom-switch-bar custom-switch-bar-white mb-2"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="custom-control-input"
+                                                id="custom-switch-bar-3"
+                                            />
+                                            <label
+                                                class="custom-control-label mt-1"
+                                                for="custom-switch-bar-3"
+                                            ></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <select class="selectpicker">
+                                    <option value="1">Select Insurance</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3 px-3">
+                                <label>Notes</label>
+                                <textarea
+                                    rows="5"
+                                    class="form-control"
+                                ></textarea>
+                            </div>
+                            <div class="text-center my-3">
+                                <a href="#" class="btn btn-red">اضافة</a>
+                                <a href="#" class="btn btn-red">الغاء</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- notification Modal -->
+        <div
+            class="modal fade"
+            id="notification-modal"
+            tabindex="-1"
+            aria-labelledby="notification-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="text-blue font-weight-bold text-center mb-4">
+                        ارسال اشعار
+                    </h4>
+                    <form class="form">
+                        <div
+                            class="form-group d-flex flex-column flex-sm-row justify-content-center mb-0"
+                        >
+                            <div class="custom-control custom-radio mb-3">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    id="all-patients"
+                                    name="notification-radio"
+                                    checked
+                                />
+                                <label
+                                    class="custom-control-label ml-5"
+                                    for="all-patients"
+                                    >كل المرضي</label
+                                >
+                            </div>
+                            <div class="custom-control custom-radio mb-3">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    id="selected-only"
+                                    name="notification-radio"
+                                />
+                                <label
+                                    class="custom-control-label"
+                                    for="selected-only"
+                                    >المختار فقط</label
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea
+                                rows="5"
+                                class="form-control input-gray input-border"
+                                placeholder="اكتب نص الاشعار"
+                            ></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-red px-4 py-2">
+                                ارسال
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- add Modal -->
+        <div
+            class="modal fade"
+            id="add-modal"
+            tabindex="-1"
+            aria-labelledby="add-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="text-blue font-weight-bold text-center mb-4">
+                        ابحث عن المريض
+                    </h4>
+                    <form class="form">
+                        <div class="form-group mb-3 px-3">
+                            <div class="d-flex align-items-stretch">
+                                <div
+                                    class="input-group input-with-img img-other-side"
+                                >
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <img
+                                                src="imgs/svg/search-icon.svg"
+                                                alt="search"
+                                                class="img-fluid"
+                                            />
+                                        </div>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        class="form-control input-border input-text-gray"
+                                        placeholder="ابحث هنا"
+                                    />
+                                </div>
+
+                                <a
+                                    href="#"
+                                    class="btn btn-blue mr-2 btn-add"
+                                    data-type="side-popup"
+                                    data-target="add-new-popup"
+                                    data-dismiss="modal"
+                                >
+                                    <img
+                                        src="imgs/svg/add-icon.svg"
+                                        alt="add"
+                                        class="img-fluid icon m-0"
+                                /></a>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-red px-4 py-2">
+                                اضافة
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- delete Modal -->
+        <div
+            class="modal fade"
+            id="delete-modal"
+            tabindex="-1"
+            aria-labelledby="delete-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="font-weight-bold text-center mb-4">
+                        هل انت متأكد من حذف الخدمة
+                    </h4>
+                    <img
+                        src="imgs/svg/delete-red-icon.svg"
+                        alt="delete"
+                        class="img-fluid img-success"
+                    />
+                    <div class="text-center pt-5 d-flex justify-content-center">
+                        <button
+                            class="btn btn-blue px-4 py-2 mx-2"
+                            data-dismiss="modal"
+                        >
+                            اغلاق
+                        </button>
+                        <button class="btn btn-red px-4 py-2 mx-2">حذف</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- success Modal -->
+        <div
+            class="modal fade success-modal"
+            id="success-modal"
+            tabindex="-1"
+            aria-labelledby="success-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="font-weight-bold text-center mb-4">تم الحفظ</h4>
+                    <img
+                        src="imgs/svg/success-icon.svg"
+                        alt="success"
+                        class="img-fluid img-success"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- error Modal -->
+        <div
+            class="modal fade success-modal"
+            id="error-modal"
+            tabindex="-1"
+            aria-labelledby="error-modal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content py-5 px-4">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <img
+                            src="imgs/svg/close-icon.svg"
+                            alt="close"
+                            class="img-fluid"
+                        />
+                    </button>
+                    <h4 class="font-weight-bold text-center mb-4">رسالة خطأ</h4>
+                    <img
+                        src="imgs/svg/error-icon.svg"
+                        alt="error"
+                        class="img-fluid img-error"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+        <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <!-- time picker -->
+        <script src="vendor/gijgo/js/core.js"></script>
+        <script src="vendor/gijgo/js/timepicker.min.js"></script>
+        <!-- time picker -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
