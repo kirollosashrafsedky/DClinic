@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="61.91" height="71.885" viewBox="0 0 61.91 71.885">
+  <g id="bar-graph" transform="translate(-35.524)">
+    <path id="Path_194" data-name="Path 194" d="M168.914,118v51.168H123.571v4.149h49.548V118Z" transform="translate(-75.685 -101.433)" fill="#ea6666"/>
+    <g id="Group_125" data-name="Group 125" transform="translate(35.524)">
+      <path id="Path_195" data-name="Path 195" d="M333.326,13.589,319.737,0V13.589Z" transform="translate(-279.833)" fill="#ea6666"/>
+      <path id="Path_196" data-name="Path 196" d="M71.216,0H35.524V63.524H89.017V17.8h-17.8Zm3.833,27.3h4.212V53.2H75.049ZM45.565,18.954h10.51v4.212H45.565ZM49.777,53.2H45.565V38.536h4.212Zm9.828,0H55.393V32.92h4.212Zm4.052-38.457H45.565V10.53H63.657v4.212ZM69.433,53.2H65.221V24.5h4.212Z" transform="translate(-35.524)" fill="#2778a7"/>
+    </g>
+  </g>
+</svg>

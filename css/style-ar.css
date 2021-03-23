@@ -299,6 +299,20 @@ table.settings-table-2 tr th:nth-of-type(2) {
     border-left-width: 0;
   }
 }
+.additional-costs-card .border-right {
+  border-left: 1px solid #000 !important;
+  padding-left: 1rem;
+  padding-right: 0;
+  border-right-width: 0 !important;
+}
+
+.cost-details .border-right {
+  border-left: 1px solid #fff !important;
+  padding-left: 1rem;
+  padding-right: 0;
+  border-right-width: 0 !important;
+}
+
 .collapse-card .collapse-row .collapse-indicator {
   transform: rotate(0deg);
 }

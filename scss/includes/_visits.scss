@@ -271,11 +271,11 @@
             margin-bottom: 0;
             border-right: 1px solid #e3e3e3;
             .nav-link {
-                padding: 0.4rem 2rem;
+                padding: 0.4rem 1.5rem;
                 transition: all 0.2s ease;
                 width: 100%;
                 svg {
-                    width: 38px;
+                    width: 30px;
                     height: auto;
                 }
                 &.active {
@@ -299,7 +299,7 @@
         .nav-tabs {
             li {
                 .nav-link {
-                    padding: 0.4rem 1.3rem;
+                    padding: 0.4rem 1rem;
                     svg {
                         width: 33px;
                     }
@@ -307,10 +307,10 @@
             }
         }
         .stretched-link.rounded-circle {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             & + span {
-                font-size: 0.9rem;
+                font-size: 0.8rem;
             }
         }
     }
@@ -321,11 +321,18 @@
         .nav-tabs {
             li {
                 .nav-link {
-                    padding: 0.4rem 0.9rem;
+                    padding: 0.4rem 0.7rem;
                     svg {
-                        width: 25px;
+                        width: 24px;
                     }
                 }
+            }
+        }
+        .stretched-link.rounded-circle {
+            width: 20px;
+            height: 20px;
+            & + span {
+                font-size: 0.7rem;
             }
         }
     }
@@ -381,11 +388,11 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .visits-grid {
         .nav-tabs {
             &#visits-tabs {
-                min-width: 145%;
+                min-width: 140%;
             }
         }
     }
@@ -523,4 +530,48 @@
 
 [data-id="current-clinic-top"] + .dropdown-menu {
     display: none;
+}
+
+.additional-costs-card{
+    background-color: #E9E9E9;
+    border-radius: 5px;
+    a{
+        img{
+            width: 15px;
+        }
+    }
+    .border-right{
+        border-right: 1px solid #000 !important;
+        padding-right: 1rem;
+    }
+}
+
+@media(max-width: 575.5px){
+    .additional-costs-card{
+        a{
+            img{
+                width: 12px;
+            }
+        }
+font-size: 14px;
+    }
+}
+.cost-details{
+    min-height: 100%;
+    width: 250px;
+    background-color: $red;
+    border-radius: 5px;
+    right: 30px;
+    color: #fff;
+    .border-right{
+        border-right: 1px solid #fff !important;
+        padding-right: 1rem;
+    }
+    flex-shrink: 0;
+}
+@media(max-width: 991.5px){
+    .cost-details{
+        width: 100%;
+        font-size: 14px;
+    }
 }

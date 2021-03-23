@@ -39,3 +39,22 @@
         }
     }
 }
+
+
+.additional-costs-card{
+    .border-right{
+        border-left: 1px solid #000 !important;
+        padding-left: 1rem;
+        padding-right: 0;
+        border-right-width: 0 !important;
+    }
+}
+
+.cost-details{
+    .border-right{
+        border-left: 1px solid #fff !important;
+        padding-left: 1rem;
+        padding-right: 0 ;
+        border-right-width: 0 !important;
+    }
+}
