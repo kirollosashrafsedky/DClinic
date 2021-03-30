@@ -324,12 +324,25 @@ $(document).ready(function() {
             $('.attachments-menu').removeClass('show')
             $('#chat-attachment-input').val('');
             $('.attachments-menu-inner').text('');
-    
         })
 
     //top bar
     function updateAppContainerHeight(){
-        $("#app-container").css('padding-top',$('.top-bar').height() + 'px')
+        $("#app-container").css('padding-top',$('.top-bar').height() + 'px');
+        if($(window).width() < 1440 && $(window).width() > 575.5) {
+            $('.side-popup').css('top',$('.top-bar').height() - 1 + 'px')
+            $('.side-popup').css('height', 'calc(100% - ' + $('.top-bar').height() + 'px)')
+        }
+        else if($(window).width() < 1440) {
+            $('.side-popup').css('top',$('.top-bar').height() - 1 + 'px')
+            $('.side-popup').css('height', 'calc(100% - ' + $('.top-bar').height() + 'px)')
+            $('.side-popup:not(.profile-menu)').css('top','0');
+            $('.side-popup:not(.profile-menu)').css('height','100%');
+        }
+        else{
+            $('.side-popup').css('top','0');
+            $('.side-popup').css('height','100%');
+        }
     }
     updateAppContainerHeight(); //always call this function on adding the top notification-bar
 
