@@ -283,6 +283,29 @@ ul {
   width: 35px;
 }
 
+.top-bar-notification {
+  padding: 5px;
+  background-color: #f5d1d3;
+  color: #641d27;
+  width: 100%;
+  font-size: 15px;
+}
+.top-bar-notification a {
+  color: #48a3da;
+  margin: 0 10px;
+  text-decoration: underline;
+}
+
+@media (max-width: 575.5px) {
+  .top-bar-notification {
+    font-size: 13px;
+  }
+}
+@media (max-width: 400.5px) {
+  .top-bar-notification {
+    font-size: 11px;
+  }
+}
 .top-bar {
   width: 100%;
   top: 0;

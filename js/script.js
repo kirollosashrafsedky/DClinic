@@ -326,5 +326,15 @@ $(document).ready(function() {
             $('.attachments-menu-inner').text('');
     
         })
+
+    //top bar
+    function updateAppContainerHeight(){
+        $("#app-container").css('padding-top',$('.top-bar').height() + 'px')
+    }
+    updateAppContainerHeight(); //always call this function on adding the top notification-bar
+
+    $(window).on('resize', function() {
+        updateAppContainerHeight();
+    });
     
 });
