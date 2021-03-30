@@ -259,4 +259,72 @@ $(document).ready(function() {
         closeSidePopup()
     })
       
+
+        //chat
+    
+        function autoGrow(element) {
+            element.css('height' , '5px');
+            element.css('height' , (element.prop('scrollHeight'))+"px");
+            
+        }
+    
+        $('#chat-textarea').on('input',function(){
+            autoGrow($(this))
+        })
+    
+        function isImage(filename) {
+            var ext = getExtension(filename);
+            switch (ext.toLowerCase()) {
+              case 'jpg':
+              case 'gif':
+              case 'bmp':
+              case 'png':
+                //etc
+                return true;
+            }
+            return false;
+        }
+    
+          
+        $('#chat-attachment-input').change(function(){
+            let input = $('#chat-attachment-input')
+            if (input.prop('files') && input.prop('files')[0]) {
+                let inputFiles = input[0].files
+                for (var i = 0, f; f = inputFiles[i]; i++) {
+                    var reader = new FileReader();
+                    let fileName = inputFiles[i].name;
+                    let fileExt = fileName.split('.').pop()
+                    reader.onload = function (e) {
+                        html = '';
+                        if(fileExt == 'jpg' | fileExt == 'png' | fileExt == 'gif' | fileExt == 'jpeg' ){
+                             html = `
+                            <div
+                                class="img-wrapper"
+                                style="
+                                    background-image: url('${ e.target.result}');
+                                "
+                            ></div>
+                            ` 
+                        }else{
+                            html = `
+                            <div class="file-name"><p>${fileName}</p></div>
+                            ` 
+                        }
+                        
+                        $('.attachments-menu-inner').append(html);
+                    };
+                
+                    reader.readAsDataURL(f);
+                
+                }
+            }
+            $('.attachments-menu').addClass('show')
+        })
+        $('.attachments-menu .close-btn').on('click',function(){
+            $('.attachments-menu').removeClass('show')
+            $('#chat-attachment-input').val('');
+            $('.attachments-menu-inner').text('');
+    
+        })
+    
 });
